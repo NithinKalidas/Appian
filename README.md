@@ -1,3 +1,7 @@
-##Best Practice in Interface
-Use of modular Coding
-querying data in Parent interface and passing as rule input to child interface to minimalise the queries
+# Appian Interview Question
+
+## 1. Best Practice in interface
+modular coding
+
+## 2.Issues you came across and how did you resolve
+query
