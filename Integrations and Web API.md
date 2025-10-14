@@ -1,0 +1,101 @@
+# Integrations and WEB API
+
+## 1. What is Web API, Integration and Connected system?
+
+## 2. Best Practices in Integration?
+
+## 3. Issues you faced in Web API or Integration and how did you overcome?
+
+## 4. Authentication types and explain them?
+
+## 5. In Web API how many smart service we can use as function?
+
+## 6. How do you implement more than one web API smart service as function
+
+## 7. In a!save how many smart service we can use 
+
+## 8. Web API is called in button action, how do you prevent from multiple clicks for same web API call
+
+## 9.Web API is called in button action, how do you distinguise it is calling the same request or different request when multiple clicks are happened?
+
+## 10. In Integration Explain header, query parameters and request body and provide the sue case as well
+
+## 11. How do you create service account to secure an API?
+
+## 12. How do you create a OAuth service account?
+
+## 13.What is the difference between SAML and LDAP?
+
+## 14. What is difference between REST API vs SOAP API?
+
+## 15. How to handle pagination and filtering in Web API Responses?
+
+## 16. What is the difference between In Bound and Out Bound Authentication?
+
+## 17. What authentication method does Appian support for integration?
+
+## 18.How to get data of employee where age is between 20-25 and salary is greatter than 1,00,000 integration?
+
+## 19. Can we deploy service account to higher environment? If yes, Hoe? If No how to overcome?
+
+## 20. How to construct custom error message in integration?
+
+## 21. Minimun level of Permission to execute web API? 
+
+## 22.What is http and its methods?
+
+## 23. Can we use get method to execute smart service?
+
+## 24. Does get accept query parameter, if no what methods accept query parameter?
+
+## 25. You want to query data using query paramter what method you use to query the data?
+
+## 26. What are all information required for OAUTH 2.0 client grand requires to implement?
+
+## 27. What are all information required for API Key authentication requires to implement?
+
+## 28. How much size appian can send data to external system?
+
+## 29. what is single sign on?
+
+## 30.
+
+## 31.
+
+## 32.
+
+## 33.
+
+## 34.
+
+## 35.
+
+## 36.
+
+## 37.
+
+## 38.
+
+## 39.
+
+## 40.
+
+## 41.
+
+## 42.
+
+## 43.
+
+## 44.
+
+## 45.
+
+## 46.
+
+## 47.
+
+## 48.
+
+## 49.
+
+## 50.
