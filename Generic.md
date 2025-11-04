@@ -4,7 +4,7 @@
 
 ## 3. How many engines are present in appian default?
 
-## 4. How do you deploy to higher environment? your doing for the first time?
+## 4. How do you deploy to higher environment? When your doing for the first time?
 
 ## 5. What are the deployment challenges you have faced?
 
