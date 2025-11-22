@@ -52,7 +52,33 @@ No. This is because if the index of the values changes, the comparison can colla
 Validation: Validation errors are displayed below the field when the value does not meet certain business conditions.
 Validation Group: Fields are validated only when a button in the same validation group is clicked.
 
-## 16.
+## 16.##  . Scenario: Interface to fill vehicle insurance details. There is a master field to capture the type of vehicle (Car/Bike etc.), and there are sets of fields that differ for the type of vehicle selected.
+Hide the sequential fields and display only the set of fields that correspond to the selected vehicle type.
+Display all the fields but keep them disabled. Enable only the set of fields that correspond to the selected vehicle type.
+Answer: Hide the sequential fields and display only the set of fields that correspond to the selected vehicle type.
+
+##  . Why should the read-only grid's pagingInfo match the data's pagingInfo?
+This is because the data has to be refreshed based on each page.
+
+##  . Why shouldn’t an interface have more than 500 lines of code? How to reduce the number of lines of code?
+More than 500 lines of code can lead to binding issues. This can be solved using modular coding.
+
+##  . What is the difference between local variables and rule inputs?
+Local Variables: Used when the scope is within the interface/rule and the value need not go outside that object. They are also used to define the repetitive piece of code/function/rule.
+Rule Inputs: Used when the value has to be taken outside the object.
+
+INTEGRATION
+##  . When should Web API, Integration/Web service be used?
+Web API: Should be used when Appian's data is to be exposed to the external system.
+Integration/Web Service: Used when external system's data is consumed by Appian.
+
+##  . When to use Web service and Integration?
+Integration: Used when the data returned by the external system is in REST structure.
+Web Service: Used when the data returned by the external system is in SOAP structure.
+
+##  . What is connected systems?
+Connected Systems is an object to store the connection credentials used in integrations when connecting to an external system.
+
 
 ## 17.
 
