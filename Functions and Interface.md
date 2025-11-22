@@ -56,12 +56,12 @@ Used a!fileUploadField() with correct PV/RIV binding
 
 
 ## 4. What is the difference between a!save vs Save!value?
-a!save(): In interface saveInto parameters, a!save() updates the target with the given value. This function has no effect when called outside of a component's saveInto parameter.
-save!value: Holds the user inputted value on a temporary basis.
+ * a!save(): In interface saveInto parameters, a!save() updates the target with the given value. This function has no effect when called outside of a component's saveInto parameter.
+ * save!value: Holds the user inputted value on a temporary basis.
 
 ## 5. What is the difference between choice Label vs choice Value?
-Choice Value: The underlying data value that gets stored when a user makes a selection.
-Choice Label: The display text that the user sees in the interface.
+ * Choice Value: The underlying data value that gets stored when a user makes a selection.
+ * Choice Label: The display text that the user sees in the interface.
 
 ## 6. What are the different ways to refresh a local variable?
 Local variables can be refreshed in the following ways:
@@ -73,7 +73,7 @@ Local variables can be refreshed in the following ways:
  * refreshAfter: Refreshes the value of the local variable after a record action, such as a related action or a record list action configured within a record type, completes from a dialog window within the Record Action Component. Instead of requiring the entire page to reload, this parameter allows you to refresh a local variable value on an interface after a record action completes. Valid values include RECORD_ACTION.
 
 ## 8. what is the difference between a!match and display value?
-Match: Evaluates the value against multiple conditions and returns a value based on a match. If no match is found, the default is returned.
+ * Match: Evaluates the value against multiple conditions and returns a value based on a match. If no match is found, the default is returned.
  a!match(
           value: local!cartSize,
           equals: 0,
@@ -85,27 +85,27 @@ Match: Evaluates the value against multiple conditions and returns a value based
           default: "Unknown."
         )
 
-Displayvalue: Tries to match a value in a given array with a value at the same index in a replacement array and returns either the value at the same index or a default value if the value is not found.
+ * Displayvalue: Tries to match a value in a given array with a value at the same index in a replacement array and returns either the value at the same index or a default value if the value is not found.
 displayvalue( value, inArray, replacement, default ) Eg: displayvalue(2,{0,1,2},{"Low","Medium","High"},"Unknown"), returns: High""
 
 ## 9. what is the difference between difference and Symmetric Difference?
-Difference: Returns the values in array1 and not in array2.
+ * Difference: Returns the values in array1 and not in array2.
 Eg: difference({1, 2, 3, 4}, {3, 4}) returns 1, 2
-Symmetric Difference: Returns the values from two integer arrays that are not in both arrays.
+ * Symmetric Difference: Returns the values from two integer arrays that are not in both arrays.
 Eg: symmetricdifference({1, 2, 3, 4}, {3, 4, 5, 6}) returns an array with 1, 2, 5, 6
 
 ## 10. what is the difference between len, length and Count?
-Len: Returns the length in characters of the text.
+ * Len: Returns the length in characters of the text.
 Eg: len("New York", "San Francisco"), Returns {8, 13}.
-Length: This function returns the number of elements in an array.
+ * Length: This function returns the number of elements in an array.
 length({10, null, 30}), Returns 2. Null values are skipped.
-Count: Returns the number items in all arrays passed to the function. Null parameters are also counted.
+ * Count: Returns the number items in all arrays passed to the function. Null parameters are also counted.
 Eg:count(1,2,3,4) returns 4
 
 ## 11. what is the difference between where and where Contains?
-Where: Returns the true value of the indexesof that array.
+ * Where: Returns the true value of the indexesof that array.
 Eg: where({68, 89, 82, 90, 93, 99, 59, 49, 88, 27, 56, 49, 100} < 50), Returns {8, 10, 12}.
-WhereContains: Receives one or more values and returns an array of indexes that indicate the position of the values within the array.
+ * WhereContains: Receives one or more values and returns an array of indexes that indicate the position of the values within the array.
 Eg: wherecontains(20, {10, 20, 30}), Returns {2}.
 
 ## 12. what is the depriciated function and how do you handle objects which are utilising them?
@@ -121,8 +121,8 @@ The env constant is used to store values specific to the environment. For exampl
 No. This is because if the index of the values changes, the comparison can collapse.
 
 ## 15. What is the difference between validation and validation group?
-Validation: Validation errors are displayed below the field when the value does not meet certain business conditions.
-Validation Group: Fields are validated only when a button in the same validation group is clicked.
+ * Validation: Validation errors are displayed below the field when the value does not meet certain business conditions.
+ * Validation Group: Fields are validated only when a button in the same validation group is clicked.
 
 ## 16. Scenario: Interface to fill vehicle insurance details. There is a master field to capture the type of vehicle (Car/Bike etc.), and there are sets of fields that differ for the type of vehicle selected.
 Hide the sequential fields and display only the set of fields that correspond to the selected vehicle type.
