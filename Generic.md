@@ -3,6 +3,24 @@
 ## 2.What is the architecture of Appian?
 
 ## 3. How many engines are present in appian default?
+An initial Appian installation installs three execution engines and three analytics engines.
+It is possible to add up to a total of 32 execution and 32 analytics engines by defining them in appian-topology.xml. 
+
+     <engine name="forums"/>
+     <engine name="notify"/>
+     <engine name="notify-email"/>
+     <engine name="channels"/>
+     <engine name="content"/>
+     <engine name="collaboration-statistics"/>
+     <engine name="personalization"/>
+     <engine name="portal"/>
+     <engine name="process-design"/>
+     <engine name="process-analytics0"/>
+     <engine name="process-analytics1"/>
+     <engine name="process-analytics2"/>
+     <engine name="process-execution0"/>
+     <engine name="process-execution1"/>
+     <engine name="process-execution2"/>
 
 ## 4. How do you deploy to higher environment? When your doing for the first time?
 
