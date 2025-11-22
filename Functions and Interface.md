@@ -20,10 +20,17 @@ a!save(): In interface saveInto parameters, a!save() updates the target with the
 save!value: Holds the user inputted value on a temporary basis.
 
 ## 5. What is the difference between choice Label vs choice Value?
+Choice Value: The underlying data value that gets stored when a user makes a selection.
+Choice Label: The display text that the user sees in the interface.
 
-## 6. What is refresh variable?
+## 6. What are the different ways to refresh a local variable?
+Local variables can be refreshed in the following ways:
 
-## 7. What is the difference between load and with?
+refreshAlways: When true, the value of this local variable will be refreshed after each user interaction and each interval refresh.
+refreshInterval: How often the variable value gets refreshed in minutes. When null, the variable will not be refreshed on an interval. Valid values include 0.5, 1, 2, 3, 4, 5, 10, 30, 60.
+refreshOnReferencedVarChange: When true, the value of this local variable will be refreshed each time the value of any variable it references within the value parameter is updated. Default is true.
+refreshOnVarChange: Refreshes the value of the local variable each time any of these specific variables change. This allows you to refresh the value when a variable that is not referenced within the value parameter is updated.
+refreshAfter: Refreshes the value of the local variable after a record action, such as a related action or a record list action configured within a record type, completes from a dialog window within the Record Action Component. Instead of requiring the entire page to reload, this parameter allows you to refresh a local variable value on an interface after a record action completes. Valid values include RECORD_ACTION.
 
 ## 8. what is the difference between a!match and display value?
 
@@ -33,19 +40,17 @@ save!value: Holds the user inputted value on a temporary basis.
 
 ## 11. what is the difference between where and where Contains?
 
-## 12. what is the depriciated function and how do you hanle objects which are utilising them?
+## 12. what is the depriciated function and how do you handle objects which are utilising them?
 
 ## 13. 2. What is an environmental constant?
 The env constant is used to store values specific to the environment. For example, we can have a constant called IS_PROD whose value will be true only in the production environment. The value of the env constant can be provided in the customization file during deployment.
 
-3. Can array type constants be used for comparison of values?
+## 14. Can array type constants be used for comparison of values?
 No. This is because if the index of the values changes, the comparison can collapse.
 
-## 14.9. What is the difference between validation and validation group?
+## 15. What is the difference between validation and validation group?
 Validation: Validation errors are displayed below the field when the value does not meet certain business conditions.
 Validation Group: Fields are validated only when a button in the same validation group is clicked.
-
-## 15.
 
 ## 16.
 
