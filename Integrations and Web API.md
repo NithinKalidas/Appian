@@ -58,7 +58,17 @@
 
 ## 29. what is single sign on?
 
-## 30.
+## 30.INTEGRATION
+## 20 . When should Web API, Integration/Web service be used?
+Web API: Should be used when Appian's data is to be exposed to the external system.
+Integration/Web Service: Used when external system's data is consumed by Appian.
+
+##  . When to use Web service and Integration?
+Integration: Used when the data returned by the external system is in REST structure.
+Web Service: Used when the data returned by the external system is in SOAP structure.
+
+##  . What is connected systems?
+Connected Systems is an object to store the connection credentials used in integrations when connecting to an external system.
 
 ## 31.
 
