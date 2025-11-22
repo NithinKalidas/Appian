@@ -123,3 +123,33 @@
 ## 62. Process is errored out? how do you check them?
 
 ## 63. why do we split tabel? why can't we store all in single DB?
+
+## 64. What are the different licenses available and for what components are they provided?
+k3.lic for engines
+k4.lic for the data server
+
+## 65. What are the different types of Appian installations and state their differences?
+On-Premise: The physical hardware is with us and maintenance is also done by us.
+On-Cloud: The physical hardware is with Appian, and Appian handles the maintenance. The URL will have "appiancloud" in it.
+Hybrid: A combination of On-Premise and On-Cloud. For example, a training environment where the hardware is with Appian but maintenance is done by us.
+
+## 66. What is the purpose of content, personalization, execution, and analytic engines?
+Process Execution: Manages process execution and data for associated process models. Also referred to as exec, PX.
+Process Analytics: Stores information relevant for reports on a process. Also referred to as analytics, PA.
+Content: Stores metadata and security settings for documents and their organizational structures (communities, knowledge centers, and folders). The actual document content is stored on the file system. Also referred to as collaboration, collab, CO.
+Personalization: Stores information about users, groups, group membership, and group types. Also referred to as groups, PE.
+
+## 67. Why can users not be deleted or moved to another environment in Appian?
+The license cost is based on the number of users per environment, and Appian maintains metadata based on users. Hence, users cannot be moved or deleted.
+
+
+## 68.  Is an archived or deleted process available in the Process report?
+No.
+
+## 69.  Will hidden variable data be displayed in the process report?
+No.
+
+## 70. What is the purpose of user start page?
+When configured, this allows the user to directly log in to the given site rather than the Tempo page.
+
+
