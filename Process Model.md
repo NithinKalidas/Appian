@@ -1,6 +1,6 @@
 # Appian Interview Question
 
-## 1. Difference Between Start Process Sub Process? Explain with real time example?
+## 1. Difference Between Start Process and Sub Process? Explain with real time example?
 
 
 ## 2. Production Issues you came across in PM and how did you handle them?
