@@ -1,6 +1,15 @@
 ## 1. How to download a document when it is unplublished?
+from Appian 25.3 we can able to download the document by using a!documentDownloadLink(), for Lower environment through process model you need to write in DB and then download the Documents
 
 ## 2.What is the architecture of Appian?
+Appian uses a 3-tier architecture where the UI is rendered with SAIL, business logic runs in Appian’s engines, and data is stored in Appian/external databases via the unified Data Fabric.
+Process Execution Engine – Runs workflows
+Content Engine – Documents & folders
+Analytics Engine – Reports and metrics
+Collaboration Engine – Tasks, news, discussions
+Search Server – Full text search
+Rules Engine – Evaluates expressions & SAIL
+Data Fabric – Single virtual data layer
 
 ## 3. How many engines are present in appian default?
 An initial Appian installation installs three execution engines and three analytics engines.
