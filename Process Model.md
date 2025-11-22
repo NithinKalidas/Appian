@@ -107,9 +107,59 @@ Short-lived processes are recommended because longer processes accumulate in the
 Asynchronous Subprocess: The parent does not wait for the child to complete. Both the parent and child processes run in the same engine.
 Start Process: The parent does not wait for the child to complete. The parent and child processes run in the same or different engines based on the load (Appian has 3 execution engines by default).
 
-## 38.
+##  . What is the difference between process model and process?
+Process Model: The model is the object where the flow can be defined/designed.
+Process: Process/Instance is the implementation of the design.
 
-## 39.
+##  . What is the purpose of alerts in Process model?
+Alerts in the model are used to notify the defined users about errors in the instance. The target users are the admins of the app as they are responsible for maintaining the app. This can be defined using a constant so that change management can be easier.
 
-## 40.
+##  . Why do we need the data management? When should one select the delete option in data management?
+Data Management is used to clear the instances stored in the execution engine. The instance can either be archived or deleted. When there is no user interaction in a process, that process can be deleted. Data management happens only for completed or canceled instances.
 
+##  . What is the difference between end and terminate node? When to use End node?
+End Node: Completes only the path that hits it while all the other paths are active. This is used when the whole process is to be completed when all the other paths are completed.
+Terminate Node: Completes all the paths once it is hit. Even in a single flow, the terminate node is recommended as even the errored instances of the node are completed when the terminate node is hit.
+
+##  . What is the purpose of process report?
+It provides information about the process models, process instances, or active tasks and other activities. This is mainly used for analysis purposes.
+
+##  . What are the different types of process report?
+Process models
+Process instances
+Active tasks
+
+##  . What is the function used to get the results from process report?
+a!queryProcessAnalytics()
+
+##  . What is the purpose of activity chaining? What is the maximum limit?
+Activity chaining is used between more than one task performed by the same user so that the user can act upon the tasks without any delay. The maximum limit is default 50 and max 100 unattended nodes between two attended nodes.
+
+##  . When a process with an active task is paused, will the task be available to the user to perform?
+No. An error will be shown to the user when the task is opened.
+
+##  . Will timer node execute when the instance is paused?
+Yes
+
+##  . What is a MNI and its best practices?
+Multiple Node Instance (MNI) is used to create multiple instances of a node. This is done when the functionality of the node is to be repeated for various inputs. The best practice is to do a null check of the variable before the MNI and if the variable has more than 1000 values, it is recommended to do batch
+
+##  . What are Gateways and their purpose?
+Gateway nodes allow you to evaluate different criteria to make decisions on which path(s) your workflow should follow – as well as how many instances are allowed to follow each optional path. Click here to know about various gateways.
+
+##  . The triggers that can be added to a start event are:
+Receive Message
+Timer
+
+##  . What is the difference between Task Assignee and Task Owner?
+Task Assignees: The people for whom the task is being assigned.
+Task Owner: The person who accepts a group task.
+
+##  . What should be the reassignment privilege for basic users?
+The reassignment privilege should be No privilege as basic users should not have the ability to reassign the task to anyone in the system, and if reassignment is enabled, the tracking of it becomes difficult. This can be set in the Assignment tab of User input task under "Set Reassignment Privilege".
+
+##  . Can the default task assignment mail be disabled?
+Yes, under the assignment tab the option can be unchecked.
+
+##  . What is the maximum number of nodes and variables allowed per process model?
+30 Nodes and 50 Variables
