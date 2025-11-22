@@ -89,23 +89,3 @@ Connected Systems is an object to store the connection credentials used in integ
 ## 39.
 
 ## 40.
-
-## 41.
-
-## 42.
-
-## 43.
-
-## 44.
-
-## 45.
-
-## 46.
-
-## 47.
-
-## 48.
-
-## 49.
-
-## 50.
