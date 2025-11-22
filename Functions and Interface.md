@@ -1,9 +1,9 @@
 # Best Practice in Interface
 
 ## 1. What is the best practice of interface?
-Break complex interfaces into reusable component rules (Modular Coding)
-Use local variables to reduce recalculations and improve performance.
-Avoid unnecessary queries inside the interface; preload data with rule inputs and Querying the data only in parent interface to reduce queries
+*Break complex interfaces into reusable component rules (Modular Coding)
+*Use local variables to reduce recalculations and improve performance.
+*Avoid unnecessary queries inside the interface; preload data with rule inputs and Querying the data only in parent interface to reduce queries
 Use paginated grids for large datasets to optimize load time.
 Follow proper naming conventions for rules, inputs, and variables.
 Ensure security with role-based visibility and record-level controls.
