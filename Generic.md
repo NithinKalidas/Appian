@@ -152,4 +152,28 @@ No.
 ## 70. What is the purpose of user start page?
 When configured, this allows the user to directly log in to the given site rather than the Tempo page.
 
+##  . If a user belongs to multiple groups that have different start pages configured, his start page will be the highest one in the grid that corresponds to a group that he belongs to.
+TRUE
+
+##  . What are the different datatypes available in Appian? Give examples for each.
+Primitive: Int, Text, Date, DateTime
+Appian Object: Application, Process Model
+Complex: PagingInfo, DataSubset
+Custom Data Type
+
+##  . What are the benefits of modular coding?
+Reusability of objects
+Easy change management
+Easy debugging
+Reduced number of lines per interface
+
+##  . What are the things to be checked during deployment?
+Missing Precedents
+Security Summary
+Proper exporting of all objects
+Inspecting all objects and fixing issues if any
+Importing the objects
+
+##  . What is a customization file?
+The customization file is used to provide values to the environmental constant and connected systems when deploying to another environment so that the value changed isn't missed.
 
