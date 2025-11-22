@@ -4,17 +4,56 @@
  * Break complex interfaces into reusable component rules (Modular Coding). 
  * Use local variables to reduce recalculations and improve performance. 
  * Avoid unnecessary queries inside the interface; preload data with rule inputs and Querying the data only in parent interface to reduce queries.
-
-Use paginated grids for large datasets to optimize load time.
-Follow proper naming conventions for rules, inputs, and variables.
-Ensure security with role-based visibility and record-level controls.
-Test UI responsiveness across web and mobile devices. hving default test cases
-Don't Hardcode: Never type specific IDs or text labels directly in the code. Use Constants so you can change them easily later without breaking the code.
+ * Use paginated grids for large datasets to optimize load time.
+ * Follow proper naming conventions for rules, inputs, and variables.
+ * Ensure security with role-based visibility and record-level controls.
+ * Test UI responsiveness across web and mobile devices. hving default test cases
+ * Don't Hardcode: Never type specific IDs or text labels directly in the code. Use Constants so you can change them easily later without breaking the code.
 
 ## 2. What is modular coding?
-Modular coding is the practice of breaking a large, complex program into smaller, independent, and manageable pieces called modules
+Modular coding is the practice of breaking a large, complex program into smaller, independent and manageable pieces called modules
 
 ## 3. Issues you came across in Interface and how do you resolve them?
+1. Slow Interface Loading / Performance Issue
+Too many queries inside the interface
+Nested loops, large datasets
+Heavy evaluations inside SAIL
+Resolution:
+Moved queries to Rule Inputs and a!localVariables()
+Used pagingInfo + limited data
+
+2. Incorrect Data Display / Null Values
+Wrong index paths
+Missing null checks
+Resolution:
+Used index() with default values
+Added condition checks like if() or where() filters
+
+3. Dropdown Not Populating
+Query returning empty
+Missing label/value configuration
+Wrong data type
+Resolution:
+Verified query separately
+Mapped values using a!dropdownField() with choiceLabels
+Converted data types using tostring() / tointeger()
+
+4. Grid Not Sorting or Filtering
+Not using pagingInfo correctly
+Missing saveInto for user actions
+Resolution:
+Implemented a!gridField() or a!gridLayout() with proper sort parameters
+Stored paging info in local variables
+
+5. File Upload Not Working
+Wrong document folder security
+Invalid file type/size
+Missing saveInto logic
+Resolution:
+Fixed folder security permissions
+Added file type validation
+Used a!fileUploadField() with correct PV/RIV binding
+
 
 ## 4. What is the difference between a!save vs Save!value?
 a!save(): In interface saveInto parameters, a!save() updates the target with the given value. This function has no effect when called outside of a component's saveInto parameter.
@@ -27,15 +66,27 @@ Choice Label: The display text that the user sees in the interface.
 ## 6. What are the different ways to refresh a local variable?
 Local variables can be refreshed in the following ways:
 
-refreshAlways: When true, the value of this local variable will be refreshed after each user interaction and each interval refresh.
-
-refreshInterval: How often the variable value gets refreshed in minutes. When null, the variable will not be refreshed on an interval. Valid values include 0.5, 1, 2, 3, 4, 5, 10, 30, 60.
-
-refreshOnReferencedVarChange: When true, the value of this local variable will be refreshed each time the value of any variable it references within the value parameter is updated. Default is true.
-refreshOnVarChange: Refreshes the value of the local variable each time any of these specific variables change. This allows you to refresh the value when a variable that is not referenced within the value parameter is updated.
-refreshAfter: Refreshes the value of the local variable after a record action, such as a related action or a record list action configured within a record type, completes from a dialog window within the Record Action Component. Instead of requiring the entire page to reload, this parameter allows you to refresh a local variable value on an interface after a record action completes. Valid values include RECORD_ACTION.
+ * refreshAlways: When true, the value of this local variable will be refreshed after each user interaction and each interval refresh.
+ * refreshInterval: How often the variable value gets refreshed in minutes. When null, the variable will not be refreshed on an interval. Valid values include 0.5, 1, 2, 3, 4, 5, 10, 30, 60.
+ * refreshOnReferencedVarChange: When true, the value of this local variable will be refreshed each time the value of any variable it references within the value parameter is updated. Default is true.
+ * refreshOnVarChange: Refreshes the value of the local variable each time any of these specific variables change. This allows you to refresh the value when a variable that is not referenced within the value parameter is updated.
+ * refreshAfter: Refreshes the value of the local variable after a record action, such as a related action or a record list action configured within a record type, completes from a dialog window within the Record Action Component. Instead of requiring the entire page to reload, this parameter allows you to refresh a local variable value on an interface after a record action completes. Valid values include RECORD_ACTION.
 
 ## 8. what is the difference between a!match and display value?
+Match: Evaluates the value against multiple conditions and returns a value based on a match. If no match is found, the default is returned.
+ a!match(
+          value: local!cartSize,
+          equals: 0,
+          then: "Your cart is empty.",
+          equals: 1,
+          then: "1 item in cart.",
+          whenTrue: fv!value > 1,
+          then: fv!value & " items in cart.",
+          default: "Unknown."
+        )
+
+Displayvalue: Tries to match a value in a given array with a value at the same index in a replacement array and returns either the value at the same index or a default value if the value is not found.
+displayvalue( value, inArray, replacement, default ) Eg: displayvalue(2,{0,1,2},{"Low","Medium","High"},"Unknown"), returns: High""
 
 ## 9. what is the difference between difference and Symmetric Difference?
 Difference: Returns the values in array1 and not in array2.
@@ -63,7 +114,7 @@ A deprecated function (or feature) is a piece of code that is still functional b
 2.Update Precedents: Go to each object using the old rule (found via "Where Used") and change the reference to point to the new rule.
 3.Deactivate the Old Rule: Once all references are updated, deactivate the deprecated rule to prevent future use.
 
-## 13. 2. What is an environmental constant?
+## 13. What is an environmental constant?
 The env constant is used to store values specific to the environment. For example, we can have a constant called IS_PROD whose value will be true only in the production environment. The value of the env constant can be provided in the customization file during deployment.
 
 ## 14. Can array type constants be used for comparison of values?
@@ -73,18 +124,18 @@ No. This is because if the index of the values changes, the comparison can colla
 Validation: Validation errors are displayed below the field when the value does not meet certain business conditions.
 Validation Group: Fields are validated only when a button in the same validation group is clicked.
 
-## 16.##  . Scenario: Interface to fill vehicle insurance details. There is a master field to capture the type of vehicle (Car/Bike etc.), and there are sets of fields that differ for the type of vehicle selected.
+## 16. Scenario: Interface to fill vehicle insurance details. There is a master field to capture the type of vehicle (Car/Bike etc.), and there are sets of fields that differ for the type of vehicle selected.
 Hide the sequential fields and display only the set of fields that correspond to the selected vehicle type.
 Display all the fields but keep them disabled. Enable only the set of fields that correspond to the selected vehicle type.
 Answer: Hide the sequential fields and display only the set of fields that correspond to the selected vehicle type.
 
-## 17 . Why should the read-only grid's pagingInfo match the data's pagingInfo?
+## 17. Why should the read-only grid's pagingInfo match the data's pagingInfo?
 This is because the data has to be refreshed based on each page.
 
-## 18 . Why shouldn’t an interface have more than 500 lines of code? How to reduce the number of lines of code?
+## 18. Why shouldn’t an interface have more than 500 lines of code? How to reduce the number of lines of code?
 More than 500 lines of code can lead to binding issues. This can be solved using modular coding.
 
-## 19 . What is the difference between local variables and rule inputs?
+## 19. What is the difference between local variables and rule inputs?
 Local Variables: Used when the scope is within the interface/rule and the value need not go outside that object. They are also used to define the repetitive piece of code/function/rule.
 Rule Inputs: Used when the value has to be taken outside the object.
 
