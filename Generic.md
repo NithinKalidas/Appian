@@ -38,8 +38,10 @@ It is possible to add up to a total of 32 execution and 32 analytics engines by 
 ## 6. What are necessary checks for pre deployement and post deployment?
 
 ## 7. How do you check is document exist or not in your application?
+getcontentobjectdetailsbyid()
 
 ## 8. How do you delete the document which is older than 2 years, when your unaware of document  Id?
+Using "Delete Documents Created Before Date"smart service in the PRocess model, by chosing the 
 
 ## 9. What are the stages appian recommend to use in Project ?
 
