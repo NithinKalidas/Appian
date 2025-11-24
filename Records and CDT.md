@@ -2,13 +2,43 @@
 
 ## 1. What is the difference between Records Vs CDT?
 
+Custom Data Type (CDT)	
+Used to map to a database table/view via a Data Store Entity. Can also be used as a purely in-memory data structure.
+Data is queried directly from the database using functions like a!queryEntity(). No built-in caching
+Relationships (e.g., one-to-many) must be explicitly defined in the CDT structure and often require careful design (nested vs. flat) and complex queries to build relationship between tables
+Cannot create fields that don't exist in the database table.
+
+Record Type
+Can source data from a database, process instances, web services, or other external systems.
+Can be configured with Data Sync to cache data on Appian's server for faster querying using a!queryRecordType().
+Supports low-code relationships to other Record Types, allowing simple dot-notation for querying related data.
+Can define Custom Record Fields (Virtual Fields) using expressions to calculate or transform data on-the-fly without changing the underlying database.
+
 ## 2. Limitation of Records and CDT?
+
+CDT: 
+No built-in join handling; you must write custom queries manually
+No inherent security model—must handle manually
+No calculated/virtual fields; everything must exist in DB
+
+Records:
+Sync breaks if external application changes the data in DB
+4 Million Rows (per synced Record Type). (licence has to be upgraded inorder to increase the limit)
+Field Limit: 100 Fields (Source fields + Custom Fields).
+varchar limit is set to 4000 character
+
 
 ## 3. How do you create CDT?
 
 ## 4.Difference between Sync vs Non Sync Records?
 
 ## 5. How many types of relationship are in Records?
+| **Relationship Type** | **Description**                                                         | **Example**                               |
+| --------------------- | ----------------------------------------------------------------------- | ----------------------------------------- |
+| **1. One-to-One**     | One record in a source relates to exactly one record in another source. | One employee → One employee detail record |
+| **2. One-to-Many**    | One record relates to multiple records in another source.               | One customer → Many orders                |
+| **3. Many-to-One**    | Many records relate back to one record in another source.               | Many students → One class                 |
+
 
 ## 6. How do you achieve many to many relationship?
 
