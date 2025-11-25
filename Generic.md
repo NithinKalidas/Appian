@@ -206,3 +206,18 @@ Importing the objects
 ##  . What is a customization file?
 The customization file is used to provide values to the environmental constant and connected systems when deploying to another environment so that the value changed isn't missed.
 
+## . Tempo vs Site?
+
+Default by appian
+View/See all tasks
+Can't add logo
+No changes can be done
+
+Site:
+Can configure based on business need
+Security acess can be modified (user access views can be designed)
+Can Add Logo
+Changes can be Done to the site based on requirement
+
+
+
