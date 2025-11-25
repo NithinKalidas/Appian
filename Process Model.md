@@ -6,7 +6,14 @@
 ## 2. Production Issues you came across in PM and how did you handle them?
 
 ## 3. Best Practice In PM?
-
+Deleting Inactive Records: Remove the Soft deleted data
+Using 30 Nodes Per Process and trying to use in Asynchronous, so that process might execute in different engine.
+Using Activity chaining on necessary parts only (as Activity chaining pushes the CPU to act very faastly with no delays) (If querying can be set outside activity chaining we need to use in that)
+Handling Security, Alerts and Data management(archival and delete based on user interaction or system interaction)
+Always take data from DSE or Records to get the primary key or what it writes
+usage of quick task for Confirmation screen and hidden variables to reduce the data load in reports
+setting up up unique name for process display name and process instance name (what is process display)
+Setting up timer to user interaction node
 
 ## 4. Difference Between Start Process Asyncronous and Sub Process Asyncronous?
 
@@ -33,10 +40,22 @@ Debugging Mode
 ## 9. What are gates and its type? Explain with real time use case?
 
 ## 10. What is Activity Chaining and What are its limitations?
+Limitation: Performance reduce when the execution of node takes more time and sometimes it might break as well which impact in user experience
+
 
 ## 11. Your Process has a long activity chaining how do you resolve them?
 
 ## 12. What is exception and esclation ? real time use case?
+Exception: An exception occurs when a process node fails, encounters an error,
+Eg: In Employee Onboarding Process, A node writes employee data to the database, The DB connection fails or required fields are missing →
+Exception triggers: Notification to admin, Error logging, Retry mechanism
+
+Esclation: An escalation occurs when a task is not completed within a specified time (SLA breach)
+A loan approval task is assigned to a manager and SLA set for 24 hours. If the manager doesn’t act within 24 hours.
+Escalation occurs automatically:
+Reassigns the task to Senior Manager
+Sends reminder emails
+Triggers escalation process
 
 ## 13. why to use process start form rather than user input task?
 
@@ -74,9 +93,14 @@ Debugging Mode
 
 ## 30. How will you deploy a scheduler PM?
 
-## 31. What is quick task? How to query the data in PM, when quick task is enabled?
+## 31. What is quick task? How to query the data in PM, when quick task is enabled? where is quick task used?
+It is an on-demand Task, which does not appear in task tab and only performed when activity is chained.
+We can't (check NR)
+
+Eg: Confirmation screen to display the request number
 
 ## 32. How do you handle retry machanism in PM for integration?
+Setting Up retry after failed attempt after (mostly when statuc code is failed with 500) few minutes and also write the log for the integration when ever hits for analysis.
 
 ## 33.What is the difference between End Node vs terminate Node?
 
@@ -163,3 +187,6 @@ Yes, under the assignment tab the option can be unchecked.
 
 ##  . What is the maximum number of nodes and variables allowed per process model?
 30 Nodes and 50 Variables
+
+
+## . If task delayed for 24 hrs it shouuld assign to hire manager (NR/Ls Interview Ques)
