@@ -149,5 +149,9 @@ fetchTotalCount returns the total number of rows in a table based on the applied
 ## 34. What is the range of filtered record list for which the "Export to Excel" button is disabled?
 The button is enabled to export up to 100,000 records from the list, including rich text, images, and links.
 
-## 35.
+## 35. Source Type to get data into appian records
+Database
+Process
+WebService
+Salesforce
 
