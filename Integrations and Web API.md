@@ -1,14 +1,23 @@
 # Integrations and WEB API
 
 ## 1. What is Web API, Integration and Connected system?
+WEB API: Data/Resource sharing to external System
+Integration: Ecternal system used by appian
+Connected system: To store the credentials for integration (basic, WebApi Key, Oauth client grand 2.0 )
 
 ## 2. Best Practices in Integration?
+Handling the integration with status code
+Using retry machanism for server unavailable and logging the details
 
 ## 3. Issues you faced in Web API or Integration and how did you overcome?
 
 ## 4. Authentication types and explain them?
+Basic
+Web API Key based
+OAuth client Grand 2.0
 
 ## 5. In Web API how many smart service we can use as function?
+
 
 ## 6. How do you implement more than one web API smart service as function
 
@@ -70,7 +79,8 @@ Web Service: Used when the data returned by the external system is in SOAP struc
 ##  . What is connected systems?
 Connected Systems is an object to store the connection credentials used in integrations when connecting to an external system.
 
-## 31.
+## 31. Third part want to trigger your DB/SP
+By creating a WEB API in process model using the execute SP smart service we can achieve (NR)
 
 ## 32.
 
