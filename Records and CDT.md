@@ -49,6 +49,9 @@ varchar limit is set to 4000 character
 | **Example**                | Add New Employee          | Update Selected Employee                |
 
 ## 8. What are the types of Backed Record Type?
+Entity Backed
+PRocess Backed
+Expression Backed
 
 ## 9. What is data fabric?
 
