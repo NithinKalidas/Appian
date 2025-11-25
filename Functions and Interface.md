@@ -1,14 +1,16 @@
 # Best Practice in Interface
 
 ## 1. What is the best practice of interface?
- * Break complex interfaces into reusable component rules (Modular Coding). 
+ * Break complex interfaces into reusable component of Interface/rules (Modular Coding). 
  * Use local variables to reduce recalculations and improve performance. 
  * Avoid unnecessary queries inside the interface; preload data with rule inputs and Querying the data only in parent interface to reduce queries.
  * Use paginated grids for large datasets to optimize load time.
  * Follow proper naming conventions for rules, inputs, and variables.
  * Ensure security with role-based visibility and record-level controls.
- * Test UI responsiveness across web and mobile devices. hving default test cases
+ * Test UI responsiveness across web and mobile devices. Provide default test cases
  * Don't Hardcode: Never type specific IDs or text labels directly in the code. Use Constants so you can change them easily later without breaking the code.
+ * Proper Naming convention for interface and RI name, Description and adding comments for the code logic.
+ * retriving data using index rather than square bracet as null is handled rather than error.
 
 ## 2. What is modular coding?
 Modular coding is the practice of breaking a large, complex program into smaller, independent and manageable pieces called modules
