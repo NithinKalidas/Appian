@@ -43,91 +43,108 @@ varchar limit is set to 4000 character
 ## 6. How do you achieve many to many relationship?
 
 ## 7. What is the difference between Record Action Vs Related Action?
+| Feature                    | Record Action             | Related Action                          |
+| -------------------------- | ------------------------- | --------------------------------------- |
+| **Use case**               | Create a new record       | Update or Delete an existing record     |
+| **Example**                | Add New Employee          | Update Selected Employee                |
 
 ## 8. What are the types of Backed Record Type?
 
 ## 9. What is data fabric?
 
 ## 10. What are the different ways to sync a record?
+Manual sync
+Sync on Create/Update/Delete (CUD events)
+Sync after Record Actions
+Sync via Process Model write operations
+Sync using a!syncRecordType()
+Sync via Refresh Interval / Polling
+
+(or)
+
+External System-Initiated (Real-Time Webhook)
+Web API with a!syncRecords(): The external system calls an Appian Web API (acting as a webhook) upon a data change, triggering an immediate sync of the specific record(s) using their identifiers.
+Sync Records Smart Service: An Appian process (often triggered by an integration or the Web API above) explicitly calls this smart service, passing a list of record identifiers (primary keys) to be synced.
+
+Scheduled or Manual Syncs (Bulk/Consistency)
+
+Scheduled Full Sync: Appian fetches all data from the source and replaces the entire synced cache on a daily schedule.
+Scheduled Incremental Sync: Appian checks a designated "Last Modified" timestamp in the source and fetches only the changed or new records on a customizable, frequent schedule (e.g., every 15 minutes).
+Manual Full Sync: An administrator manually triggers a complete refresh of all records via the "Start Full Sync" button in the Record Type settings.
 
 ## 11. What are the different ways to use a record (Table, web service , PM)
 
-## 12. Limitations of CDT?
-
 ## 13. How do you increase query Performance?
+Use selection to limit the number of columns to be returned.
+Use filters wherever possible.
+Use a limited batch size rather than -1.
+Set fetchTotalCount to false.
 
 ## 14. webservice/Database/salesforce?
 
 ## 15. If i write more than 5000 Character using record, where there is no issues in varchar limit, will it write the date or truncate? and how much data will get back when i query the data? (firts 4000 or last 4000)
 
 ## 16. What approach you use to delete In-Active Records?
+In Same Process model, at end before it completes we can create a stored procedure 
 
 ## 17. How do you optimise your records having more than 4 millions of data? (OR) How do you sync more than 4 Millions rows of records?
 
 ## 18. How many ways we can query a data from record?
+1. a!queryRecordType()
+2. a!queryRecordByIdentifier()
 
 ## 19. What is ther return type of query entity and query record?
+Query Record: List of Dictionary 
+Query Entity: DataSubset
 
 ## 20. How do you cofigure securities to records?
 
-## 21. What are the sync methods available in records?
+## 21. difference between Record level security and field level security?
 
-## 22. Record Type security vs record level security?
+## 22. What is view and action security?
 
-## 23.  What are record level datasource?
+## 23. What are the sync methods available in records?
 
-## 24. ##  . What are the different types of records created in Appian?
+## 24. Record Type security vs record level security?
+
+## 25.  What are record level datasource?
+
+## 26. What are the different types of records created in Appian?
 Entity Backed Records
 Service/Expression Backed Records
 Process Backed Records
 
-##  . What is a data sync and when should I use it?
+## 27. What is a data sync and when should I use it?
 When data sync is enabled, you are caching your source data in Appian. With a cache of your data, this means Appian will only have to execute queries from the cached data instead of the external source whenever you view or interact with the record data. Refer here on when to use data sync.
 
-##  . When should default filters and user filters be used?
+## 28. When should default filters and user filters be used?
 Default Filters: Used when the filter has to be applied to the source while retrieving the data for the record type.
 User Filters: Applied by the user once the record type list is displayed.
 
-##  . How many additional views can be added to a record type?
+## 29. How many additional views can be added to a record type?
 Total 20 along with Summary view
 
-##  . What is the difference between an action and a related action?
+## 30. What is the difference between an action and a related action?
 Action: Creates new data in the system.
 Related Action: Performs some action related to the existing data.
 
-##  . What are the different ways to create a CDT?
+## 31. What are the different ways to create a CDT?
 From Scratch
 Duplicating the existing datatype
 From database view or table
 From XSD
 From Web Services
 
-##  . What are the different ways to fetch details from a database?
+## 32. What are the different ways to fetch details from a database?
 Query DB smart service
 Query Entity
 Query rule (Deprecated)
 
-##  . What is the purpose of fetchTotalCount and provide a scenario where fetchTotalCount has to be true?
+## 33. What is the purpose of fetchTotalCount and provide a scenario where fetchTotalCount has to be true?
 fetchTotalCount returns the total number of rows in a table based on the applied filters. This is usually set to false (i.e., when batch size is not -1) as it takes extra time to retrieve the total. Set to true when used in a Read-Only grid to calculate the total number of pages required.
 
-##  . Provide the ways to optimize the results of a query entity
-Use selection to limit the number of columns to be returned.
-Use filters wherever possible.
-Use a limited batch size rather than -1.
-Set fetchTotalCount to false.
-
-##  . What is the range of filtered record list for which the "Export to Excel" button is disabled?
+## 34. What is the range of filtered record list for which the "Export to Excel" button is disabled?
 The button is enabled to export up to 100,000 records from the list, including rich text, images, and links.
 
+## 35.
 
-## 25.
-
-## 26.
-
-## 27.
-
-## 28.
-
-## 29.
-
-## 30.
