@@ -58,8 +58,12 @@ Sends reminder emails
 Triggers escalation process
 
 ## 13. why to use process start form rather than user input task?
+Starts the process model when button action trigerred
+Reduces the utilisation of Appian Memory unit/Resource of appian engine (NR)
 
-## 14. Limitations of Process start form?
+## 14. Limitations of Process start form? when can we use user input task?
+When used in MNI user input task need to be used
+When quering the data inside the process model before the user interaction starts (Not required , NR)
 
 ## 15. How do you convert a word to document
 
