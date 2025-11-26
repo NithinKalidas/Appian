@@ -3,7 +3,7 @@
 ## 1. What is Web API, Integration and Connected system?
 WEB API: Data/Resource sharing to external System
 Integration: Ecternal system used by appian
-Connected system: To store the credentials for integration (basic, WebApi Key, Oauth client grand 2.0 )
+Connected system: To store the credentials for integration (basic, WebApi Key, Oauth client grand 2.0)
 
 ## 2. Best Practices in Integration?
 Handling the integration with status code
@@ -18,14 +18,13 @@ OAuth client Grand 2.0
 
 ## 5. In Web API how many smart service we can use as function?
 
-
 ## 6. How do you implement more than one web API smart service as function
 
 ## 7. In a!save how many smart service we can use 
 
 ## 8. Web API is called in button action, how do you prevent from multiple clicks for same web API call
 
-## 9.Web API is called in button action, how do you distinguise it is calling the same request or different request when multiple clicks are happened?
+## 9. Web API is called in button action, how do you distinguise it is calling the same request or different request when multiple clicks are happened?
 
 ## 10. In Integration Explain header, query parameters and request body and provide the sue case as well
 
@@ -33,7 +32,7 @@ OAuth client Grand 2.0
 
 ## 12. How do you create a OAuth service account?
 
-## 13.What is the difference between SAML and LDAP?
+## 13. What is the difference between SAML and LDAP?
 
 ## 14. What is difference between REST API vs SOAP API?
 
@@ -43,7 +42,7 @@ OAuth client Grand 2.0
 
 ## 17. What authentication method does Appian support for integration?
 
-## 18.How to get data of employee where age is between 20-25 and salary is greatter than 1,00,000 integration?
+## 18. How to get data of employee where age is between 20-25 and salary is greatter than 1,00,000 integration?
 
 ## 19. Can we deploy service account to higher environment? If yes, Hoe? If No how to overcome?
 
@@ -51,7 +50,7 @@ OAuth client Grand 2.0
 
 ## 21. Minimun level of Permission to execute web API? 
 
-## 22.What is http and its methods?
+## 22. What is http and its methods?
 
 ## 23. Can we use get method to execute smart service?
 
@@ -67,35 +66,17 @@ OAuth client Grand 2.0
 
 ## 29. what is single sign on?
 
-## 30.INTEGRATION
-## 20 . When should Web API, Integration/Web service be used?
+## 30. When should Web API, Integration/Web service be used?
 Web API: Should be used when Appian's data is to be exposed to the external system.
 Integration/Web Service: Used when external system's data is consumed by Appian.
 
-##  . When to use Web service and Integration?
+## 31. When to use Web service and Integration?
 Integration: Used when the data returned by the external system is in REST structure.
 Web Service: Used when the data returned by the external system is in SOAP structure.
 
-##  . What is connected systems?
+## 32. What is connected systems?
 Connected Systems is an object to store the connection credentials used in integrations when connecting to an external system.
 
-## 31. Third part want to trigger your DB/SP
+## 33. Third part want to trigger your DB/SP
 By creating a WEB API in process model using the execute SP smart service we can achieve (NR)
 
-## 32.
-
-## 33.
-
-## 34.
-
-## 35.
-
-## 36.
-
-## 37.
-
-## 38.
-
-## 39.
-
-## 40.
