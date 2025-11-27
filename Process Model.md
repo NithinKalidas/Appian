@@ -14,6 +14,7 @@ Always take data from DSE or Records to get the primary key or what it writes
 usage of quick task for Confirmation screen and hidden variables to reduce the data load in reports
 setting up up unique name for process display name and process instance name (what is process display)
 Setting up timer to user interaction node
+Lane Assignments for user task and system task
 
 ## 4. Difference Between Start Process Asyncronous and Sub Process Asyncronous?
 
