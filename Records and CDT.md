@@ -155,3 +155,6 @@ Process
 WebService
 Salesforce
 
+## 36. Long Text vs text in Record?
+64000 characters for long text 
+4000 character for text
