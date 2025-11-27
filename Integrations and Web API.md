@@ -80,3 +80,7 @@ Connected Systems is an object to store the connection credentials used in integ
 ## 33. Third part want to trigger your DB/SP
 By creating a WEB API in process model using the execute SP smart service we can achieve (NR)
 
+## 34. Inbound Integration vs Outbound Integration?
+Inbound: External system initiating call to pull data from appian or push data
+Outbound: When Appian initiate the connection to external system
+
