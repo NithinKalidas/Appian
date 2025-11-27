@@ -36,19 +36,33 @@ It is possible to add up to a total of 32 execution and 32 analytics engines by 
 ## 5. What are the deployment challenges you have faced?
 
 ## 6. What are necessary checks for pre deployement and post deployment?
-Missing Precedents
+PreDeployment :
+Create all necessary DB scripts and organise to one script
+Checking Missing Precedents
+Scheduler Process Model check
 Security Summary
 Proper exporting of all objects
 Inspecting all objects and fixing issues if any
 Importing the objects
 
+
+Post Deployment :
+Security Checks
+Error in Logs
+Change in Constant for Post scheduler Process
+
 ## 7. How do you check is document exist or not in your application?
 getcontentobjectdetailsbyid()
 
-## 8. How do you delete the document which is older than 2 years, when your unaware of document  Id?
+## 8. How do you delete the document which is older than 2 years, when your unaware of document Id?
 Using "Delete Documents Created Before Date" smart service in the PRocess model, by chosing the 
 
 ## 9. What are the stages appian recommend to use in Project ?
+Dev (Development)
+SIT (System Integration Testing)
+UAT (User Acceptance Testing)
+Pre Production
+Production
 
 ## 10. What is Portal and how does sign in and sign out works?
 
@@ -82,13 +96,16 @@ Use request response Times
 Process/rules execution time
 Database query performance
 
-## 21. Huge amount of data in external system, how will you use in appian application
+## 21. Huge amount of data in external system, how will you use in appian application?
+CDT based approach -> Integration Object -> Call data and use integration object in PM and store in DB and use the data
+Record Type: Create record with web service menthod, inside webservice need to create integration (before creating integration, connected system and you need to configure in data base)
 
 ## 22. What are new appian featuresor new release?
 
 ## 23. What is AI skill types and use cases?
 
 ## 24. What is decision table and say some use case scenario?
+
 
 ## 25. How do you handle errors in Portal?
 
@@ -226,6 +243,13 @@ Can configure based on business need
 Security acess can be modified (user access views can be designed)
 Can Add Logo
 Changes can be Done to the site based on requirement
+
+
+## . Types of AI Skill ?
+Document Classification
+Document Extraction
+Email Classification
+
 
 
 
