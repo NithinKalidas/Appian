@@ -36,12 +36,17 @@ It is possible to add up to a total of 32 execution and 32 analytics engines by 
 ## 5. What are the deployment challenges you have faced?
 
 ## 6. What are necessary checks for pre deployement and post deployment?
+Missing Precedents
+Security Summary
+Proper exporting of all objects
+Inspecting all objects and fixing issues if any
+Importing the objects
 
 ## 7. How do you check is document exist or not in your application?
 getcontentobjectdetailsbyid()
 
 ## 8. How do you delete the document which is older than 2 years, when your unaware of document  Id?
-Using "Delete Documents Created Before Date"smart service in the PRocess model, by chosing the 
+Using "Delete Documents Created Before Date" smart service in the PRocess model, by chosing the 
 
 ## 9. What are the stages appian recommend to use in Project ?
 
@@ -195,13 +200,6 @@ Reusability of objects
 Easy change management
 Easy debugging
 Reduced number of lines per interface
-
-##  . What are the things to be checked during deployment?
-Missing Precedents
-Security Summary
-Proper exporting of all objects
-Inspecting all objects and fixing issues if any
-Importing the objects
 
 ##  . What is a customization file?
 The customization file is used to provide values to the environmental constant and connected systems when deploying to another environment so that the value changed isn't missed.
