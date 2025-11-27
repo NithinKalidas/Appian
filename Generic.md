@@ -69,8 +69,18 @@ Using "Delete Documents Created Before Date" smart service in the PRocess model,
 ## 18. Differnce between optimising Performance through admin console and through interface objects?
 
 ## 19. How 2 environment can we configured for compare and deploy method for development?
+In Appian Admin console -> Devops -> Infrastructure -> Add new Environment
 
 ## 20. difference between tomcot logs and performance logs?
+Tomcot logs: 
+Server startup/shutdown details
+Application deployment errors
+Java exception stack traces
+
+Performance Logs: 
+Use request response Times
+Process/rules execution time
+Database query performance
 
 ## 21. Huge amount of data in external system, how will you use in appian application
 
@@ -178,7 +188,7 @@ The license cost is based on the number of users per environment, and Appian mai
 
 
 ## 68.  Is an archived or deleted process available in the Process report?
-No.
+No, Deleted process are removed permanently can't be undone, for archival process we can unarchive the process and we can able to get it report (NR, how to unarchieve, within how many days we can archieve)
 
 ## 69.  Will hidden variable data be displayed in the process report?
 No.
