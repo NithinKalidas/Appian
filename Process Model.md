@@ -15,6 +15,7 @@ usage of quick task for Confirmation screen and hidden variables to reduce the d
 setting up up unique name for process display name and process instance name (what is process display)
 Setting up timer to user interaction node
 Lane Assignments for user task and system task
+Short lived Process model
 
 ## 4. Difference Between Start Process Asyncronous and Sub Process Asyncronous?
 
@@ -81,6 +82,8 @@ When quering the data inside the process model before the user interaction start
 ## 21. How to schedule a PM at specifi time?
 
 ## 22. How to optimise the PM having 200 Nodes?
+Need to create reusable process model and call the process model again
+using sub process asynchronous to reduce the load the engine as it may execute in different engine
 
 ## 23. How to bring back unarchival Process?
 
@@ -93,8 +96,10 @@ When quering the data inside the process model before the user interaction start
 ## 27. What is the limitaion of MNI?
 
 ## 28. There is a 1000 Instances on the Production and you want to edit the variable value, how can we achieve it instad of manual approach?
+Get data of active process instances through report and using setexternalpv we can modify the process variable value and we can restart the process instance using (NR)
 
 ## 29. Usage of Lane in PM?
+
 
 ## 30. How will you deploy a scheduler PM?
 
