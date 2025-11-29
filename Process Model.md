@@ -14,7 +14,7 @@
  * usage of quick task for Confirmation screen and hidden variables to reduce the data load in reports
  * setting up up unique name for process display name and process instance name (what is process display)
  * Setting up timer to user interaction node
- * Lane Assignments for user Input task and system task
+ * Lane Assignments for user Input task and system task and Proper Annotation
  * Short lived Process model
  * Usage of terminate node rather than end node
 
