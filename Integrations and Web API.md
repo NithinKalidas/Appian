@@ -47,6 +47,7 @@ OAuth client Grand 2.0
 ## 19. Can we deploy service account to higher environment? If yes, Hoe? If No how to overcome?
 
 ## 20. How to construct custom error message in integration?
+"OverRide and define all error conditions"
 
 ## 21. Minimun level of Permission to execute web API? 
 
