@@ -86,6 +86,7 @@ When quering the data inside the process model before the user interaction start
 Create WebAPI of start process type and implement SP
 
 ## 21. How to schedule a PM at specifi time?
+In start Process by scheduling the time and interval of run (NR)
 
 ## 22. How to optimise the PM having 200 Nodes?
 Need to create reusable process model and call the process model again
@@ -105,9 +106,10 @@ using sub process asynchronous to reduce the load the engine as it may execute i
 Get data of active process instances through report and using setexternalpv we can modify the process variable value and we can restart the process instance using (NR)
 
 ## 29. Usage of Lane in PM?
-
+For Eas readability to separate between User input task and system acted task
 
 ## 30. How will you deploy a scheduler PM?
+Create an Environment constant and Set up as False and handle in XOR Gate and after deployment change the environmental constant to true
 
 ## 31. What is quick task? How to query the data in PM, when quick task is enabled? where is quick task used?
 It is an on-demand Task, which does not appear in task tab and only performed when activity is chained.
