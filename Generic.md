@@ -65,6 +65,8 @@ Pre Production
 Production
 
 ## 10. What is Portal and how does sign in and sign out works?
+Business user who does not have login credential in appian but able to access
+Eg: Complaince related to water shortage, Electricity shortage
 
 ## 11.How do you implement triggers in appian?
 
@@ -120,6 +122,7 @@ Record Type: Create record with web service menthod, inside webservice need to c
 ## 30. What is Use case of Customisation file what is environment constant?
 
 ## 31. How to deploy and group to higher environment? Will Group Id Changes when we deploy to higher environment?
+Groups need to configured manually, (NR)
 
 ## 32. How will you send document to external systems?
 
@@ -128,6 +131,7 @@ Record Type: Create record with web service menthod, inside webservice need to c
 ## 34. What are the limitations for business user?
 
 ## 35. What is hot fix?
+Hot fix is an bug of appian (NR)
 
 ## 36. What is difference between equal to and like operator?
 
@@ -148,6 +152,7 @@ Record Type: Create record with web service menthod, inside webservice need to c
 ## 44. What is Sprint duration and Sprint velocity?
 
 ## 45. how to move document without changing its ID to next environment?
+Can't be done, Documet Id is varies for different environment
 
 ## 46. How to create new schema for appian what permission would require for that?
 
@@ -249,6 +254,15 @@ Changes can be Done to the site based on requirement
 Document Classification
 Document Extraction
 Email Classification
+
+## . How much doc size appian can send to external document?
+Request Body : Can't exceed 5 mb
+Base 64 : Combined size of file 75 mb
+Binary files : 250 Mb
+
+## What is UUID and does it change for different environment?
+UUID is an Universally Unique Identifier - remains stable acrosss different environment
+
 
 
 
