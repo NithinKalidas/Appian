@@ -6,18 +6,23 @@
 ## 2. Production Issues you came across in PM and how did you handle them?
 
 ## 3. Best Practice In PM?
-Deleting Inactive Records: Remove the Soft deleted data
-Using 30 Nodes Per Process and trying to use in Asynchronous, so that process might execute in different engine.
-Using Activity chaining on necessary parts only (as Activity chaining pushes the CPU to act very faastly with no delays) (If querying can be set outside activity chaining we need to use in that)
-Handling Security, Alerts and Data management(archival and delete based on user interaction or system interaction)
-Always take data from DSE or Records to get the primary key or what it writes
-usage of quick task for Confirmation screen and hidden variables to reduce the data load in reports
-setting up up unique name for process display name and process instance name (what is process display)
-Setting up timer to user interaction node
-Lane Assignments for user task and system task
-Short lived Process model
+ * Deleting Inactive Records: Remove the Soft deleted data
+ * Using 30 Nodes Per Process and trying to use in Asynchronous, so that process might execute in different engine.
+ * Using Activity chaining on necessary parts only (as Activity chaining pushes the CPU to act very faastly with no delays) (If querying can be set outside activity chaining we need to use in that)
+ * Handling Security, Alerts and Data management(archival and delete based on user interaction or system interaction)
+ * Always take data from DSE or Records to get the primary key or what it writes
+ * usage of quick task for Confirmation screen and hidden variables to reduce the data load in reports
+ * setting up up unique name for process display name and process instance name (what is process display)
+ * Setting up timer to user interaction node
+ * Lane Assignments for user Input task and system task
+ * Short lived Process model
+ * Usage of terminate node rather than end node
 
 ## 4. Difference Between Start Process Asyncronous and Sub Process Asyncronous?
+
+## 4. Difference Between  Asyncronous and syncronous Process?
+Sync: Parent Process will wait for its child process to complete. Eg: used for sequential steps, business calculation logic, confirmation screen 
+ASync: Parent Process trigerrs the child process and runs in parallel. Eg: Sending email 
 
 ## 5. What is MNI and where do you use them?
 
@@ -196,6 +201,10 @@ The reassignment privilege should be No privilege as basic users should not have
 
 ## 53. Can the default task assignment mail be disabled?
 Yes, under the assignment tab the option can be unchecked.
+
+## 54. Scenario where record type over a tradition CDT Method?
+Records -> Speed of development is higher as foreign key mapping are easily configured by inbuilt relationship
+Usage of views, creation of record summary and able to configure custom field for aggregate function (NR)
 
 ## 54. What is the maximum number of nodes and variables allowed per process model?
 30 Nodes and 50 Variables
