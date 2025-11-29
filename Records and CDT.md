@@ -158,3 +158,10 @@ Salesforce
 ## 36. Long Text vs text in Record?
 64000 characters for long text 
 4000 character for text
+
+## 37. Best practice for querying data?
+Query fetch totalcount to false (using it only when required)
+Querying only the record field that is required
+Query only in Parent interface and avoid querying in child interface, to reduce the no of query if reusable is needed
+
+
