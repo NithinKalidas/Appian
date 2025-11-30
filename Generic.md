@@ -31,9 +31,10 @@ It is possible to add up to a total of 32 execution and 32 analytics engines by 
      <engine name="process-execution1"/>
      <engine name="process-execution2"/>
 
-## 4. How do you deploy to higher environment? When your doing for the first time?
 
 ## 5. What are the deployment challenges you have faced?
+Precedents missing
+Common Packages missing
 
 ## 6. What are necessary checks for pre deployement and post deployment?
 PreDeployment :
@@ -44,6 +45,7 @@ Security Summary
 Proper exporting of all objects
 Inspecting all objects and fixing issues if any
 Importing the objects
+Force Sync (in custom properties, sync enable)
 
 
 Post Deployment :
@@ -68,19 +70,25 @@ Production
 Business user who does not have login credential in appian but able to access
 Eg: Complaince related to water shortage, Electricity shortage
 
-## 11.How do you implement triggers in appian?
+## 11.How do you implement Optimistic locking in appian?
+In CDT Based approch, we can add a new column Version and default set to zero, In XSD package add @Version and import and then using trigerrs we can create those versions.
 
-## 12. how to configure Single click document download 
+## 12. how to configure Single click document download?
 
-## 13. suppose we need to update 1000 rows of data on daily basis in a week how can we do that or what is the optimised way to prevet without affecting the Performance
+
+## 13. Suppose we need to update 1000 rows of data on daily basis in a week how can we do that or what is the optimised way to prevet without affecting the Performance?
+update using batch wise in non business hours
 
 ## 14. Suppose we have 1000 entries in excel file and how can i dumb to 5 different database?
+Read excel smart service and segreagate the DB, Write to data store entity for each data write as schema might differ.
 
 ## 15. Different Types of prod Issues you have encounter?
+PV Variable was mis configured, due to which calculation went missing, using report we took the process instances 
 
 ## 16. Which Appian objects does not have Permission level or securities?
 
-## 17. how do you modify the securities for 1000 appian objects
+## 17. how do you modify the securities for 1000 appian objects?
+Using security summary (under gear symbol) we can cofigure
 
 ## 18. Differnce between optimising Performance through admin console and through interface objects?
 
@@ -102,16 +110,27 @@ Database query performance
 CDT based approach -> Integration Object -> Call data and use integration object in PM and store in DB and use the data
 Record Type: Create record with web service menthod, inside webservice need to create integration (before creating integration, connected system and you need to configure in data base)
 
-## 22. What are new appian featuresor new release?
+## 22. What are new appian features or new release?
 
 ## 23. What is AI skill types and use cases?
 
 ## 24. What is decision table and say some use case scenario?
+A Decision Table in Appian is a rule-based grid used to evaluate multiple conditions and return results without complex nested if() or case() logic.
+It provides a tabular visual framework to make business decisions clear, maintainable, and reusable.
+| Columns        | Purpose                                                               |
+| -------------- | --------------------------------------------------------------------- |
+| Input Columns  | Conditions to evaluate (state, amount, age, score, etc.)              |
+| Rule Rows      | Each row represents a rule set                                        |
+| Output Columns | Result when a rule is matched                                         |
+| Hit Policy     | Defines whether to return first match, all matches, or collect values |
 
 
 ## 25. How do you handle errors in Portal?
+Portals do NOT support out-of-the-box Appian error dialogs. Portals run outside the Appian environment
+Errors must be handled manually in the interface and integrations
 
 ## 26. If any request is submitted through an user by portal, how can we find them?
+By creating a request id which can be configured through email id or phone number using unique set of constraints
 
 ## 27. What is the difference between text, long text and extra long text
 
@@ -121,10 +140,8 @@ Record Type: Create record with web service menthod, inside webservice need to c
 
 ## 30. What is Use case of Customisation file what is environment constant?
 
-## 31. How to deploy and group to higher environment? Will Group Id Changes when we deploy to higher environment?
+## 31. How to deploy group to higher environment? Will Group Id Changes when we deploy to higher environment?
 Groups need to configured manually, (NR)
-
-## 32. How will you send document to external systems?
 
 ## 33. How to deploy service account to higher environment to higher environment?
 
@@ -134,10 +151,13 @@ Groups need to configured manually, (NR)
 Hot fix is an bug of appian (NR)
 
 ## 36. What is difference between equal to and like operator?
+Equal: The value must be exactly equal to the column value. Faster (can use index directly)
+Like: Used for pattern-based match. LIKE is slower, especially if value starts with %
 
 ## 37. Delete related record action, how not to show error page and redirect? 
 
 ## 38. How to create new service Account?
+Under Admin Console, In WEB Api Authentication we ccan create service account and authentication key as well
 
 ## 39. What are the AI Components, what AI Model does Appian Use?
 
@@ -145,11 +165,13 @@ Hot fix is an bug of appian (NR)
 
 ## 41. What are record level securities?
 
-## 42. What are the sutomisation file and how many things can be modified?
-
 ## 43. What is Agile\Waterfall method?
+Agile: Agile is an iterative and incremental development methodology. Work is delivered in small cycles (Sprints) with continuous feedback.
+Waterfall: Waterfall is a linear and sequential project development model. Each phase must be completed fully before moving to the next.
 
 ## 44. What is Sprint duration and Sprint velocity?
+Sprint Duration: A Sprint is a fixed time period in Agile (mainly Scrum) during which the team works to complete a set of user stories.
+Sprint Velocity: Sprint Velocity is the measure of work done by a team in a sprint.
 
 ## 45. how to move document without changing its ID to next environment?
 Can't be done, Documet Id is varies for different environment
@@ -173,22 +195,35 @@ Can't be done, Documet Id is varies for different environment
 ## 54. what is charts and what are its types in appian?
 
 ## 55. What is T24 and have you used in your application?
-
-## 56. Where do you use refresh variable and what are its constraints?
+T24 (Temenos T24) is a core banking software developed by Temenos.
+Customer onboarding
+Account management
+Loans & deposits
+Payments & transactions
+Interest & charges
+Regulatory and financial reporting
 
 ## 57. DB driven vs process driven based approach?
+ * Db Drivern : A DB-driven approach means data drives the state of the application instead of workflows.
+ * Process models are minimized; most operations happen via records, smart services, write to data store, and interfaces.
+Process Driven: A process-driven approach means the workflow (process model) is the center of the application.
+All business logic, task assignments, and data updates are managed inside process models.
 
 ## 58. Process HQ?
+In Appian, Process HQ (Process Headquarters) is a centralized monitoring and analytics capability used to get real-time visibility into business processes running in the system.
 
 ## 59. How do you create WEB API in REST?
 
 ## 60. Difference between query record type and record type identifier?
 
 ## 61. 10 Approvers need to approve then only we need to proceed to next step? how to define them?
+We can keep a script task and check is all completed through task status
 
 ## 62. Process is errored out? how do you check them?
 
 ## 63. why do we split tabel? why can't we store all in single DB?
+Split tabel because it would create major performance, storage, consistency, scalability, and maintainability issues.
+Databases follow Normalization, where data is split into related tables to avoid duplication and ensure efficiency.
 
 ## 64. What are the different licenses available and for what components are they provided?
 k3.lic for engines
