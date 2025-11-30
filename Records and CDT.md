@@ -93,8 +93,8 @@ In Same Process model, at end before it completes we can create a stored procedu
 ## 17. How do you optimise your records having more than 4 millions of data? (OR) How do you sync more than 4 Millions rows of records?
 
 ## 18. How many ways we can query a data from record?
-1. a!queryRecordType()
-2. a!queryRecordByIdentifier()
+1. a!queryRecordType() : is a function used to fetch multiple records (rows) from a Record Type based on filters, paging, and sorting.
+2. a!queryRecordByIdentifier() : The Record Type Identifier is the unique primary identifier (key) of each record in a Record Type.
 
 ## 19. What is ther return type of query entity and query record?
 Query Record: List of Dictionary 
