@@ -16,21 +16,26 @@ Basic
 Web API Key based
 OAuth client Grand 2.0
 
-## 5. In Web API how many smart service we can use as function?
+## 5. In Web API/ a!save how many smart service we can use as function?
+Only one, To configure multiple we can provide the another smart services either in On success or on error
 
 ## 6. How do you implement more than one web API smart service as function
 
-## 7. In a!save how many smart service we can use 
+## what are method of API types?
+Put post patch delete get
 
-## 8. Web API is called in button action, how do you prevent from multiple clicks for same web API call
+## How do you handle integration error ?
+400
+500
+
+## 8. Web API is called in button action, how do you prevent from multiple clicks for same web API call?
 
 ## 9. Web API is called in button action, how do you distinguise it is calling the same request or different request when multiple clicks are happened?
 
-## 10. In Integration Explain header, query parameters and request body and provide the sue case as well
+## 10. In Integration Explain header, query parameters and request body and provide the use case as well?
 
-## 11. How do you create service account to secure an API?
-
-## 12. How do you create a OAuth service account?
+## 11. How do you create service account?
+In Admin console, under web API authentication we can create service account
 
 ## 13. What is the difference between SAML and LDAP?
 
