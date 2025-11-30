@@ -1,6 +1,8 @@
 # Appian Interview Question
 
 ## 1. Difference Between Start Process and Sub Process? Explain with real time example?
+Start Process: The started process is load-balanced and may run on a different execution engine.
+Sub Process: Runs on the same execution engine as the parent.
 
 
 ## 2. Production Issues you came across in PM and how did you handle them?
@@ -72,13 +74,19 @@ Reduces the utilisation of Appian Memory unit/Resource of appian engine (NR)
 When used in MNI user input task need to be used
 When quering the data inside the process model before the user interaction starts (Not required , NR)
 
-## 15. How do you convert a word to document
+## 15. How do you convert a word to document?
+using docx to pdf converter through process model
 
-## 16. how do you send document to external system
+## 16. how do you send document to external system?
+Using integration we can send through either base 64 or binary 
+Using a smart service send document to external system (NR)
 
 ## 17. what is task log?
+Task Log is a handling the task through DB Driven rather than Appian default assignment 
+Which Decrease the RAM memory and increase in Performance as all the task are handled through storages in DB
 
-## 18. How do you use task log in DB instead of task management
+## 18. How do you use task log in DB instead of task management?
+Everytime we can query the data and showcase to the dependent user and for any change it can be easily reset through DB
 
 ## 19. You have multiple start and sub process need to be used, what is the approach you use? (top to bottom or bottom or top)
  
