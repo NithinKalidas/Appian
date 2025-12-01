@@ -47,12 +47,18 @@ Using End/Terminate Node
 Debugging Mode
 
 ## 9. What are gates and its type? Explain with real time use case?
+| Gateway Type                           | Description / Behavior                                                                                                                                | Real-Time Use Case / Example                                                                                                                                     |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **XOR (Exclusive Decision / Merge)**   | Diverging: Only **one outgoing path** is taken based on condition. <br> Merging: Only **one incoming flow** continues.                                | **Leave Request Process:** If leave ≤ 2 days → Auto-approve; else → Send to manager for approval. Only one path is followed.                                     |
+| **OR (Inclusive Decision / Merge)**    | Diverging: **One or more outgoing paths** can be taken if their conditions are true. <br> Merging: Accepts **all incoming flows** that meet criteria. | **Insurance Claim:** If damage > 50% → Approve claim **and** notify legal team; if damage < 50% → Approve claim only. Multiple paths may execute simultaneously. |
+| **AND (Parallel Fork / Join)**         | Diverging: Starts **all outgoing paths simultaneously**. <br> Merging: Waits for **all incoming paths** before continuing.                            | **Employee Onboarding:** After hiring approval → Create IT account, assign mentor, send welcome kit **all at the same time**.                                    |
+| **COMPLEX (Complex Decision / Merge)** | Advanced control: You can define **custom rules** for outgoing and incoming flows (e.g., accept N out of M incoming flows).                           | **Multi-Reviewer Approval:** 4 reviewers evaluate a document; process continues once **any 3 approve**. Complex conditions determine the flow.                   |
 
 ## 10. What is Activity Chaining and What are its limitations?
 Limitation: Performance reduce when the execution of node takes more time and sometimes it might break as well which impact in user experience
 
-
 ## 11. Your Process has a long activity chaining how do you resolve them?
+Avoid query data if it is non essentials (NR)
 
 ## 12. What is exception and esclation ? real time use case?
 Exception: An exception occurs when a process node fails, encounters an error,
@@ -117,7 +123,7 @@ Get data of active process instances through report and using setexternalpv we c
 For Eas readability to separate between User input task and system acted task
 
 ## 30. How will you deploy a scheduler PM?
-Create an Environment constant and Set up as False and handle in XOR Gate and after deployment change the environmental constant to true
+Create an Environment constant in boolean to act as a switch and Set up as False and handle in XOR Gate and after deployment change the environmental constant to true
 
 ## 31. What is quick task? How to query the data in PM, when quick task is enabled? where is quick task used?
 It is an on-demand Task, which does not appear in task tab and only performed when activity is chained.
@@ -130,7 +136,7 @@ Setting Up retry after failed attempt after (mostly when statuc code is failed w
 
 ## 33.What is the difference between End Node vs terminate Node?
 
-## 34.12. Long activity chains - greater than 5 seconds between attended activities - are strongly discouraged because they have both an adverse effect on the performance of the system at scale and the experience of the user. True or False?
+## 34. Long activity chains - greater than 5 seconds between attended activities - are strongly discouraged because they have both an adverse effect on the performance of the system at scale and the experience of the user. True or False?
 TRUE
 
 ## 35.What is a quick task?
