@@ -180,8 +180,6 @@ Can't be done, Documet Id is varies for different environment
 
 ## 47. What are Production bugs? How did you fix them?
 
-## 48. How do you approach Pessimistic locking in appain?
-
 ## 49. How do you resolve write to records got errored out because of unique constraints ID?
 
 ## 50. An external Integration in experiencing timout when sending a large volume of data? How do you resolve?
