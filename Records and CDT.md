@@ -24,13 +24,18 @@ No calculated/virtual fields; everything must exist in DB
 Records:
 Sync breaks if external application changes the data in DB
 4 Million Rows (per synced Record Type). (licence has to be upgraded inorder to increase the limit)
-Field Limit: 100 Fields (Source fields + Custom Fields).
-varchar limit is set to 4000 character
-
+Related Record limit: 100 Related Records for queryRecordType and 250 for queryRecordByIdentifier.
+Text 4000 and Extra long text 64000 character limit
 
 ## 3. How do you create CDT?
+Create a Table in SQL
+Create Data Store Entity 
+Create Data Store
+Create Constant for Data store entity
 
 ## 4.Difference between Sync vs Non Sync Records?
+Synced Records store data in Appian memory 
+Non Synced Records is data queried and fetched from DB
 
 ## 5. How many types of relationship are in Records?
 | **Relationship Type** | **Description**                                                         | **Example**                               |
@@ -41,6 +46,8 @@ varchar limit is set to 4000 character
 
 
 ## 6. How do you achieve many to many relationship?
+For Many-to-Many: Not directly supported as a single relationship type. 
+Create an intermediate record type (e.g., Student -> Enrollment -> Class) to bridge them.
 
 ## 7. What is the difference between Record Action Vs Related Action?
 | Feature                    | Record Action             | Related Action                          |
@@ -48,9 +55,9 @@ varchar limit is set to 4000 character
 | **Use case**               | Create a new record       | Update or Delete an existing record     |
 | **Example**                | Add New Employee          | Update Selected Employee                |
 
-## 8. What are the types of Backed Record Type?
+## 8. What are the types of Backed Record Type? (NR)
 Entity Backed
-PRocess Backed
+Process Backed
 Expression Backed
 
 ## 9. What is data fabric?
@@ -76,6 +83,11 @@ Scheduled Incremental Sync: Appian checks a designated "Last Modified" timestamp
 Manual Full Sync: An administrator manually triggers a complete refresh of all records via the "Start Full Sync" button in the Record Type settings.
 
 ## 11. What are the different ways to use a record (Table, web service , PM)
+ * Database
+ * Process
+ * Web Service
+ * Sales Force
+ * Create From Scratch
 
 ## 13. How do you increase query Performance?
 Use selection to limit the number of columns to be returned.
@@ -83,7 +95,6 @@ Use filters wherever possible.
 Use a limited batch size rather than -1.
 Set fetchTotalCount to false.
 
-## 14. webservice/Database/salesforce?
 
 ## 15. If i write more than 5000 Character using record, where there is no issues in varchar limit, will it write the date or truncate? and how much data will get back when i query the data? (firts 4000 or last 4000)
 
@@ -102,13 +113,14 @@ Query Entity: DataSubset
 
 ## 20. How do you cofigure securities to records?
 
-## 21. difference between Record level security and field level security?
+## 21. Difference between Record level security and field level security?
 
 ## 22. What is view and action security?
 
 ## 23. What are the sync methods available in records?
-
-## 24. Record Type security vs record level security?
+Schedule Full Sync
+Schedule incremental syncs
+In Monitoring, under Record sync status -> Start Full Sync
 
 ## 25.  What are record level datasource?
 
