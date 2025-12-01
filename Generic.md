@@ -115,6 +115,12 @@ PV Variable was mis configured, due to which calculation went missing, using rep
 Using security summary (under gear symbol) we can cofigure
 
 ## 18. Differnce between optimising Performance through admin console and through interface objects?
+| Admin Console                          | Interface Object                          |
+|----------------------------------------|-------------------------------------------|
+| Rule execution monitoring              | Monitor query calls                       |
+| Monitor resource allocation            | Optimizing rule inputs & local variables  |
+| Complete environment monitoring        | Specific object monitoring                |
+
 
 ## 19. How 2 environment can we configured for compare and deploy method for development?
 In Appian Admin console -> Devops -> Infrastructure -> Add new Environment
@@ -134,7 +140,17 @@ Database query performance
 CDT based approach -> Integration Object -> Call data and use integration object in PM and store in DB and use the data
 Record Type: Create record with web service menthod, inside webservice need to create integration (before creating integration, connected system and you need to configure in data base)
 
-## 22. What are new appian features or new release?
+## 22. What are new appian features or new release (25.4)?
+ * AI-Powered Reporting: Users can create reports instantly using AI Copilot.
+ * Increased Sync Limits: You can now sync up to 50 million rows per record type, significantly increasing data capacity.
+ * Transparent Data Encryption (TDE) for synced data — Enterprises can now protect their synced data at rest with built-in encryption, with no changes required at the application level.
+ * More resilient sync behavior — If a smart-service sync fails, you can now skip the failure and continue with the last good data, improving application availability.
+ * Appian Composer is now Generally Available — An AI-powered planning and design tool. You can upload requirements (DOC, PDF, etc.), and Composer helps generate business rules, workflows/process models, and a high-level application plan
+ * Appian Composer is now Generally Available — An AI-powered planning and design tool. You can upload requirements (DOC, PDF, etc.), and Composer helps generate business rules, workflows/process models, and a high-level application plan.
+ * Agent Studio — Build AI Agents for your processes. Agents can read unstructured data (e.g., emails), make decisions, and automatically route tasks or trigger process actions — embedding intelligent automation right into workflows.
+ * Expanded AI model support & flexibility — You can now pick which generative AI model (e.g., newer ones) each AI Skill uses, via inference profiles, providing more control over performance, compliance and governance.
+ * Long-running AI Skill execution — New option to execute generative-AI tasks in “Long Running” mode (for large inputs/responses) so you don’t hit timeout issues.
+ * New a!genAiModels() function — Helps you dynamically get the list of available AI models and lets you build more flexible AI-enabled solutions.
 
 ## 23. What is AI skill types and use cases?
 
@@ -147,7 +163,6 @@ It provides a tabular visual framework to make business decisions clear, maintai
 | Rule Rows      | Each row represents a rule set                                        |
 | Output Columns | Result when a rule is matched                                         |
 | Hit Policy     | Defines whether to return first match, all matches, or collect values |
-
 
 ## 25. How do you handle errors in Portal?
 Portals do NOT support out-of-the-box Appian error dialogs. Portals run outside the Appian environment
@@ -162,14 +177,15 @@ By creating a request id which can be configured through email id or phone numbe
 
 ## 29. What is monitoring and use case?
 
-## 30. What is Use case of Customisation file what is environment constant?
+## 30. What is Use case of Customisation file and what is environment constant / (connected System)?
 
 ## 31. How to deploy group to higher environment? Will Group Id Changes when we deploy to higher environment?
-Groups need to configured manually, (NR)
+Groups/Users need to configured manually, (NR)
 
 ## 33. How to deploy service account to higher environment to higher environment?
 
 ## 34. What are the limitations for business user?
+In Appian, a Business User (usually someone from the business team who reviews tasks and data but does not design/develop applications) has limited access and capabilities compared to Designers / Administrators.
 
 ## 35. What is hot fix?
 Hot fix is an bug of appian (NR)
@@ -184,10 +200,11 @@ Like: Used for pattern-based match. LIKE is slower, especially if value starts w
 Under Admin Console, In WEB Api Authentication we ccan create service account and authentication key as well
 
 ## 39. What are the AI Components, what AI Model does Appian Use?
+Anthropic is used, Now In Appian we can able to use
+{"Claude 3 Haiku", "Claude 3.5 Sonnet", "Claude 3.7 Sonnet", "Claude Sonnet 4", "Claude Sonnet 4.5", "Claude Haiku 4.5"}
 
 ## 40. How do you force deploy to next environment?
-
-## 41. What are record level securities?
+By Removing UUID/ Customisation File (NR)
 
 ## 43. What is Agile\Waterfall method?
 Agile: Agile is an iterative and incremental development methodology. Work is delivered in small cycles (Sprints) with continuous feedback.
@@ -215,6 +232,13 @@ Can't be done, Documet Id is varies for different environment
 ## 53. What is task log?
 
 ## 54. what is charts and what are its types in appian?
+Chart are used to diagramatically represent the value
+BAR CHART
+COLUMN CHART
+PIE CHART
+LINE CHART
+AREA CHART
+SCATTER CHART
 
 ## 55. What is T24 and have you used in your application?
 T24 (Temenos T24) is a core banking software developed by Temenos.
@@ -236,7 +260,6 @@ In Appian, Process HQ (Process Headquarters) is a centralized monitoring and ana
 
 ## 59. How do you create WEB API in REST?
 
-## 60. Difference between query record type and record type identifier?
 
 ## 61. 10 Approvers need to approve then only we need to proceed to next step? how to define them?
 We can keep a script task and check is all completed through task status
