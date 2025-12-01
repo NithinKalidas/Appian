@@ -46,6 +46,10 @@ Proper exporting of all objects
 Inspecting all objects and fixing issues if any
 Importing the objects
 Force Sync (in custom properties, sync enable)
+Object Version conflicts
+Deployment Fails Due to Locked Objects.
+Circular Dependencies Between Objects.
+Import Customisation File ICF Not Applied or Misconfigured.
 
 
 Post Deployment :
@@ -85,7 +89,27 @@ Read excel smart service and segreagate the DB, Write to data store entity for e
 ## 15. Different Types of prod Issues you have encounter?
 PV Variable was mis configured, due to which calculation went missing, using report we took the process instances 
 
-## 16. Which Appian objects does not have Permission level or securities?
+## 16. Which Appian objects Permission level or Securities Inheritance?
+
+| Always Inherit Security From Parent | Always Inherit Security IF Parent Specified | Inherit Security From Parent By Default (Editable) | Never Inherit Security | Don't Have Security |
+|------------------------------------|---------------------------------------------|----------------------------------------------------|------------------------|----------------------|
+| Documents                          | Groups                                      | Constants                                          | AI Skill               | Custom Data Types    |
+| Process reports                    | Knowledge centers                           | Decisions                                          | Applications           | Group Types          |
+|                                    |                                             | Document folders                                   | Connected systems      |                      |
+|                                    |                                             | Expression rules                                   | Data stores            |                      |
+|                                    |                                             | Integrations                                       | Dashboards             |                      |
+|                                    |                                             | Interfaces                                         | Feeds                  |                      |
+|                                    |                                             | Rule folders                                       | Process model folders  |                      |
+|                                    |                                             |                                                    | Process models         |                      |
+|                                    |                                             |                                                    | Record types           |                      |
+|                                    |                                             |                                                    | Reports                |                      |
+|                                    |                                             |                                                    | Robot pool             |                      |
+|                                    |                                             |                                                    | Robotic tasks          |                      |
+|                                    |                                             |                                                    | Sites                  |                      |
+|                                    |                                             |                                                    | Tempo reports          |                      |
+|                                    |                                             |                                                    | Translation sets       |                      |
+|                                    |                                             |                                                    | Web APIs               |                      |
+
 
 ## 17. how do you modify the securities for 1000 appian objects?
 Using security summary (under gear symbol) we can cofigure
