@@ -89,7 +89,9 @@ In Admin console, under web API authentication we can create service account
 ## 19. Can we deploy service account to higher environment? If yes, Hoe? If No how to overcome?
 
 ## 20. How to construct custom error message in integration?
-"OverRide and define all error conditions"
+In Response, under Error Handling 
+turn on "OverRide and define all error conditions"
+We can set up success criteria and error message based on the status code
 
 ## 21. Minimun level of Permission to execute web API? 
 Viewer Access but Can't able to upload document(NR)
