@@ -67,8 +67,9 @@ Manual sync
 Sync on Create/Update/Delete (CUD events)
 Sync after Record Actions
 Sync via Process Model write operations
-Sync using a!syncRecordType()
+Sync using a!syncRecords() Smart service
 Sync via Refresh Interval / Polling
+Using ICF - Force sync to true when deployed to higher environment
 
 (or)
 
@@ -114,6 +115,7 @@ Query Entity: DataSubset
 ## 20. How do you cofigure securities to records?
 
 ## 21. Difference between Record level security and field level security?
+Record level security : Determine who can see the records by adding security rules (NR)
 
 ## 22. What is view and action security?
 
@@ -175,5 +177,15 @@ Salesforce
 Query fetch totalcount to false (using it only when required)
 Querying only the record field that is required
 Query only in Parent interface and avoid querying in child interface, to reduce the no of query if reusable is needed
+
+## 38. Difference between query record type and record type identifier?
+ | queryrecordtype()                  | recordType.identifier             |
+| ---------------------------------- | --------------------------------- |
+| Queries **data**                   | Locates **a single record**       |
+| Can return **multiple records**    | Points to **one record**          |
+| Used in reports / lists            | Used in links / write actions     |
+| Heavy operation (executes a query) | Lightweight (just passes ID)      |
+| Accepts filters, sorting, paging   | No filtering options — just an ID |
+
 
 
