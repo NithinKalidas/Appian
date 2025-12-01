@@ -137,8 +137,8 @@ Process/rules execution time
 Database query performance
 
 ## 21. Huge amount of data in external system, how will you use in appian application?
-CDT based approach -> Integration Object -> Call data and use integration object in PM and store in DB and use the data
-Record Type: Create record with web service menthod, inside webservice need to create integration (before creating integration, connected system and you need to configure in data base)
+ * CDT based approach -> Integration Object -> Call data and use integration object in PM and store in DB and use the data
+ * Record Type: Create record with web service menthod, inside webservice need to create integration (before creating integration, connected system and you need to configure data source as well). sync aslo can be enabled and will be achieved through batching
 
 ## 22. What are new appian features or new release (25.4)?
  * AI-Powered Reporting: Users can create reports instantly using AI Copilot.
