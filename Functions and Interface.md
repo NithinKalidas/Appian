@@ -10,7 +10,7 @@
  * Test UI responsiveness across web and mobile devices. Provide default test cases
  * Don't Hardcode: Never type specific IDs or text labels directly in the code. Use Constants so you can change them easily later without breaking the code.
  * Proper Naming convention for interface and RI name, Description and adding comments for the code logic.
- * retriving data using index rather than square bracet as null is handled rather than error.
+ * Retriving data using index rather than square bracet as null is handled rather than error.
 
 ## 2. What is modular coding?
 Modular coding is the practice of breaking a large, complex program into smaller, independent and manageable pieces called modules
