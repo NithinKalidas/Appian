@@ -32,30 +32,25 @@ It is possible to add up to a total of 32 execution and 32 analytics engines by 
      <engine name="process-execution2"/>
 
 
-## 5. What are the deployment challenges you have faced?
-Precedents missing
-Common Packages missing
-
 ## 6. What are necessary checks for pre deployement and post deployment?
-PreDeployment :
-Create all necessary DB scripts and organise to one script
-Checking Missing Precedents
-Scheduler Process Model check
-Security Summary
-Proper exporting of all objects
-Inspecting all objects and fixing issues if any
-Importing the objects
-Force Sync (in custom properties, sync enable)
-Object Version conflicts
-Deployment Fails Due to Locked Objects.
-Circular Dependencies Between Objects.
-Import Customisation File ICF Not Applied or Misconfigured.
 
+PreDeployment :
+ * Create all necessary DB scripts and organise to one script
+ * Checking Missing Precedents
+ * Scheduler Process Model check
+ * Security Summary
+ * Proper exporting of all objects
+ * Inspecting all objects and fixing issues if any
+ * Force Sync (in custom properties, sync enable)
+ * Object Version conflicts 
+ * Deployment Fails Due to Locked Objects.
+ * Circular Dependencies Between Objects.
+ * Import Customisation File ICF Not Applied or Misconfigured.
 
 Post Deployment :
-Security Checks
-Error in Logs
-Change in Constant for Post scheduler Process
+ * Security Checks
+ * Error in Logs
+ * Change in Constant for Post scheduler Process
 
 ## 7. How do you check is document exist or not in your application?
 getcontentobjectdetailsbyid()
@@ -74,13 +69,13 @@ Production
 Business user who does not have login credential in appian but able to access
 Eg: Complaince related to water shortage, Electricity shortage
 
-## 11.How do you implement Optimistic locking in appian?
+## 11. How do you implement Optimistic locking in appian?
 In CDT Based approch, we can add a new column Version and default set to zero, In XSD package add @Version and import and then using trigerrs we can create those versions.
 
 ## 12. how to configure Single click document download?
+Url construct -> Create API -> 
 
-
-## 13. Suppose we need to update 1000 rows of data on daily basis in a week how can we do that or what is the optimised way to prevet without affecting the Performance?
+## 13. Suppose we need to Insert 100000 rows of data on daily basis in a week how can we do that or what is the optimised way to prevet without affecting the Performance?
 update using batch wise in non business hours
 
 ## 14. Suppose we have 1000 entries in excel file and how can i dumb to 5 different database?
