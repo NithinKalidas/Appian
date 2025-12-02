@@ -148,6 +148,9 @@ Database query performance
  * New a!genAiModels() function — Helps you dynamically get the list of available AI models and lets you build more flexible AI-enabled solutions.
 
 ## 23. What is AI skill types and use cases?
+Prompt - Text, EML File, PDF, Jpeg, TIFF, PNG
+IDP - PDF, Jpeg, TIFF, PNG
+ML - PDF, EML
 
 ## 24. What is decision table and say some use case scenario?
 A Decision Table in Appian is a rule-based grid used to evaluate multiple conditions and return results without complex nested if() or case() logic.
@@ -162,34 +165,42 @@ It provides a tabular visual framework to make business decisions clear, maintai
 ## 25. How do you handle errors in Portal?
 Portals do NOT support out-of-the-box Appian error dialogs. Portals run outside the Appian environment
 Errors must be handled manually in the interface and integrations
+check dependents and navigate (It will show which precedents caused issue)
+Published with no error message (Open interface, comment child interface and check one by one which causing the error)
 
 ## 26. If any request is submitted through an user by portal, how can we find them?
 By creating a request id which can be configured through email id or phone number using unique set of constraints
 
-## 27. What is the difference between text, long text and extra long text
+## 27. What is the difference between text, long text and extra long text?
+text 255
+long text 4000 
+extra long text 64000
 
 ## 28. what is health chekup and use case?
+check metrics and performance log critical fix, high fix, medium,  low (check if fix)
 
 ## 29. What is monitoring and use case?
 
 ## 30. What is Use case of Customisation file and what is environment constant / (connected System)?
 
-## 31. How to deploy group to higher environment? Will Group Id Changes when we deploy to higher environment?
-Groups/Users need to configured manually, (NR)
+## 31. How to deploy groups/users to higher environment? Will Group Id Changes when we deploy to higher environment?
+Users need to configured manually. Groups can be moved to next environment
 
 ## 33. How to deploy service account to higher environment to higher environment?
+service account need to configured manually
 
 ## 34. What are the limitations for business user?
 In Appian, a Business User (usually someone from the business team who reviews tasks and data but does not design/develop applications) has limited access and capabilities compared to Designers / Administrators.
 
 ## 35. What is hot fix?
-Hot fix is an bug of appian (NR)
+Hot fix is an bug of appian 
 
 ## 36. What is difference between equal to and like operator?
 Equal: The value must be exactly equal to the column value. Faster (can use index directly)
 Like: Used for pattern-based match. LIKE is slower, especially if value starts with %
 
 ## 37. Delete related record action, how not to show error page and redirect? 
+Delete action outside the record using 
 
 ## 38. How to create new service Account?
 Under Admin Console, In WEB Api Authentication we ccan create service account and authentication key as well
