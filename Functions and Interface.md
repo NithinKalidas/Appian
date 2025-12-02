@@ -5,11 +5,12 @@
  * Use local variables to reduce recalculations and improve performance. 
  * Avoid unnecessary queries inside the interface; preload data with rule inputs and Querying the data only in parent interface to reduce queries.
  * Use paginated grids for large datasets to optimize load time.
- * Follow proper naming conventions for rules, inputs, and variables.
- * Ensure security with role-based visibility and record-level controls.
- * Test UI responsiveness across web and mobile devices. Provide default test cases
- * Don't Hardcode: Never type specific IDs or text labels directly in the code. Use Constants so you can change them easily later without breaking the code.
  * Proper Naming convention for interface and RI name, Description and adding comments for the code logic.
+ * Default test Cases.
+ * Don't Hardcode: Never type specific IDs or text labels directly in the code. Use Constants so you can change them easily later without breaking the code.
+ * Unused RI, Local variable, improperly scoped parameters and null handling.
+ * Avoid nested loops
+ * Check performance metrics
  * Retriving data using index rather than square bracet as null is handled rather than error.
 
 ## 2. What is modular coding?
@@ -17,12 +18,10 @@ Modular coding is the practice of breaking a large, complex program into smaller
 
 ## 3. Issues you came across in Interface and how do you resolve them?
 1. Slow Interface Loading / Performance Issue
-Too many queries inside the interface
-Nested loops, large datasets
-Heavy evaluations inside SAIL
+Too many queries inside the interface, Nested loops, large datasets Heavy evaluations inside SAIL
 Resolution:
-Moved queries to Rule Inputs and a!localVariables()
-Used pagingInfo + limited data
+Performance metrics tab, drill down what is causing the error
+remove multiple queries, Used pagingInfo + limited data
 
 2. Incorrect Data Display / Null Values
 Wrong index paths
@@ -31,31 +30,12 @@ Resolution:
 Used index() with default values
 Added condition checks like if() or where() filters
 
-3. Dropdown Not Populating
-Query returning empty
-Missing label/value configuration
-Wrong data type
-Resolution:
-Verified query separately
-Mapped values using a!dropdownField() with choiceLabels
-Converted data types using tostring() / tointeger()
-
-4. Grid Not Sorting or Filtering
-Not using pagingInfo correctly
-Missing saveInto for user actions
-Resolution:
-Implemented a!gridField() or a!gridLayout() with proper sort parameters
-Stored paging info in local variables
-
 5. File Upload Not Working
-Wrong document folder security
-Invalid file type/size
-Missing saveInto logic
+Wrong document folder security Invalid file type/size Missing saveInto logic
 Resolution:
 Fixed folder security permissions
 Added file type validation
-Used a!fileUploadField() with correct PV/RIV binding
-
+Used a!fileUploadField() with correct PV/RI binding
 
 ## 4. What is the difference between a!save vs Save!value?
  * a!save(): In interface saveInto parameters, a!save() updates the target with the given value. This function has no effect when called outside of a component's saveInto parameter.
