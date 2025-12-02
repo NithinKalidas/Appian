@@ -82,7 +82,7 @@ update using batch wise in non business hours
 Read excel smart service and segreagate the DB, Write to data store entity for each data write as schema might differ.
 
 ## 15. Different Types of prod Issues you have encounter?
-PV Variable was mis configured, due to which calculation went missing, using report we took the process instances 
+PV Variable was mis configured, due to which calculation went missing, using report we took the process instances, getexternalPv or setexternalPv
 
 ## 16. Which Appian objects Permission level or Securities Inheritance?
 
