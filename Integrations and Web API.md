@@ -179,3 +179,13 @@ or
 It uses Basic Authentication, where you
 manually include credentials in the request.
 
+## 50. An external Integration in experiencing timout when sending a large volume of data? How do you resolve?
+
+## 52. How do you handle the data after integration? How would you clean data from API response?
+
+## 59. How do you create WEB API in REST?
+
+## 38. How to create new service Account?
+Under Admin Console, In WEB Api Authentication we can create service account and authentication key as well
+
+
