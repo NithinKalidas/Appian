@@ -4,7 +4,6 @@
 Start Process: The started process is load-balanced and may run on a different execution engine.
 Sub Process: Runs on the same execution engine as the parent.
 
-
 ## 2. Production Issues you came across in PM and how did you handle them?
 
 ## 3. Best Practice In PM?
@@ -128,7 +127,6 @@ Create an Environment constant in boolean to act as a switch and Set up as False
 ## 31. What is quick task? How to query the data in PM, when quick task is enabled? where is quick task used?
 It is an on-demand Task, which does not appear in task tab and only performed when activity is chained.
 We can't (check NR)
-
 Eg: Confirmation screen to display the request number
 
 ## 32. How do you handle retry machanism in PM for integration?
@@ -226,3 +224,14 @@ Usage of views, creation of record summary and able to configure custom field fo
 30 Nodes and 50 Variables
 
 ## 55. If task delayed for 24 hrs it shouuld assign to hire manager (NR/Ls Interview Ques)
+
+## 62. When Process is errored out? how do you check them?
+
+## 58. Process HQ?
+In Appian, Process HQ (Process Headquarters) is a centralized monitoring and analytics capability used to get real-time visibility into business processes running in the system.
+
+## 69.  Will hidden variable data be displayed in the process report/History?
+No.
+
+## 68.  Is an archived or deleted process available in the Process report?
+No, Deleted process are removed permanently can't be undone, for archival process we can unarchive the process and we can able to get it report (NR, how to unarchieve, within how many days we can archieve)
