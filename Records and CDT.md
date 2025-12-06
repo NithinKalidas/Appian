@@ -10,26 +10,24 @@
 | Virtual / Custom Fields | Cannot create fields that do not exist in the DB table | Supports **Custom Record Fields** (Virtual Fields) calculated via expressions without altering DB |
 | Flexibility in Data Source | Only database tables/views | Database, process models, APIs, web services, or other systems |
 
-
-
 ## 2. Limitation of Records and CDT?
 
 CDT: 
-No built-in join handling; you must write custom queries manually
-No inherent security model—must handle manually
-No calculated/virtual fields; everything must exist in DB
+ * No built-in join handling; you must write custom queries manually
+ * No inherent security model—must handle manually
+ * No calculated/virtual fields; everything must exist in DB
 
 Records:
-Sync breaks if external application changes the data in DB
-4 Million Rows (per synced Record Type). (licence has to be upgraded inorder to increase the limit)
-Related Record limit: 100 Related Records for queryRecordType and 250 for queryRecordByIdentifier.
-Text 4000 and Extra long text 64000 character limit
+ * Sync breaks if external application changes the data in DB
+ * 4 Million Rows (per synced Record Type). (licence has to be upgraded inorder to increase the limit)
+ * Related Record limit: 100 Related Records for queryRecordType and 250 for queryRecordByIdentifier.
+ * Text 4000 and Extra long text 64000 character limit
 
 ## 3. How do you create CDT?
-Create a Table in SQL
-Create Data Store Entity 
-Create Data Store
-Create Constant for Data store entity
+ * Create a Table in SQL
+ * Create Data Store Entity 
+ * Create Data Store
+ * Create Constant for Data store entity
 
 ## 4.Difference between Sync vs Non Sync Records?
 Synced Records store data in Appian memory 
@@ -44,8 +42,8 @@ Non Synced Records is data queried and fetched from DB
 
 
 ## 6. How do you achieve many to many relationship?
-For Many-to-Many: Not directly supported as a single relationship type. 
-Create an intermediate record type (e.g., Student -> Enrollment -> Class) to bridge them.
+Many-to-Many Relationship: Not directly supported as a single relationship type. 
+Create an intermediate record type (Eg: Student -> Enrollment -> Class) to bridge them.
 
 ## 7. What is the difference between Record Action Vs Related Action?
 | Feature                    | Record Action             | Related Action                          |
@@ -54,20 +52,20 @@ Create an intermediate record type (e.g., Student -> Enrollment -> Class) to bri
 | **Example**                | Add New Employee          | Update Selected Employee                |
 
 ## 8. What are the types of Backed Record Type? (NR)
-Entity Backed
-Process Backed
-Expression Backed
+ * Entity Backed
+ * Process Backed
+ * Expression Backed
 
 ## 9. What is data fabric?
 
 ## 10. What are the different ways to sync a record?
-Manual sync
-Sync on Create/Update/Delete (CUD events)
-Sync after Record Actions
-Sync via Process Model write operations
-Sync using a!syncRecords() Smart service
-Sync via Refresh Interval / Polling
-Using ICF - Force sync to true when deployed to higher environment
+ * Manual sync
+ * Sync on Create/Update/Delete (CUD events)
+ * Sync after Record Actions
+ * Sync via Process Model write operations
+ * Sync using a!syncRecords() Smart service
+ * Sync via Refresh Interval / Polling
+ * Using ICF - Force sync to true when deployed to higher environment
 
 (or)
 
@@ -76,7 +74,6 @@ Web API with a!syncRecords(): The external system calls an Appian Web API (actin
 Sync Records Smart Service: An Appian process (often triggered by an integration or the Web API above) explicitly calls this smart service, passing a list of record identifiers (primary keys) to be synced.
 
 Scheduled or Manual Syncs (Bulk/Consistency)
-
 Scheduled Full Sync: Appian fetches all data from the source and replaces the entire synced cache on a daily schedule.
 Scheduled Incremental Sync: Appian checks a designated "Last Modified" timestamp in the source and fetches only the changed or new records on a customizable, frequent schedule (e.g., every 15 minutes).
 Manual Full Sync: An administrator manually triggers a complete refresh of all records via the "Start Full Sync" button in the Record Type settings.
@@ -89,11 +86,10 @@ Manual Full Sync: An administrator manually triggers a complete refresh of all r
  * Create From Scratch
 
 ## 13. How do you increase query Performance?
-Use selection to limit the number of columns to be returned.
-Use filters wherever possible.
-Use a limited batch size rather than -1.
-Set fetchTotalCount to false.
-
+ * Use selection to limit the number of columns to be returned.
+ * Use filters wherever possible.
+ * Use a limited batch size rather than -1.
+ * Set fetchTotalCount to false.
 
 ## 15. If i write more than 5000 Character using record, where there is no issues in varchar limit, will it write the date or truncate? and how much data will get back when i query the data? (firts 4000 or last 4000)
 
@@ -107,10 +103,11 @@ In Same Process model, at end before it completes we can create a stored procedu
 2. a!queryRecordByIdentifier() : The Record Type Identifier is the unique primary identifier (key) of each record in a Record Type.
 
 ## 19. What is ther return type of query entity and query record?
-Query Record: List of Dictionary 
-Query Entity: DataSubset
+ * Query Record: List of Dictionary 
+ * Query Entity: DataSubset
 
 ## 20. How do you cofigure securities to records?
+
 
 ## 21. Difference between Record level security and field level security?
 Record level security : Determine who can see the records by adding security rules (NR)
@@ -144,16 +141,16 @@ Action: Creates new data in the system.
 Related Action: Performs some action related to the existing data.
 
 ## 31. What are the different ways to create a CDT?
-From Scratch
-Duplicating the existing datatype
-From database view or table
-From XSD
-From Web Services
+ * From Scratch
+ * Duplicating the existing datatype
+ * From database view or table
+ * From XSD
+ * From Web Services
 
-## 32. What are the different ways to fetch details from a database?
-Query DB smart service
-Query Entity
-Query rule (Deprecated)
+## 32. What are the different ways to fetch details from a database? (Nr)
+ * Query DB smart service
+ * Query Entity
+ * Query rule (Deprecated)
 
 ## 33. What is the purpose of fetchTotalCount and provide a scenario where fetchTotalCount has to be true?
 fetchTotalCount returns the total number of rows in a table based on the applied filters. This is usually set to false (i.e., when batch size is not -1) as it takes extra time to retrieve the total. Set to true when used in a Read-Only grid to calculate the total number of pages required.
@@ -162,22 +159,22 @@ fetchTotalCount returns the total number of rows in a table based on the applied
 The button is enabled to export up to 100,000 records from the list, including rich text, images, and links.
 
 ## 35. Source Type to get data into appian records
-Database
-Process
-WebService
-Salesforce
+ * Database
+ * Process
+ * WebService
+ * Salesforce
 
 ## 36. Long Text vs text in Record?
 64000 characters for long text 
 4000 character for text
 
 ## 37. Best practice for querying data?
-Query fetch totalcount to false (using it only when required)
-Querying only the record field that is required
-Query only in Parent interface and avoid querying in child interface, to reduce the no of query if reusable is needed
+ * Query fetch totalcount to false (using it only when required)
+ * Querying only the record field that is required
+ * Query only in Parent interface and avoid querying in child interface, to reduce the no of query if reusable is needed
 
 ## 38. Difference between query record type and record type identifier?
- | queryrecordtype()                  | recordType.identifier             |
+| queryrecordtype()                  | recordType.identifier             |
 | ---------------------------------- | --------------------------------- |
 | Queries **data**                   | Locates **a single record**       |
 | Can return **multiple records**    | Points to **one record**          |
