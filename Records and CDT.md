@@ -1,18 +1,16 @@
 # Appian Process Model Interview Question
 
 ## 1. What is the difference between Records Vs CDT?
+| Feature | Custom Data Type (CDT) | Record Type |
+|--------|------------------------|-------------|
+| Primary Purpose | Maps to a database table/view via Data Store Entity and can be used as an in-memory data structure | Represents data from DB, process instances, APIs, or external systems |
+| Data Retrieval | Queried directly from the database via `a!queryEntity()` | Queried using `a!queryRecordType()` |
+| Caching | No built-in caching | Supports **Data Sync** to cache data for faster performance |
+| Relationships | Must be explicitly designed in CDT (nested/flat structures) and often require complex queries | Supports **low-code relationships** between record types using **dot notation** |
+| Virtual / Custom Fields | Cannot create fields that do not exist in the DB table | Supports **Custom Record Fields** (Virtual Fields) calculated via expressions without altering DB |
+| Flexibility in Data Source | Only database tables/views | Database, process models, APIs, web services, or other systems |
 
-Custom Data Type (CDT)	
-Used to map to a database table/view via a Data Store Entity. Can also be used as a purely in-memory data structure.
-Data is queried directly from the database using functions like a!queryEntity(). No built-in caching
-Relationships (e.g., one-to-many) must be explicitly defined in the CDT structure and often require careful design (nested vs. flat) and complex queries to build relationship between tables
-Cannot create fields that don't exist in the database table.
 
-Record Type
-Can source data from a database, process instances, web services, or other external systems.
-Can be configured with Data Sync to cache data on Appian's server for faster querying using a!queryRecordType().
-Supports low-code relationships to other Record Types, allowing simple dot-notation for querying related data.
-Can define Custom Record Fields (Virtual Fields) using expressions to calculate or transform data on-the-fly without changing the underlying database.
 
 ## 2. Limitation of Records and CDT?
 
@@ -187,5 +185,13 @@ Query only in Parent interface and avoid querying in child interface, to reduce 
 | Heavy operation (executes a query) | Lightweight (just passes ID)      |
 | Accepts filters, sorting, paging   | No filtering options — just an ID |
 
+## 49. How do you resolve write to records got errored out because of unique constraints ID?
+Need to check in process history and modify the necessary change and fix in the instances
+
+## 51. how can you ensure that updating reccord creates a new entry instead of modifying the existing one
+By passing the Id (primary key) for the value in the record
+
+## 37. Delete related record action, how not to show error page and redirect? 
+Delete action outside the related action using Process model call Outside the view page
 
 
