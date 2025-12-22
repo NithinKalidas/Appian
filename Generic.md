@@ -59,33 +59,33 @@ getcontentobjectdetailsbyid()
 ## 6. How do you delete the document which is older than 2 years, when your unaware of document Id?
 Using "Delete Documents Created Before Date" smart service in the Process model, Under Input enter our desired date on "Delete Before Date".
 
-## 9. What are the stages appian recommend to use in Project ?
+## 7. What are the stages appian recommend to use in Project ?
  * Dev (Development)
  * SIT (System Integration Testing)
  * UAT (User Acceptance Testing)
  * Pre Production
  * Production
 
-## 10. What is Portal and how does sign in and sign out works?
+## 8. What is Portal and how does sign in and sign out works?
 Business user who does not have login credential in appian but able to access
 Eg: Complaince related to water shortage, Electricity shortage (NR)
 
-## 11. How do you implement Optimistic locking in appian?
+## 9. How do you implement Optimistic locking in appian?
 In CDT Based approch, we can add a new column Version and default set to zero, In XSD package add @Version and import and then using trigerrs we can create those versions.
 
-## 12. how to configure Single click document download?
+## 10. how to configure Single click document download?
 Url construct -> Create API -> 
 
-## 13. Suppose we need to Insert 100000 rows of data on daily basis in a week how can we do that or what is the optimised way to prevet without affecting the Performance?
+## 11. Suppose we need to Insert 100000 rows of data on daily basis in a week how can we do that or what is the optimised way to prevet without affecting the Performance?
 update using batch wise in non business hours
 
-## 14. Suppose we have 1000 entries in excel file and how can i dumb to 5 different database?
+## 12. Suppose we have 1000 entries in excel file and how can i dumb to 5 different database?
 Read excel smart service and segreagate the DB, Write to data store entity for each data write as schema might differ.
 
-## 15. Different Types of prod Issues you have encounter? (NR)
+## 13. Different Types of prod Issues you have encounter? (NR)
 PV Variable was mis configured, due to which calculation went missing, using report we took the process instances, getexternalPv or setexternalPv
 
-## 16. Which Appian objects Permission level or Securities Inheritance?
+## 14. Which Appian objects Permission level or Securities Inheritance?
 
 | Always Inherit Security From Parent | Always Inherit Security IF Parent Specified | Inherit Security From Parent By Default (Editable) | Never Inherit Security | Don't Have Security |
 |------------------------------------|---------------------------------------------|----------------------------------------------------|------------------------|----------------------|
@@ -107,10 +107,10 @@ PV Variable was mis configured, due to which calculation went missing, using rep
 |                                    |                                             |                                                    | Web APIs               |                      |
 
 
-## 17. how do you modify the securities for 1000 appian objects?
+## 15. how do you modify the securities for 1000 appian objects?
 Using security summary (under gear symbol) we can cofigure
 
-## 18. Differnce between optimising Performance through admin console and through interface objects?
+## 16. Differnce between optimising Performance through admin console and through interface objects?
 | Admin Console                          | Interface Object                          |
 |----------------------------------------|-------------------------------------------|
 | Rule execution monitoring              | Monitor query calls                       |
@@ -118,21 +118,21 @@ Using security summary (under gear symbol) we can cofigure
 | Complete environment monitoring        | Specific object monitoring                |
 
 
-## 19. How 2 environment can we configured for compare and deploy method for development?
+## 17. How 2 environment can we configured for compare and deploy method for development?
 In Appian Admin console -> Devops -> Infrastructure -> Add new Environment
 
-## 20. difference between tomcot logs and performance logs?
+## 18. difference between tomcot logs and performance logs?
 | Tomcot Logs                           | Performance Logs                         |
 |---------------------------------------|------------------------------------------|
 | Server startup/shutdown details       | Use request response Times               |
 | Application deployment errors         | Process/rules execution time             |
 | Java exception stack traces           | Database query performance               |
 
-## 21. Huge amount of data in external system, how will you use in appian application?
+## 19. Huge amount of data in external system, how will you use in appian application?
  * CDT based approach -> Integration Object -> Call data in batch and use integration object in PM and store in DB and use the data
  * Record Type: Create record with web service menthod, inside webservice need to create integration (before creating integration, connected system and you need to configure data source as well). sync also can be enabled and will be achieved through batching
 
-## 22. What are new appian features or new release (25.4)?
+## 20. What are new appian features or new release (25.4)?
  * AI-Powered Reporting: Users can create reports instantly using AI Copilot.
  * Increased Sync Limits: You can now sync up to 50 million rows per record type, significantly increasing data capacity.
  * Transparent Data Encryption (TDE) for synced data — Enterprises can now protect their synced data at rest with built-in encryption, with no changes required at the application level.
@@ -144,12 +144,12 @@ In Appian Admin console -> Devops -> Infrastructure -> Add new Environment
  * Long-running AI Skill execution — New option to execute generative-AI tasks in “Long Running” mode (for large inputs/responses) so you don’t hit timeout issues.
  * New a!genAiModels() function — Helps you dynamically get the list of available AI models and lets you build more flexible AI-enabled solutions.
 
-## 23. What is AI skill types and use cases?
+## 21. What is AI skill types and use cases?
 Prompt - Text, EML File, PDF, Jpeg, TIFF, PNG
 IDP - PDF, Jpeg, TIFF, PNG
 ML - PDF, EML
 
-## 24. What is decision table and say some use case scenario?
+## 22. What is decision table and say some use case scenario?
 A Decision Table in Appian is a rule-based grid used to evaluate multiple conditions and return results without complex nested if() or case() logic.
 It provides a tabular visual framework to make business decisions clear, maintainable, and reusable.
 | Columns        | Purpose                                                               |
@@ -159,16 +159,16 @@ It provides a tabular visual framework to make business decisions clear, maintai
 | Output Columns | Result when a rule is matched                                         |
 | Hit Policy     | Defines whether to return first match, all matches, or collect values |
 
-## 25. How do you handle errors in Portal?
+## 23. How do you handle errors in Portal?
 Portals do NOT support out-of-the-box Appian error dialogs. Portals run outside the Appian environment
 Errors must be handled manually in the interface and integrations
 check dependents and navigate (It will show which precedents caused issue)
 Published with no error message (Open interface, comment child interface and check one by one which causing the error)
 
-## 26. If any request is submitted through an user by portal, how can we find them?
+## 24. If any request is submitted through an user by portal, how can we find them?
 By creating a request id which can be configured through email id or phone number using unique set of constraints
 
-## 27. What is the difference between text, long text and extra long text?
+## 25. What is the difference between text, long text and extra long text?
  * text 255
  * long text 4000 
  * extra long text 64000
