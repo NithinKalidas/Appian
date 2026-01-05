@@ -173,56 +173,56 @@ By creating a request id which can be configured through email id or phone numbe
  * long text 4000 
  * extra long text 64000
 
-## 28. what is health chekup and use case?
+## 26. what is health chekup and use case?
 check metrics and performance log critical fix, high fix, medium,  low (check if fix)
 
-## 29. What is monitoring and use case?
+## 27. What is monitoring and use case?
 
-## 30. What is Use case of Customisation file and what is environment constant / (connected System)?
+## 28. What is Use case of Customisation file and what is environment constant / (connected System)?
 The customization file is used to provide values to the environmental constant and connected systems when deploying to another environment so that the value changed isn't missed.
 
-## 31. How to deploy groups/users to higher environment? Will Group Id Changes when we deploy to higher environment?
+## 29. How to deploy groups/users to higher environment? Will Group Id Changes when we deploy to higher environment?
 Users need to configured manually. Groups can be moved to next environment. (NR)
 
-## 33. How to deploy service account to higher environment?
+## 30. How to deploy service account to higher environment?
 service account need to configured manually
 
-## 34. What are the limitations for business user?
+## 31. What are the limitations for business user?
 In Appian, a Business User (usually someone from the business team who reviews tasks and data but does not design/develop applications) has limited access and capabilities compared to Designers / Administrators.
 
-## 35. What is hot fix?
+## 32. What is hot fix?
 Hot fix is an bug of appian, which appian provide to fix those bugs.
 
-## 36. What is difference between equal to and like operator?
+## 33. What is difference between equal to and like operator?
  * Equal: The value must be exactly equal to the column value. Faster (can use index directly)
  * Like: Used for pattern-based match. LIKE is slower, especially if value starts with %
 
-## 39. What are the AI Components, What AI Model does Appian Use?
+## 34. What are the AI Components, What AI Model does Appian Use?
 Anthropic AI is earlier used, Now In Appian we can able to use
 {"Claude 3 Haiku", "Claude 3.5 Sonnet", "Claude 3.7 Sonnet", "Claude Sonnet 4", "Claude Sonnet 4.5", "Claude Haiku 4.5"}
 
-## 40. How do you force deploy to next environment?
+## 35. How do you force deploy to next environment?
 By Removing UUID/ Customisation File (NR)
 
-## 43. What is Agile\Waterfall method?
+## 36. What is Agile\Waterfall method?
  * Agile: Agile is an iterative and incremental development methodology. Work is delivered in small cycles (Sprints) with continuous feedback.
  * Waterfall: Waterfall is a linear and sequential project development model. Each phase must be completed fully before moving to the next.
 
-## 44. What is Sprint duration and Sprint velocity?
+## 37. What is Sprint duration and Sprint velocity?
  * Sprint Duration: A Sprint is a fixed time period in Agile (mainly Scrum) during which the team works to complete a set of user stories.
  * Sprint Velocity: Sprint Velocity is the measure of work done by a team in a sprint.
 
-## 45. how to move document without changing its ID to next environment?
+## 38. how to move document without changing its ID to next environment?
 Can't be done, Documet Id is varies for different environment
 
-## 46. How to create new schema for appian what permission would require for that?
+## 39. How to create new schema for appian what permission would require for that?
 
-## 47. What are Production bugs? How did you fix them?
+## 40. What are Production bugs? How did you fix them?
 Reproduce the Production bugs in lower environment and fix those bugs (NR, how and what to do with prodcution bug changes)
 
-## 53. What is task log?
+## 41. What is task log?
 
-## 54. what is charts and what are its types in appian?
+## 42. what is charts and what are its types in appian?
 Chart are used to diagramatically represent the value
  * Bar Chart
  * Column Chart
@@ -231,7 +231,7 @@ Chart are used to diagramatically represent the value
  * Area Chart
  * Scatter Chart
 
-## 55. What is T24 and have you used in your application?
+## 43. What is T24 and have you used in your application?
 T24 (Temenos T24) is a core banking software developed by Temenos.
  * Customer onboarding
  * Account management
@@ -240,50 +240,50 @@ T24 (Temenos T24) is a core banking software developed by Temenos.
  * Interest & charges
  * Regulatory and financial reporting
 
-## 57. DB driven vs process driven based approach?
+## 44. DB driven vs process driven based approach?
  * Db Drivern : A DB-driven approach means data drives the state of the application instead of workflows.
  * Process models are minimized; most operations happen via records, smart services, write to data store, and interfaces.
 Process Driven: A process-driven approach means the workflow (process model) is the center of the application.
 All business logic, task assignments, and data updates are managed inside process models.
 
-## 61. 10 Approvers need to approve then only we need to proceed to next step? how to define them?
+## 45. 10 Approvers need to approve then only we need to proceed to next step? how to define them?
 We can keep a script task and check is all completed through task status
 
-## 63. why do we split tabel? why can't we store all in single DB?
+## 46. why do we split tabel? why can't we store all in single DB?
 Split tabel because it would create major performance, storage, consistency, scalability, and maintainability issues.
 Databases follow Normalization, where data is split into related tables to avoid duplication and ensure efficiency.
 
-## 64. What are the different licenses available and for what components are they provided?
+## 47. What are the different licenses available and for what components are they provided?
 k3.lic for engines
 k4.lic for the data server
 
-## 65. What are the different types of Appian installations and state their differences?
+## 48. What are the different types of Appian installations and state their differences?
 On-Premise: The physical hardware is with us and maintenance is also done by us.
 On-Cloud: The physical hardware is with Appian, and Appian handles the maintenance. The URL will have "appiancloud" in it.
 Hybrid: A combination of On-Premise and On-Cloud. For example, a training environment where the hardware is with Appian but maintenance is done by us.
 
-## 67. Why can users not be deleted or moved to another environment in Appian?
+## 49. Why can users not be deleted or moved to another environment in Appian?
 The license cost is based on the number of users per environment, and Appian maintains metadata based on users. Hence, users cannot be moved or deleted.
 
-## 70. What is the purpose of user start page?
+## 50. What is the purpose of user start page?
 When configured, this allows the user to directly log in to the given site rather than the Tempo page.
 
-##  . If a user belongs to multiple groups that have different start pages configured, his start page will be the highest one in the grid that corresponds to a group that he belongs to.
+## 51 . If a user belongs to multiple groups that have different start pages configured, his start page will be the highest one in the grid that corresponds to a group that he belongs to.
 TRUE
 
-##  . What are the different datatypes available in Appian? Give examples for each.
+## 52 . What are the different datatypes available in Appian? Give examples for each.
 Primitive: Int, Text, Date, DateTime
 Appian Object: Application, Process Model
 Complex: PagingInfo, DataSubset
 Custom Data Type
 
-##  . What are the benefits of modular coding?
+## 53 . What are the benefits of modular coding?
 Reusability of objects
 Easy change management
 Easy debugging
 Reduced number of lines per interface
 
-## . Tempo vs Site?
+## 54. Tempo vs Site?
 | Tempoo                  | Site                                                   |
 |-------------------------|--------------------------------------------------------|
 | Default by appian       | Can configure based on business need                   |
@@ -291,20 +291,20 @@ Reduced number of lines per interface
 | Can't add logo          | Can Add Logo                                           |
 | No changes can be done  | Changes can be Done to site based on requirement       |
 
-## . Types of AI Skill ?
+## 55. Types of AI Skill ?
 Document Classification
 Document Extraction
 Email Classification
 
-## . How much document size appian can send to external document?
+## 56. How much document size appian can send to external document?
 Request Body : Can't exceed 5 mb
 Base 64 : Combined size of file 75 mb
 Binary files : 250 Mb
 
-## What is UUID and does it change for different environment?
+## 57. What is UUID and does it change for different environment?
 UUID is an Universally Unique Identifier - remains stable acrosss different environment
 
-## how do you build an Application
+## 58. how do you build an Application
 Get Clear Requirements
 Analyse the requirement and flow process
 Create Data Model
