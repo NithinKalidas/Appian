@@ -191,4 +191,6 @@ By passing the Id (primary key) for the value in the record
 ## 37. Delete related record action, how not to show error page and redirect? 
 Delete action outside the related action using Process model call Outside the view page
 
+## 38. Record Smart Search?
+
 
