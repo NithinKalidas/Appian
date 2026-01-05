@@ -21,10 +21,10 @@ Only one, To configure multiple we can provide the another smart services either
 
 ## 6. How do you implement more than one web API smart service as function
 
-## what are method of API types?
+## 7. What are method of API types?
 Put post patch delete get
 
-## How do you handle integration error ?
+## 8. How do you handle integration error ?
 400
 500
 
