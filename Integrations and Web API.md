@@ -185,6 +185,16 @@ manually include credentials in the request.
 
 ## 59. How do you create WEB API in REST?
 
+
+## 43. What is T24 and have you used in your application?
+T24 (Temenos T24) is a core banking software developed by Temenos.
+ * Customer onboarding
+ * Account management
+ * Loans & deposits
+ * Payments & transactions
+ * Interest & charges
+ * Regulatory and financial reporting
+
 ## 38. How to create new service Account?
 Under Admin Console, In WEB Api Authentication we can create service account and authentication key as well
 
