@@ -17,25 +17,15 @@
 Modular coding is the practice of breaking a large, complex program into smaller, independent and manageable pieces called modules
 
 ## 3. Issues you came across in Interface and how do you resolve them?
-1. Slow Interface Loading / Performance Issue
-Too many queries inside the interface, Nested loops, large datasets Heavy evaluations inside SAIL
-Resolution:
-Performance metrics tab, drill down what is causing the error
-remove multiple queries, Used pagingInfo + limited data
-
-2. Incorrect Data Display / Null Values
-Wrong index paths
-Missing null checks
-Resolution:
-Used index() with default values
-Added condition checks like if() or where() filters
-
-5. File Upload Not Working
-Wrong document folder security Invalid file type/size Missing saveInto logic
-Resolution:
-Fixed folder security permissions
-Added file type validation
-Used a!fileUploadField() with correct PV/RI binding
+ *  Slow Interface Loading / Performance Issue
+Too many queries inside the interface, Nested loops, large datasets Heavy evaluations inside SAIL: 
+Performance metrics tab, drill down what is causing the error and remove multiple queries, Used pagingInfo + limited data
+ * Incorrect Data Display / Null Values
+Wrong index paths, Missing null checks: 
+Used index() with default values and Added condition checks like if() or where() filters
+ * File Upload Not Working
+Wrong document folder security Invalid file type/size Missing saveInto logic: 
+Fixed folder security permissions, Added file type validation and Used a!fileUploadField() with correct PV/RI binding
 
 ## 4. What is the difference between a!save vs Save!value?
  * a!save(): In interface saveInto parameters, a!save() updates the target with the given value. This function has no effect when called outside of a component's saveInto parameter.
@@ -47,14 +37,13 @@ Used a!fileUploadField() with correct PV/RI binding
 
 ## 6. What are the different ways to refresh a local variable?
 Local variables can be refreshed in the following ways:
-
  * refreshAlways: When true, the value of this local variable will be refreshed after each user interaction and each interval refresh.
  * refreshInterval: How often the variable value gets refreshed in minutes. When null, the variable will not be refreshed on an interval. Valid values include 0.5, 1, 2, 3, 4, 5, 10, 30, 60.
  * refreshOnReferencedVarChange: When true, the value of this local variable will be refreshed each time the value of any variable it references within the value parameter is updated. Default is true.
  * refreshOnVarChange: Refreshes the value of the local variable each time any of these specific variables change. This allows you to refresh the value when a variable that is not referenced within the value parameter is updated.
  * refreshAfter: Refreshes the value of the local variable after a record action, such as a related action or a record list action configured within a record type, completes from a dialog window within the Record Action Component. Instead of requiring the entire page to reload, this parameter allows you to refresh a local variable value on an interface after a record action completes. Valid values include RECORD_ACTION.
 
-## 8. what is the difference between a!match and display value?
+## 7. what is the difference between a!match and display value?
  * Match: Evaluates the value against multiple conditions and returns a value based on a match. If no match is found, the default is returned.
  a!match(
           value: local!cartSize,
@@ -69,6 +58,10 @@ Local variables can be refreshed in the following ways:
 
  * Displayvalue: Tries to match a value in a given array with a value at the same index in a replacement array and returns either the value at the same index or a default value if the value is not found.
 displayvalue( value, inArray, replacement, default ) Eg: displayvalue(2,{0,1,2},{"Low","Medium","High"},"Unknown"), returns: High""
+
+## 8. What is the difference between local variables and rule inputs?
+Local Variables: Used when the scope is within the interface/rule and the value need not go outside that object. They are also used to define the repetitive piece of code/function/rule.
+Rule Inputs: Used when the value has to be taken outside the object.
 
 ## 9. what is the difference between difference and Symmetric Difference?
  * Difference: Returns the values in array1 and not in array2.
@@ -116,10 +109,4 @@ This is because the data has to be refreshed based on each page.
 
 ## 18. Why shouldn’t an interface have more than 500 lines of code? How to reduce the number of lines of code?
 More than 500 lines of code can lead to binding issues. This can be solved using modular coding.
-
-## 19. What is the difference between local variables and rule inputs?
-Local Variables: Used when the scope is within the interface/rule and the value need not go outside that object. They are also used to define the repetitive piece of code/function/rule.
-Rule Inputs: Used when the value has to be taken outside the object.
-
-
 
