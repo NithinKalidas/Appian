@@ -12,9 +12,9 @@ Using retry machanism for server unavailable and logging the details
 ## 3. Issues you faced in Web API or Integration and how did you overcome?
 
 ## 4. Authentication types and explain them?
-Basic
-Web API Key based
-OAuth client Grand 2.0
+ * Basic
+ * Web API Key based
+ * OAuth client Grand 2.0
 
 ## 5. In Web API/ a!save how many smart service we can use as function?
 Only one, To configure multiple we can provide the another smart services either in On success or on error
