@@ -6,6 +6,7 @@ Sub Process: Runs on the same execution engine as the parent.
 
 ## 2. Production Issues you came across in PM and how did you handle them?
 
+
 ## 3. Best Practice In PM?
  * Deleting Inactive Records: Remove the Soft deleted data
  * Using 30 Nodes Per Process and trying to use in Asynchronous, so that process might execute in different engine.
@@ -20,14 +21,24 @@ Sub Process: Runs on the same execution engine as the parent.
  * Usage of terminate node rather than end node
 
 ## 4. Difference Between Start Process Asyncronous and Sub Process Asyncronous?
+trigerring a process model 
+sync -> output (confirmation screen, calculation)
+async -> output not required
+sub process - > Asynchronous -> same engine
+sync -> activity chaining connect -> same engine
+start process -> async -> different engine (based on availability in load balance)
+sync -> activity chaining not there (AC not handled in appian)
+
 
 ## 4. Difference Between  Asyncronous and syncronous Process?
 Sync: Parent Process will wait for its child process to complete. Eg: used for sequential steps, business calculation logic, confirmation screen 
 ASync: Parent Process trigerrs the child process and runs in parallel. Eg: Sending email 
 
 ## 5. What is MNI and where do you use them?
+MNI -> more than 1000 subprocesss but not in start process
 
 ## 6. What is quick task and how do you configure?
+quick task, on-demand task no need to vsible in task reports ( confirmation screen )
 
 ## 7. what is hidden variable? How to get its report?
 
@@ -94,6 +105,7 @@ Which Decrease the RAM memory and increase in Performance as all the task are ha
 Everytime we can query the data and showcase to the dependent user and for any change it can be easily reset through DB
 
 ## 19. You have multiple start and sub process need to be used, what is the approach you use? (top to bottom or bottom or top)
+bottom to top (form create -> How many sections, 
  
 ## 20. Third Part want to trigger an Stores Procedure? how do you implement them?
 Create WebAPI of start process type and implement SP
@@ -108,8 +120,12 @@ using sub process asynchronous to reduce the load the engine as it may execute i
 ## 23. How to bring back unarchival Process?
 
 ## 24. While calling a Sub process what is the difference between passing a variable as reference and a value?
+When Pass by referece is not selected the value will not change immediately only when we take the output, it will change
+Pass by reference is not preferred, as performance may impact as it need to refresh the variable every time it changes
 
-## 25. Does activity chaining decrease the Process, if yes how do you overcome?
+## 25. Does activity chaining decrease the Performance, if yes how do you overcome?
+As it create pressure to complete faster, CPU spike
+Only when required, priority alone AC, after confirmation screen another path delete document, audit logs
 
 ## 26. When to use short lived process and long lived Process?
 
@@ -226,6 +242,8 @@ Usage of views, creation of record summary and able to configure custom field fo
 ## 55. If task delayed for 24 hrs it shouuld assign to hire manager (NR/Ls Interview Ques)
 
 ## 62. When Process is errored out? how do you check them?
+Error on which node is causing error, Eg: Write node character limitation, Expression rule type cast issue identify which rule 
+Data reproduce in lower environment (UAT)
 
 ## 58. Process HQ?
 In Appian, Process HQ (Process Headquarters) is a centralized monitoring and analytics capability used to get real-time visibility into business processes running in the system.
@@ -235,3 +253,6 @@ No.
 
 ## 68.  Is an archived or deleted process available in the Process report?
 No, Deleted process are removed permanently can't be undone, for archival process we can unarchive the process and we can able to get it report (NR, how to unarchieve, within how many days we can archieve)
+
+
+Db backed  vs processs backed task log /
