@@ -156,21 +156,17 @@ Read excel smart service and segreagate the DB, Write to data store entity for e
  * CDT based approach -> Integration Object -> Call data in batch and use integration object in PM and store in DB and use the data
  * Record Type: Create record with web service menthod, inside webservice need to create integration (before creating integration, connected system need to configure data source as well). sync also can be enabled and will be achieved through batching
 
-
 ## 30. 10 Approvers need to approve then only we need to proceed to next step? how to define them? (NR)
 We can keep a script task and check is all completed through task status and proceed with next steps
 Can we configure AND gate ?
 
-
-## 31. why do we split tabel? why can't we store all in single DB?
+## 31. why do we split tabel in Database? why can't we store all in single DB?
 Split tabel because it would create major performance, storage, consistency, scalability, and maintainability issues.
 Databases follow Normalization, where data is split into related tables to avoid duplication and ensure efficiency.
 
 ## 32. What are the different licenses available and for what components are they provided?
 k3.lic for engines
 k4.lic for the data server
-
-Generic:
 
 ## 33. what is health chekup and use case?
 check metrics and performance log critical fix, high fix, medium,  low (check if fix)
