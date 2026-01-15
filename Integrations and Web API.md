@@ -19,20 +19,33 @@ Using retry machanism for server unavailable and logging the details
 ## 5. In Web API/ a!save how many smart service we can use as function?
 Only one, To configure multiple we can provide the another smart services either in On success or on error
 
-## 6. How do you implement more than one web API smart service as function
+## 6. How do you handle integration error ?
+| Code Type | Reason        |
+| --------- | ------------- |
+| 1xx       | Informational |
+| 2xx       | Success       |
+| 3xx       | Redirection   |
+| 4xx       | Client issue  |
+| 5xx       | Server issue  |
 
 ## 7. What are method of API types?
-Put post patch delete get
-
-## 8. How do you handle integration error ?
-400
-500
+| Method | Operation        | Idempotent | Use Case       |
+| ------ | ---------------- | ---------- | -------------- |
+| GET    | Read             | Yes        | Fetch data     |
+| POST   | Create           | No         | New record     |
+| PUT    | Update (full)    | Yes        | Replace record |
+| PATCH  | Update (partial) | No         | Modify fields  |
+| DELETE | Remove           | Yes        | Delete record  |
 
 ## 8. Web API is called in button action, how do you prevent from multiple clicks for same web API call?
+
 
 ## 9. Web API is called in button action, how do you distinguise it is calling the same request or different request when multiple clicks are happened?
 
 ## 10. In Integration Explain header, query parameters and request body and provide the use case as well?
+Headers carry metadata and authentication, 
+Query parameters control how data is fetched
+Request body contains the business data sent to the API.
 
 ## 11. How do you create service account?
 In Admin console, under web API authentication we can create service account
@@ -68,8 +81,8 @@ In Admin console, under web API authentication we can create service account
 
 
 ## 15. How to handle pagination and filtering in Web API Responses?
+use start index and batch size for pagination and use query parameter for filters
 
-## 16. What is the difference between In Bound and Out Bound Authentication?
 
 ## 17. What authentication method does Appian support for integration?
 | Authentication Type                                            | Description / Usage                                                                                                                           |
@@ -85,8 +98,15 @@ In Admin console, under web API authentication we can create service account
 | **Preconfigured Connected System Authentication**              | Reusable credential objects that manage authentication securely.                                                                              |
 
 ## 18. How to get data of employee where age is between 20-25 and salary is greatter than 1,00,000 integration?
+GET /employees?minAge=20&maxAge=25&minSalary=100000
 
-## 19. Can we deploy service account to higher environment? If yes, Hoe? If No how to overcome?
+Query Parameters:
+minAge=20 → lower age limit
+maxAge=25 → upper age limit
+minSalary=100000 → salary filter
+
+## 19. Can we deploy service account to higher environment? If yes, How? If No how to overcome?
+No, Need to create new and add into the group
 
 ## 20. How to construct custom error message in integration?
 In Response, under Error Handling 
@@ -108,7 +128,7 @@ Viewer Access but Can't able to upload document(NR)
 ## 23. Can we use get method to execute smart service?
 No, To execute any smart service we need Post/Put/Patch
 
-## 24. Does get accept query parameter, if no what methods accept query parameter?
+## 24. Does GET accept query parameter, if no what methods accept query parameter?
 GET is the standard method for query parameters.
 Other methods (POST, PUT, PATCH, DELETE) typically use request body to send data, not query parameters.
 
@@ -171,20 +191,14 @@ When creating the Web API, name the endpoint with the version prefix:
 vl_getEmployeeDetails
 v2_getEmployeeDetails
 
-## 36. Can we import third-party data into Appian
-without a Connected System?
-Yes, You can connect to a third-party API without using a Connected System if:
-The API is not secured (e.g., public/open API)
-or
-It uses Basic Authentication, where you
-manually include credentials in the request.
+## 36. Can we import third-party data into Appian without a Connected System?
+Yes, You can connect to a third-party API without using a Connected System if the API is not secured or uses Basic Authentication, where you manually include credentials in the request.
 
 ## 50. An external Integration in experiencing timout when sending a large volume of data? How do you resolve?
+Batching
 
-## 52. How do you handle the data after integration? How would you clean data from API response?
-
-## 59. How do you create WEB API in REST?
-
+## 59. How do you create WEB API in SOAP?
+Create process model and keep that as a service (NR)
 
 ## 43. What is T24 and have you used in your application?
 T24 (Temenos T24) is a core banking software developed by Temenos.
