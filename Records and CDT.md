@@ -85,86 +85,86 @@ Manual Full Sync: An administrator manually triggers a complete refresh of all r
  * Sales Force
  * Create From Scratch
 
-## 13. How do you increase query Performance?
+## 12. How do you increase query Performance?
  * Use selection to limit the number of columns to be returned.
  * Use filters wherever possible.
  * Use a limited batch size rather than -1.
  * Set fetchTotalCount to false.
 
-## 15. If i write more than 5000 Character using record, where there is no issues in varchar limit, will it write the date or truncate? and how much data will get back when i query the data? (firts 4000 or last 4000)
+## 13. If i write more than 5000 Character using record, where there is no issues in varchar limit, will it write the date or truncate? and how much data will get back when i query the data? (firts 4000 or last 4000)
 5000 character will be written and only 4000 character will be retrieved back.
 
-## 16. What approach you use to delete In-Active Records?
+## 14. What approach you use to delete In-Active Records?
 In Same Process model, at end before it completes we can create a stored procedure 
 
-## 18. How many ways we can query a data from record?
+## 15. How many ways we can query a data from record?
 1. a!queryRecordType() : is a function used to fetch multiple records (rows) from a Record Type based on filters, paging, and sorting.
 2. a!queryRecordByIdentifier() : The Record Type Identifier is the unique primary identifier (key) of each record in a Record Type.
 
-## 19. What is ther return type of query entity and query record?
+## 16. What is ther return type of query entity and query record?
  * Query Record: List of Dictionary 
  * Query Entity: DataSubset
 
-## 20. How do you cofigure securities to records?
+## 17. How do you cofigure securities to records?
 
-## 21. Difference between Record level security and field level security?
+## 18. Difference between Record level security and field level security?
 Record level security : Determine who can see the records by adding security rules (NR)
 
-  ## 22. What is view and action security?
+## 19. What is view and action security?
 
-## 23. What are the sync methods available in records?
+## 20. What are the sync methods available in records?
 Schedule Full Sync
 Schedule incremental syncs
 In Monitoring, under Record sync status -> Start Full Sync
 
-## 26. What are the different types of records created in Appian?
+## 21. What are the different types of records created in Appian?
 Database Table Backed Records
 Service Backed Records
 Process Backed Records
 
-## 27. What is a data sync and when should I use it?
+## 22. What is a data sync and when should I use it?
 When data sync is enabled, you are caching your source data in Appian. With a cache of your data, this means Appian will only have to execute queries from the cached data instead of the external source whenever you view or interact with the record data. Refer here on when to use data sync.
 
-## 28. When should default filters and user filters be used?
+## 23. When should default filters and user filters be used?
 Default Filters: Used when the filter has to be applied to the source while retrieving the data for the record type.
 User Filters: Applied by the user once the record type list is displayed.
 
-## 29. How many additional views can be added to a record type?
+## 24. How many additional views can be added to a record type?
 Total 20 along with Summary view
 
-## 30. What is the difference between an action and a related action?
+## 25. What is the difference between an action and a related action?
 Action: Creates new data in the system.
 Related Action: Performs some action related to the existing data.
 
-## 31. What are the different ways to create a CDT?
+## 26. What are the different ways to create a CDT?
  * From Scratch
  * Duplicating the existing datatype
  * From database view or table
  * From XSD
  * From Web Services
 
-## 32. What are the different ways to fetch details from a database? (Nr)
+## 27. What are the different ways to fetch details from a database? (Nr)
  * Query DB smart service
  * Query Entity
  * Query rule (Deprecated)
 
-## 33. What is the purpose of fetchTotalCount and provide a scenario where fetchTotalCount has to be true?
+## 28. What is the purpose of fetchTotalCount and provide a scenario where fetchTotalCount has to be true?
 fetchTotalCount returns the total number of rows in a table based on the applied filters. This is usually set to false (i.e., when batch size is not -1) as it takes extra time to retrieve the total. Set to true when used in a Read-Only grid to calculate the total number of pages required.
 
-## 34. What is the range of filtered record list for which the "Export to Excel" button is disabled?
+## 29. What is the range of filtered record list for which the "Export to Excel" button is disabled?
 The button is enabled to export up to 100,000 records from the list, including rich text, images, and links.
 
-## 36. Difference between Extra Long Text, Long Text and text in Record?
+## 30. Difference between Extra Long Text, Long Text and text in Record?
 64000 characters for Extra long text 
 4000 character for Long text
 255 character for text
 
-## 37. Best practice for querying data?
+## 31. Best practice for querying data?
  * Query fetch totalcount to false (using it only when required)
  * Querying only the record field that is required
  * Query only in Parent interface and avoid querying in child interface, to reduce the no of query if reusable is needed
 
-## 38. Difference between query record type and record type identifier?
+## 32. Difference between query record type and record type identifier?
 | queryrecordtype()                  | recordType.identifier             |
 | ---------------------------------- | --------------------------------- |
 | Queries **data**                   | Locates **a single record**       |
@@ -173,15 +173,15 @@ The button is enabled to export up to 100,000 records from the list, including r
 | Heavy operation (executes a query) | Lightweight (just passes ID)      |
 | Accepts filters, sorting, paging   | No filtering options — just an ID |
 
-## 49. How do you resolve write to records got errored out because of unique constraints ID?
+## 33. How do you resolve write to records got errored out because of unique constraints ID?
 Need to check in process history and modify the necessary change and fix in the instances
 
-## 51. how can you ensure that updating reccord creates a new entry instead of modifying the existing one
+## 34. how can you ensure that updating reccord creates a new entry instead of modifying the existing one
 By passing the Id (primary key) for the value in the record
 
-## 37. Delete related record action, how not to show error page and redirect? 
+## 35. Delete related record action, how not to show error page and redirect? 
 Delete action outside the related action using Process model call Outside the view page
 
-## 38. Record Smart Search?
+## 36. Record Smart Search?
 
 
