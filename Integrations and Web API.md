@@ -50,7 +50,7 @@ Request body contains the business data sent to the API.
 ## 11. How do you create service account?
 In Admin console, under web API authentication we can create service account
 
-## 13. What is the difference between SAML and LDAP?
+## 12. What is the difference between SAML and LDAP?
 | Feature                | **SAML**                    | **LDAP**                                   |
 | ---------------------- | --------------------------- | ------------------------------------------ |
 | Type                   | SSO Authentication Protocol | Directory Authentication Protocol          |
@@ -63,7 +63,7 @@ In Admin console, under web API authentication we can create service account
 | Appian usage           | Appian SSO login via IdP    | Appian user authentication via AD          |
 
 
-## 14. What is difference between REST API vs SOAP API?
+## 13. What is difference between REST API vs SOAP API?
 | Feature                  | **REST API**                                                       | **SOAP API**                                                                      |
 | ------------------------ | ------------------------------------------------------------------ | --------------------------------------------------------------------------------- |
 | **Full Form**            | Representational State Transfer                                    | Simple Object Access Protocol                                                     |
@@ -79,12 +79,10 @@ In Admin console, under web API authentication we can create service account
 | **Learning Curve**       | Easy                                                               | Complex                                                                           |
 | **Best Uses**            | Public APIs, mobile apps, microservices, lightweight communication | Financial, banking, telecom, government where high security + compliance required |
 
-
-## 15. How to handle pagination and filtering in Web API Responses?
+## 14. How to handle pagination and filtering in Web API Responses?
 use start index and batch size for pagination and use query parameter for filters
 
-
-## 17. What authentication method does Appian support for integration?
+## 15. What authentication method does Appian support for integration?
 | Authentication Type                                            | Description / Usage                                                                                                                           |
 | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | **None**                                                       | No authentication required (public APIs).                                                                                                     |
@@ -97,7 +95,7 @@ use start index and batch size for pagination and use query parameter for filter
 | **AWS Signature v4**                                           | Used to connect securely with AWS services (S3, Lambda, etc.).                                                                                |
 | **Preconfigured Connected System Authentication**              | Reusable credential objects that manage authentication securely.                                                                              |
 
-## 18. How to get data of employee where age is between 20-25 and salary is greatter than 1,00,000 integration?
+## 16. How to get data of employee where age is between 20-25 and salary is greatter than 1,00,000 integration?
 GET /employees?minAge=20&maxAge=25&minSalary=100000
 
 Query Parameters:
@@ -105,18 +103,18 @@ minAge=20 → lower age limit
 maxAge=25 → upper age limit
 minSalary=100000 → salary filter
 
-## 19. Can we deploy service account to higher environment? If yes, How? If No how to overcome?
+## 17. Can we deploy service account to higher environment? If yes, How? If No how to overcome?
 No, Need to create new and add into the group
 
-## 20. How to construct custom error message in integration?
+## 18. How to construct custom error message in integration?
 In Response, under Error Handling 
 turn on "OverRide and define all error conditions"
 We can set up success criteria and error message based on the status code
 
-## 21. Minimun level of Permission to execute web API? 
+## 19. Minimun level of Permission to execute web API? 
 Viewer Access but Can't able to upload document(NR)
 
-## 22. What are the http methods supported in appian?
+## 20. What are the http methods supported in appian?
 | HTTP Method | Usage in Appian                                                   | Typical Use Case                             |
 | ----------- | ----------------------------------------------------------------- | -------------------------------------------- |
 | **GET**     | Retrieve data from an external system or return data in a Web API | Get record / fetch list / search details     |
@@ -125,17 +123,17 @@ Viewer Access but Can't able to upload document(NR)
 | **PATCH**   | Update only specific fields of a resource                         | Update only email / status / phone number    |
 | **DELETE**  | Remove a resource from external system                            | Delete record / cancel request / remove user |
  
-## 23. Can we use get method to execute smart service?
+## 21. Can we use get method to execute smart service?
 No, To execute any smart service we need Post/Put/Patch
 
-## 24. Does GET accept query parameter, if no what methods accept query parameter?
+## 22. Does GET accept query parameter, if no what methods accept query parameter?
 GET is the standard method for query parameters.
 Other methods (POST, PUT, PATCH, DELETE) typically use request body to send data, not query parameters.
 
-## 25. You want to query data using query parameter what method you use to query the data?
+## 23. You want to query data using query parameter what method you use to query the data?
 If you are querying an external system, use the GET HTTP method. You pass query parameters in the URL: by adding "\" or "?"
 
-## 26. What are all information required for OAUTH 2.0 client grand requires to implement?
+## 24. What are all information required for OAUTH 2.0 client grand requires to implement?
 | Required Information                                     | Purpose                                                                               |
 | -------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | **Token URL (Authorization Server / Identity Provider)** | URL where Appian will request an access token                                         |
@@ -148,7 +146,7 @@ If you are querying an external system, use the GET HTTP method. You pass query 
 | **Token Type**                                           | Bearer token (typically) to include in Authorization header                           |
 
 
-## 27. What are all information required for API Key authentication requires to implement?
+## 25. What are all information required for API Key authentication requires to implement?
 | Required Information                  | Purpose                                                                                        |
 | ------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | **API Key / Token**                   | The secret key used to authorize the request                                                   |
@@ -160,47 +158,47 @@ If you are querying an external system, use the GET HTTP method. You pass query 
 | **Expected Response Format**          | JSON / XML (used for parsing in Appian)                                                        |
 
 
-## 28. How much size appian can send data to external system?
+## 26. How much size appian can send data to external system?
  * Request Body : Can't exceed 5 MB
  * Base 64 : Combined size of File 75 MB
  * Binary Files : 250 Mb
 
-## 29. what is single sign on?
+## 27. what is single sign on?
 
-## 30. When should Web API, Integration/Web service be used?
+## 28. When should Web API, Integration/Web service be used?
 Web API: Should be used when Appian's data is to be exposed to the external system.
 Integration/Web Service: Used when external system's data is consumed by Appian.
 
-## 31. When to use Web service and Integration?
+## 29. When to use Web service and Integration?
 Integration: Used when the data returned by the external system is in REST structure.
 Web Service: Used when the data returned by the external system is in SOAP structure.
 
-## 32. What is connected systems?
+## 30. What is connected systems?
 Connected Systems is an object to store the connection credentials used in integrations when connecting to an external system.
 
-## 33. Third part want to trigger your DB/SP
+## 31. Third part want to trigger your DB/SP
 By creating a WEB API in process model using the execute SP smart service we can achieve (NR)
 
-## 34. Inbound Integration vs Outbound Integration?
+## 32. Inbound Integration vs Outbound Integration?
 Inbound: External system initiating call to pull data from appian or push data
 Outbound: When Appian initiate the connection to external system
 
-## 35. How Do you Handle Versioning in Web API?
+## 33. How Do you Handle Versioning in Web API?
 Include the version number in the API endpoint path.
 When creating the Web API, name the endpoint with the version prefix:
 vl_getEmployeeDetails
 v2_getEmployeeDetails
 
-## 36. Can we import third-party data into Appian without a Connected System?
+## 34. Can we import third-party data into Appian without a Connected System?
 Yes, You can connect to a third-party API without using a Connected System if the API is not secured or uses Basic Authentication, where you manually include credentials in the request.
 
-## 50. An external Integration in experiencing timout when sending a large volume of data? How do you resolve?
+## 35. An external Integration in experiencing timout when sending a large volume of data? How do you resolve?
 Batching
 
-## 59. How do you create WEB API in SOAP?
+## 36. How do you create WEB API in SOAP?
 Create process model and keep that as a service (NR)
 
-## 43. What is T24 and have you used in your application?
+## 37. What is T24 and have you used in your application?
 T24 (Temenos T24) is a core banking software developed by Temenos.
  * Customer onboarding
  * Account management
