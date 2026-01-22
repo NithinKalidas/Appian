@@ -92,11 +92,10 @@ Manual Full Sync: An administrator manually triggers a complete refresh of all r
  * Set fetchTotalCount to false.
 
 ## 15. If i write more than 5000 Character using record, where there is no issues in varchar limit, will it write the date or truncate? and how much data will get back when i query the data? (firts 4000 or last 4000)
+5000 character will be written and only 4000 character will be retrieved back.
 
 ## 16. What approach you use to delete In-Active Records?
 In Same Process model, at end before it completes we can create a stored procedure 
-
-## 17. How do you optimise your records having more than 4 millions of data? (OR) How do you sync more than 4 Millions rows of records?
 
 ## 18. How many ways we can query a data from record?
 1. a!queryRecordType() : is a function used to fetch multiple records (rows) from a Record Type based on filters, paging, and sorting.
@@ -108,22 +107,19 @@ In Same Process model, at end before it completes we can create a stored procedu
 
 ## 20. How do you cofigure securities to records?
 
-
 ## 21. Difference between Record level security and field level security?
 Record level security : Determine who can see the records by adding security rules (NR)
 
-## 22. What is view and action security?
+  ## 22. What is view and action security?
 
 ## 23. What are the sync methods available in records?
 Schedule Full Sync
 Schedule incremental syncs
 In Monitoring, under Record sync status -> Start Full Sync
 
-## 25.  What are record level datasource?
-
 ## 26. What are the different types of records created in Appian?
-Entity Backed Records
-Service/Expression Backed Records
+Database Table Backed Records
+Service Backed Records
 Process Backed Records
 
 ## 27. What is a data sync and when should I use it?
@@ -158,15 +154,10 @@ fetchTotalCount returns the total number of rows in a table based on the applied
 ## 34. What is the range of filtered record list for which the "Export to Excel" button is disabled?
 The button is enabled to export up to 100,000 records from the list, including rich text, images, and links.
 
-## 35. Source Type to get data into appian records
- * Database
- * Process
- * WebService
- * Salesforce
-
-## 36. Long Text vs text in Record?
-64000 characters for long text 
-4000 character for text
+## 36. Difference between Extra Long Text, Long Text and text in Record?
+64000 characters for Extra long text 
+4000 character for Long text
+255 character for text
 
 ## 37. Best practice for querying data?
  * Query fetch totalcount to false (using it only when required)
