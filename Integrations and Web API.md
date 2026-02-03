@@ -38,9 +38,11 @@ Only one, To configure multiple we can provide the another smart services either
 | DELETE | Remove           | Yes        | Delete record  |
 
 ## 8. Web API is called in button action, how do you prevent from multiple clicks for same web API call?
-
+In critical flows like payments or submissions, we handle this at both UI and API levels. The UI disables the button after the first click, and the backend ensures idempotency using unique transaction identifiers to avoid duplicate processing.
 
 ## 9. Web API is called in button action, how do you distinguise it is calling the same request or different request when multiple clicks are happened?
+We distinguish between the same request and a different request by using a unique request identifier (idempotency key) and validating it on the backend. If multiple clicks send the same identifier, the backend treats them as the same request; if the identifier is different, it is processed as a new request.
+Additionally, a timestamp-based threshold is applied—if the same payload is received within a short time window (for example, 2–3 seconds), it is identified as a duplicate request and ignored.”
 
 ## 10. In Integration Explain header, query parameters and request body and provide the use case as well?
 Headers carry metadata and authentication, 
@@ -164,6 +166,7 @@ If you are querying an external system, use the GET HTTP method. You pass query 
  * Binary Files : 250 Mb
 
 ## 27. what is single sign on?
+SSO is a login mechanism where you sign in once and Securely access multiple applications using token-based authentication
 
 ## 28. When should Web API, Integration/Web service be used?
 Web API: Should be used when Appian's data is to be exposed to the external system.
