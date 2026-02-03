@@ -299,7 +299,8 @@ Anthropic AI is earlier used, Now In Appian we can able to use
  * Sprint Duration: A Sprint is a fixed time period in Agile (mainly Scrum) during which the team works to complete a set of user stories.
  * Sprint Velocity: Sprint Velocity is the measure of work done by a team in a sprint.
 
-## 56. How to create new schema for appian what permission would require for that? (NR)
+## 56. How to create new schema for appian what permission would require for that? 
+When connected with database schema, We can select the database
 
 
 
