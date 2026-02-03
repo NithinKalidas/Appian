@@ -10,6 +10,9 @@ Handling the integration with status code
 Using retry machanism for server unavailable and logging the details
 
 ## 3. Issues you faced in Web API or Integration and how did you overcome?
+Timeout and network issues (Implemented retry logic for safe APIs)
+Duplicate API calls due to multiple button clicks (Multiple clicks triggered duplicate API calls, leading to repeated transactions)
+Data mapping and type mismatch (Integration failures due to incorrect data types (text vs number, date formats))
 
 ## 4. Authentication types and explain them?
  * Basic
