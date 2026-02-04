@@ -4,7 +4,7 @@
 Start Process: The started process is load-balanced and may run on a different execution engine.
 Sub Process: Runs on the same execution engine as the parent.
 
-## 2. Production Issues you came across in PM and how did you handle them?
+## 2. Production Issues you came across in PM and how did you handle them? (NR)
 
 
 ## 3. Best Practice In PM?
@@ -129,7 +129,7 @@ Pass by reference is not preferred, as performance may impact as it need to refr
 As it create pressure to complete faster, CPU spike
 Only when required, priority alone AC, after confirmation screen another path delete document, audit logs
 
-## 26. When to use short lived process and long lived Process?
+## 26. When to use short lived process and long lived Process? (NR)
 Prefer short lived process
 
 ## 27. Is an archived or deleted process available in the Process report?
