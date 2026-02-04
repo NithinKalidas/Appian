@@ -29,18 +29,21 @@ sync -> activity chaining connect -> same engine
 start process -> async -> different engine (based on availability in load balance)
 sync -> activity chaining not there (AC not handled in appian)
 
-
 ## 5. Difference Between  Asyncronous and syncronous Process?
 Sync: Parent Process will wait for its child process to complete. Eg: used for sequential steps, business calculation logic, confirmation screen 
 ASync: Parent Process trigerrs the child process and runs in parallel. Eg: Sending email 
 
 ## 6. What is MNI and where do you use them?
-MNI -> more than 1000 subprocesss but not in start process
+It is a process model configuration that allows you to run the same process node more than once using the same flow token.
+In Subprocess nodes, you can enable “Allow more than 1000 instances of this node” in the Other tab. Appian will then execute instances in batches of 1000 for efficiency.
+In Startprocess 1000 is the limit
 
 ## 7. What is quick task and how do you configure?
-quick task, on-demand task no need to vsible in task reports ( confirmation screen )
+Quick Tasks are User Input Tasks executed outside the main task list, usually not shown in task reports, and often used for confirmation actions.
 
 ## 8. what is hidden variable? How to get its report?
+A Hidden Variable is a process variable that is not exposed to reports or end users by default. It is mainly used for internal process logic, temporary values, or technical tracking that should not appear in standard process reports.
+Hidden variables reduce the amount of data Appian stores in process history, which improves memory efficiency
 
 ## 9. What are the ways to start a Process Model?
 Using Actions
@@ -66,7 +69,7 @@ Debugging Mode
 
 
 ## 11. Your Process has a long activity chaining how do you resolve them?
-Avoid query data if it is non essentials (NR)
+Only use the essential quering and Avoid query data if it is non essentials 
 
 ## 12. What is exception and esclation ? real time use case?
 Exception: An exception occurs when a process node fails, encounters an error,
@@ -116,6 +119,7 @@ Need to create reusable process model and call the process model again
 using sub process asynchronous to reduce the load the engine as it may execute in different engine
 
 ## 23. How to bring back unarchival Process?
+Self Service Process Unarchive (SSPU) Plugin is used to unarchieve the archived Process instances.
 
 ## 24. While calling a Sub process what is the difference between passing a variable as reference and a value?
 When Pass by referece is not selected the value will not change immediately only when we take the output, it will change
@@ -126,8 +130,10 @@ As it create pressure to complete faster, CPU spike
 Only when required, priority alone AC, after confirmation screen another path delete document, audit logs
 
 ## 26. When to use short lived process and long lived Process?
+Prefer short lived process
 
-## 27. What is the limitaion of MNI?
+## 27. Is an archived or deleted process available in the Process report?
+No, Deleted process are removed permanently can't be undone, for archival process we can unarchive the process and we can able to get it report (NR, how to unarchieve, within how many days we can archieve)
 
 ## 28. There is a 1000 Instances on the Production and you want to edit the variable value, how can we achieve it instad of manual approach?
 Get data of active process instances through report and using setexternalpv we can modify the process variable value and we can restart the process instance using (NR)
@@ -146,7 +152,7 @@ Eg: Confirmation screen to display the request number
 ## 32. How do you handle retry machanism in PM for integration?
 Setting Up retry after failed attempt after (mostly when statuc code is failed with 500) few minutes and also write the log for the integration when ever hits for analysis.
 
-## 33.What is the difference between End Node vs terminate Node?
+## 33. What is the difference between End Node vs terminate Node?
 
 ## 34. Long activity chains - greater than 5 seconds between attended activities - are strongly discouraged because they have both an adverse effect on the performance of the system at scale and the experience of the user. True or False?
 TRUE
@@ -190,7 +196,7 @@ Alerts in the model are used to notify the defined users about errors in the ins
 Data Management is used to clear the instances stored in the execution engine. The instance can either be archived or deleted. When there is no user interaction in a process, that process can be deleted. Data management happens only for completed or canceled instances.
 
 ## 46. What is the difference between end and terminate node? When to use End node?
-End Node: Completes only the path that hits it while all the other paths are active. This is used when the whole process is to be completed when all the other paths are completed.
+End Node: After your process flow reaches the End Event node, the process remains active until all active paths in the process arrive at an End Event.
 Terminate Node: Completes all the paths once it is hit. Even in a single flow, the terminate node is recommended as even the errored instances of the node are completed when the terminate node is hit.
 
 ## 47. What is the purpose of process report?
@@ -251,9 +257,5 @@ In Appian, Process HQ (Process Headquarters) is a centralized monitoring and ana
 
 ## 64.  Will hidden variable data be displayed in the process report/History?
 No.
-
-## 65.  Is an archived or deleted process available in the Process report?
-No, Deleted process are removed permanently can't be undone, for archival process we can unarchive the process and we can able to get it report (NR, how to unarchieve, within how many days we can archieve)
-
 
 Db backed  vs processs backed task log /
