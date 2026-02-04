@@ -56,7 +56,7 @@ Create an intermediate record type (Eg: Student -> Enrollment -> Class) to bridg
  * Process Backed
  * Expression Backed
 
-## 9. What is data fabric?
+## 9. What is data fabric? (NR)
 
 ## 10. What are the different ways to sync a record?
  * Manual sync
@@ -105,12 +105,12 @@ In Same Process model, at end before it completes we can create a stored procedu
  * Query Record: List of Dictionary 
  * Query Entity: DataSubset
 
-## 17. How do you cofigure securities to records?
+## 17. How do you cofigure securities to records? (NR)
 
 ## 18. Difference between Record level security and field level security?
 Record level security : Determine who can see the records by adding security rules (NR)
 
-## 19. What is view and action security?
+## 19. What is view and action security?(NR)
 
 ## 20. What are the sync methods available in records?
 Schedule Full Sync
@@ -182,6 +182,6 @@ By passing the Id (primary key) for the value in the record
 ## 35. Delete related record action, how not to show error page and redirect? 
 Delete action outside the related action using Process model call Outside the view page
 
-## 36. Record Smart Search?
+## 36. Record Smart Search? (NR)
 
 
