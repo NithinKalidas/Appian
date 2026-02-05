@@ -16,16 +16,14 @@
 ## 2. What is modular coding?
 Modular coding is the practice of breaking a large, complex program into smaller, independent and manageable pieces called modules
 
-## 3. Issues you came across in Interface and how do you resolve them?
- *  Slow Interface Loading / Performance Issue
-Too many queries inside the interface, Nested loops, large datasets Heavy evaluations inside SAIL: 
-Performance metrics tab, drill down what is causing the error and remove multiple queries, Used pagingInfo + limited data
- * Incorrect Data Display / Null Values
-Wrong index paths, Missing null checks: 
-Used index() with default values and Added condition checks like if() or where() filters
- * File Upload Not Working
-Wrong document folder security Invalid file type/size Missing saveInto logic: 
-Fixed folder security permissions, Added file type validation and Used a!fileUploadField() with correct PV/RI binding
+## 3. Issues you came across in Interface and how do you resolve them? (NR)
+ * Faced slow interface loading due to multiple queries, nested loops, and large datasets; resolved by using Performance Metrics, removing redundant queries, caching data in local variables, and applying pagingInfo to limit data.
+ * Encountered incorrect data display and null value issues caused by wrong index paths and missing checks; resolved using index() with default values and conditional logic like if() and where().
+ * Experienced unwanted interface refresh and input reset issues; resolved by controlling refreshOnReferencedVarChange and managing save logic properly.
+ * Faced grid duplication and sorting issues; resolved by configuring correct pagingInfo, using unique identifiers, and managing a!forEach() carefully.
+ * Experienced validation issues during form submission; resolved by implementing submit-level validations and maintaining proper save order.
+ * Faced file upload issues due to security and configuration problems; resolved by fixing document folder permissions, validating file type and size, and configuring a!fileUploadField() with correct bindings.
+ * Ensured UI consistency across interfaces by using reusable interface rules and following Appian UX best practices.
 
 ## 4. What is the difference between a!save vs Save!value?
  * a!save(): In interface saveInto parameters, a!save() updates the target with the given value. This function has no effect when called outside of a component's saveInto parameter.
