@@ -10,6 +10,7 @@ Appian uses a 3-tier architecture where the UI is rendered with SAIL, business l
  * Personalization - Stores users, group membership & group types. 
 
 ## 2. How many engines are present in appian default?
+A default Appian installation has 15 engines: 3 process execution engines, 3 process analytics engines, 6 other individual engines, and 3 to support legacy portal. 
 An initial Appian installation installs three execution engines and three analytics engines.
 It is possible to add up to a total of 32 execution and 32 analytics engines by defining them in appian-topology.xml. 
 
