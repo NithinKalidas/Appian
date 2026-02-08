@@ -138,11 +138,12 @@ Eg: Complaince related to water shortage, Electricity shortage (NR)
 ## 24. If any request is submitted through an user by portal, how can we find them?
 By creating a request id which can be configured through email id or phone number using unique set of constraints
 
-## 25. How do you handle errors in Portal?
+## 25. How do you handle errors in Portal? (NR)
 Portals do NOT support out-of-the-box Appian error dialogs. Portals run outside the Appian environment
 Errors must be handled manually in the interface and integrations
 check dependents and navigate (It will show which precedents caused issue)
 Published with no error message (Open interface, comment child interface and check one by one which causing the error)
+Error will be emaailed to admin
 
 ## 26. What is the purpose of user start page?
 When configured, this allows the user to directly log in to the given site rather than the Tempo page.
