@@ -17,7 +17,9 @@ a!localVariables(
 ****
 *****
 ```
-```
+
+Print * from 5 to 1 in descending order:
+```javascript
 a!localVariables(
   local!data: 5,
   a!forEach(
@@ -25,14 +27,17 @@ a!localVariables(
     joinarray(repeat(local!data - fv!index + 1, "*"), "")
   )
 )
-
+```
+```
 *****
 ****
 ***
 **
 *
 ```
-```
+
+Palindrome Check
+```javascript
 /*Palindrome */
 a!localVariables(
   local!data: "Malayalam",
