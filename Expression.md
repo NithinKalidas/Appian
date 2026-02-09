@@ -1,5 +1,6 @@
 Print * from 1 to 5 in ascending order:
 
+```javascript
 a!localVariables(
   local!data: 5,
   a!forEach(
@@ -7,13 +8,16 @@ a!localVariables(
     joinarray(repeat(fv!index, "*"), "")
   )
 )
+```
 
+```
 *
 **
 ***
 ****
 *****
-
+```
+```
 a!localVariables(
   local!data: 5,
   a!forEach(
@@ -27,8 +31,8 @@ a!localVariables(
 ***
 **
 *
-
-
+```
+```
 /*Palindrome */
 a!localVariables(
   local!data: "Malayalam",
@@ -38,5 +42,5 @@ a!localVariables(
     concat(local!data, " is not a palindrome")
   )
 )
-
+```
 "Malayalam is palindrome"
