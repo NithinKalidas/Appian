@@ -40,7 +40,6 @@ Non Synced Records is data queried and fetched from DB
 | **2. One-to-Many**    | One record relates to multiple records in another source.               | One customer → Many orders                |
 | **3. Many-to-One**    | Many records relate back to one record in another source.               | Many students → One class                 |
 
-
 ## 6. How do you achieve many to many relationship?
 Many-to-Many Relationship: Not directly supported as a single relationship type. 
 Create an intermediate record type (Eg: Student -> Enrollment -> Class) to bridge them.
@@ -56,27 +55,19 @@ Create an intermediate record type (Eg: Student -> Enrollment -> Class) to bridg
  * Process Backed
  * Expression Backed
 
-## 9. What is data fabric? (NR)
+## 9. What is data fabric?
+Data Fabric in Appian allows applications to access and manage data from multiple sources through records in a unified, secure, and real-time manner.
 
 ## 10. What are the different ways to sync a record?
- * Manual sync
+ * Manual Full sync (via the "Start Full Sync" button)
  * Sync on Create/Update/Delete (CUD events)
  * Sync after Record Actions
+ * Sync using a!syncRecords() Smart service in interface 
+ * Sync Records Smart Service (passing a list of record identifiers (PK) to be synced)
  * Sync via Process Model write operations
- * Sync using a!syncRecords() Smart service
- * Sync via Refresh Interval / Polling
+ * Schedule Full Sync
+ * Schedule incremental syncs
  * Using ICF - Force sync to true when deployed to higher environment
-
-(or)
-
-External System-Initiated (Real-Time Webhook)
-Web API with a!syncRecords(): The external system calls an Appian Web API (acting as a webhook) upon a data change, triggering an immediate sync of the specific record(s) using their identifiers.
-Sync Records Smart Service: An Appian process (often triggered by an integration or the Web API above) explicitly calls this smart service, passing a list of record identifiers (primary keys) to be synced.
-
-Scheduled or Manual Syncs (Bulk/Consistency)
-Scheduled Full Sync: Appian fetches all data from the source and replaces the entire synced cache on a daily schedule.
-Scheduled Incremental Sync: Appian checks a designated "Last Modified" timestamp in the source and fetches only the changed or new records on a customizable, frequent schedule (e.g., every 15 minutes).
-Manual Full Sync: An administrator manually triggers a complete refresh of all records via the "Start Full Sync" button in the Record Type settings.
 
 ## 11. What are the different ways to use a record (Table, web service , PM)
  * Database
@@ -105,22 +96,26 @@ In Same Process model, at end before it completes we can create a stored procedu
  * Query Record: List of Dictionary 
  * Query Entity: DataSubset
 
-## 17. How do you cofigure securities to records? (NR)
+## 17. How do you cofigure securities to records?
+ * Record Type Object Security: Set up the role map (Viewer, Editor, Administrator) on the record type so users can access the record type and see data.
+ * Record-Level Security: Enable record-level security (for synced record types) and create security rules or a security expression to control which records each user can see.
+ * Record View Security:For each additional record view, configure security rules or security expressions to determine who can see that view and under what conditions.
+ * Record Action Security:Secure related actions by adding security rules so only authorized users (with appropriate group/role and process initiator rights) can start or view record actions.
 
 ## 18. Difference between Record level security and field level security?
-Record level security : Determine who can see the records by adding security rules (NR)
+ * Record-Level Security: Controls who can see which records (rows) in a record type. It limits visibility of entire records based on security rules or expressions (e.g., only assigned users see certain records).
+ * Field-Level Security: Controls who can see specific fields (columns) within a record. It hides or nullifies sensitive field values for unauthorized users, while still allowing access to the rest of the record.
 
-## 19. What is view and action security?(NR)
+## 19. Delete related record action, how not to show error page and redirect? 
+Delete action outside the related action using Process model call Outside the view page
 
-## 20. What are the sync methods available in records?
-Schedule Full Sync
-Schedule incremental syncs
-In Monitoring, under Record sync status -> Start Full Sync
+## 20. Record Smart Search? 
+Record Smart Search is an AI-powered semantic search feature that you can enable on a synced record type so users can search using natural language or concepts rather than exact keywords
 
 ## 21. What are the different types of records created in Appian?
-Database Table Backed Records
-Service Backed Records
-Process Backed Records
+ * Database Table Backed Records
+ * Service Backed Records
+ * Process Backed Records
 
 ## 22. What is a data sync and when should I use it?
 When data sync is enabled, you are caching your source data in Appian. With a cache of your data, this means Appian will only have to execute queries from the cached data instead of the external source whenever you view or interact with the record data. Refer here on when to use data sync.
@@ -133,8 +128,8 @@ User Filters: Applied by the user once the record type list is displayed.
 Total 20 along with Summary view
 
 ## 25. What is the difference between an action and a related action?
-Action: Creates new data in the system.
-Related Action: Performs some action related to the existing data.
+* Record Action: Creates new data in the system.
+* Related Action: Performs some action related to the existing data.
 
 ## 26. What are the different ways to create a CDT?
  * From Scratch
@@ -149,15 +144,15 @@ Related Action: Performs some action related to the existing data.
  * Query rule (Deprecated)
 
 ## 28. What is the purpose of fetchTotalCount and provide a scenario where fetchTotalCount has to be true?
-fetchTotalCount returns the total number of rows in a table based on the applied filters. This is usually set to false (i.e., when batch size is not -1) as it takes extra time to retrieve the total. Set to true when used in a Read-Only grid to calculate the total number of pages required.
+FetchTotalCount returns the total number of rows in a table based on the applied filters. This is usually set to false (i.e., when batch size is not -1) as it takes extra time to retrieve the total. Set to true when used in a Read-Only grid to calculate the total number of pages required.
 
 ## 29. What is the range of filtered record list for which the "Export to Excel" button is disabled?
 The button is enabled to export up to 100,000 records from the list, including rich text, images, and links.
 
 ## 30. Difference between Extra Long Text, Long Text and text in Record?
-64000 characters for Extra long text 
-4000 character for Long text
-255 character for text
+ * 64000 characters for Extra long text 
+ * 4000 character for Long text
+ * 255 character for text
 
 ## 31. Best practice for querying data?
  * Query fetch totalcount to false (using it only when required)
@@ -176,12 +171,7 @@ The button is enabled to export up to 100,000 records from the list, including r
 ## 33. How do you resolve write to records got errored out because of unique constraints ID?
 Need to check in process history and modify the necessary change and fix in the instances
 
-## 34. how can you ensure that updating reccord creates a new entry instead of modifying the existing one
-By passing the Id (primary key) for the value in the record
 
-## 35. Delete related record action, how not to show error page and redirect? 
-Delete action outside the related action using Process model call Outside the view page
 
-## 36. Record Smart Search? (NR)
 
 
