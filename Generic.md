@@ -84,19 +84,19 @@ Post Deployment :
  * Error in Logs
  * Change in Constant for Post scheduler Process
 
-## 8. How to deploy groups/users to higher environment? Will Group Id Changes when we deploy to higher environment? (NR)
-Users need to configured manually. Groups can be moved to next environment but not the users. 
+## 8. How to deploy groups/users/service account to higher environment? Will Group Id Changes when we deploy to higher environment? 
+Users and Service account need to configured manually. Groups can be moved to next environment but not the users. 
 
-## 9. How to deploy service account to higher environment?
-Service account need to configured manually
+## 9. How to create 50 users to next environment? (NR)
+using create user smart service we can create but how 50 data's are populated?
 
 ## 10. Why can users not be deleted or moved to another environment in Appian?
 The license cost is based on the number of users per environment, and Appian maintains metadata based on users. Hence, users cannot be moved or deleted.
 
-## 11. Different Types of prod Issues you have encounter? (NR)
+## 11. Different Types of prod Issues you have encounter?
 PV Variable was mis configured, due to which calculation went missing, using report we took the process instances, getexternalPv or setexternalPv
 
-## 12. What is use case of Customisation file and what is environment constant / (connected System)? (NR)
+## 12. What is use case of Customisation file and what is environment constant / (connected System)? 
 The customization file is used to provide values to the environmental constant and connected systems when deploying to another environment so that the value changed isn't missed.
 
 ## 13. What are the limitations for business user?
@@ -128,17 +128,17 @@ Using "Delete Documents Created Before Date" smart service in the Process model,
 ## 21. How to move document without changing its ID to next environment?
 Can't be done, Documet Id varies for different environment
 
-## 22. how to configure Single click document download? (NR)
-Url construct -> Create API -> 
+## 22. how to configure Single click document download?
+Contruct the excel sheet or document and pass it in document download link
 
 ## 23. What is Portal and how does sign in and sign out works?
 Business user who does not have login credential in appian but able to access
-Eg: Complaince related to water shortage, Electricity shortage (NR)
+Eg: Complaince related to water shortage, Electricity shortage 
 
 ## 24. If any request is submitted through an user by portal, how can we find them?
 By creating a request id which can be configured through email id or phone number using unique set of constraints
 
-## 25. How do you handle errors in Portal? (NR)
+## 25. How do you handle errors in Portal? 
 Portals do NOT support out-of-the-box Appian error dialogs. Portals run outside the Appian environment
 Errors must be handled manually in the interface and integrations
 check dependents and navigate (It will show which precedents caused issue)
@@ -149,7 +149,8 @@ Error will be emaailed to admin
 When configured, this allows the user to directly log in to the given site rather than the Tempo page.
 
 ## 27. Suppose we need to Insert 100000 rows of data on daily basis in a week how can we do that or what is the optimised way to prevet without affecting the Performance? (NR)
-update using batch wise in non business hours
+ * Batch-wise insertion (off business hours): Split data into smaller batches (e.g., 5k–10k rows) and run during non-business hours to avoid user impact.
+ * Use wait timer between batches: Adding a small wait time prevents continuous heavy DB writes and reduces load spikes.
 
 ## 28. Suppose we have 1000 entries in excel file and how can i dumb to 5 different database?
 Read excel smart service and segreagate the DB, Write to data store entity for each data write as schema might differ.
@@ -158,22 +159,28 @@ Read excel smart service and segreagate the DB, Write to data store entity for e
  * CDT based approach -> Integration Object -> Call data in batch and use integration object in PM and store in DB and use the data
  * Record Type: Create record with web service menthod, inside webservice need to create integration (before creating integration, connected system need to configure data source as well). sync also can be enabled and will be achieved through batching
 
-## 30. 10 Approvers need to approve then only we need to proceed to next step? how to define them? (NR)
-We can keep a script task and check is all completed through task status and proceed with next steps
-Can we configure AND gate ?
+## 30. In PM, 10 Approvers need to approve then only we need to proceed to next step? how to define them? (NR)
+By Creating separate individual sub process in sync for each approvers (In sync method Parent process instance will wait for child process to complete)
+For DB driven, query the data in script task and once all completed, proceed with next steps
 
 ## 31. why do we split tabel in Database? why can't we store all in single DB?
 Split tabel because it would create major performance, storage, consistency, scalability, and maintainability issues.
 Databases follow Normalization, where data is split into related tables to avoid duplication and ensure efficiency.
 
 ## 32. What are the different licenses available and for what components are they provided?
-k3.lic for engines
-k4.lic for the data server
+ * k3.lic for engines
+ * k4.lic for the data server
 
 ## 33. what is health chekup and use case?
 check metrics and performance log critical fix, high fix, medium,  low (check if fix)
 
-## 34. What is monitoring and use case? (NR)
+## 34. What is monitoring and use case? 
+ * Health Dashboard: Overall system health view showing performance, errors, and resource usage.
+ * Process Activity: Monitors running, completed, and failed process instances.
+ * Process Model Metrics: Shows performance metrics like execution count and average completion time of process models.
+ * Record Response Times: Tracks how fast record data is loaded for end users.
+ * Record Sync Status: Monitors the status and failures of record data synchronization jobs.
+ * Query Performance: Analyzes database query execution time to identify slow or inefficient queries.
 
 ## 35. What is difference between equal to and like operator?
  * Equal: The value must be exactly equal to the column value. Faster (can use index directly)
