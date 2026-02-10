@@ -1,4 +1,4 @@
-# Best Practice in Interface
+# Function & Interface
 
 ## 1. What is the best practice of interface?
  * Break complex interfaces into reusable component of Interface/rules (Modular Coding). 
