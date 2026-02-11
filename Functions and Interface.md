@@ -6,7 +6,7 @@
  * Avoid unnecessary queries inside the interface; preload data with rule inputs and Querying the data only in parent interface to reduce queries.
  * Use paginated grids for large datasets to optimize load time.
  * Proper Naming convention for interface and RI name, Description and adding comments for the code logic.
- * Default test Cases.
+ * Add Default test Cases.
  * Don't Hardcode: Never type specific IDs or text labels directly in the code. Use Constants so you can change them easily later without breaking the code.
  * Unused RI, Local variable, improperly scoped parameters and null handling.
  * Avoid nested loops
@@ -22,7 +22,7 @@ Modular coding is the practice of breaking a large, complex program into smaller
  * Experienced unwanted interface refresh and input reset issues; resolved by controlling refreshOnReferencedVarChange and managing save logic properly.
  * Faced grid duplication and sorting issues; resolved by configuring correct pagingInfo, using unique identifiers, and managing a!forEach() carefully.
  * Experienced validation issues during form submission; resolved by implementing submit-level validations and maintaining proper save order.
- * Faced file upload issues due to security and configuration problems; resolved by fixing document folder permissions, validating file type and size, and configuring a!fileUploadField() with correct bindings.
+ * Faced file upload issues due to security and configuration problems, resolved by fixing document folder permissions, validating file type and size, and configuring a!fileUploadField() with correct bindings.
  * Ensured UI consistency across interfaces by using reusable interface rules and following Appian UX best practices.
 
 ## 4. What is the difference between a!save vs Save!value?
@@ -53,13 +53,12 @@ Local variables can be refreshed in the following ways:
           then: fv!value & " items in cart.",
           default: "Unknown."
         )
-
  * Displayvalue: Tries to match a value in a given array with a value at the same index in a replacement array and returns either the value at the same index or a default value if the value is not found.
 displayvalue( value, inArray, replacement, default ) Eg: displayvalue(2,{0,1,2},{"Low","Medium","High"},"Unknown"), returns: High""
 
 ## 8. What is the difference between local variables and rule inputs?
-Local Variables: Used when the scope is within the interface/rule and the value need not go outside that object. They are also used to define the repetitive piece of code/function/rule.
-Rule Inputs: Used when the value has to be taken outside the object.
+ * Local Variables: Used when the scope is within the interface/rule and the value need not go outside that object. They are also used to define the repetitive piece of code/function/rule.
+ * Rule Inputs: Used when the value has to be taken outside the object.
 
 ## 9. what is the difference between difference and Symmetric Difference?
  * Difference: Returns the values in array1 and not in array2.
@@ -83,9 +82,9 @@ Eg: wherecontains(20, {10, 20, 30}), Returns {2}.
 
 ## 12. what is the depriciated function and how do you handle objects which are utilising them?
 A deprecated function (or feature) is a piece of code that is still functional but is no longer recommended for use by the developers. It is formally marked for future removal and has typically been replaced by a newer, more efficient, more secure, or more consistent alternative.
-1.Create a New Version: Create a new rule with the updated, non-deprecated logic.
-2.Update Precedents: Go to each object using the old rule (found via "Where Used") and change the reference to point to the new rule.
-3.Deactivate the Old Rule: Once all references are updated, deactivate the deprecated rule to prevent future use.
+ * 1.Create a New Version: Create a new rule with the updated, non-deprecated logic.
+ * 2.Update Precedents: Go to each object using the old rule (found via "Where Used") and change the reference to point to the new rule.
+ * 3.Deactivate the Old Rule: Once all references are updated, deactivate the deprecated rule to prevent future use.
 
 ## 13. What is an environmental constant?
 The env constant is used to store values specific to the environment. For example, we can have a constant called IS_PROD whose value will be true only in the production environment. The value of the env constant can be provided in the customization file during deployment.
@@ -97,14 +96,9 @@ No. This is because if the index of the values changes, the comparison can colla
  * Validation: Validation errors are displayed below the field when the value does not meet certain business conditions.
  * Validation Group: Fields are validated only when a button in the same validation group is clicked.
 
-## 16. Scenario: Interface to fill vehicle insurance details. There is a master field to capture the type of vehicle (Car/Bike etc.), and there are sets of fields that differ for the type of vehicle selected.
-Hide the sequential fields and display only the set of fields that correspond to the selected vehicle type.
-Display all the fields but keep them disabled. Enable only the set of fields that correspond to the selected vehicle type.
-Answer: Hide the sequential fields and display only the set of fields that correspond to the selected vehicle type.
-
-## 17. Why should the read-only grid's pagingInfo match the data's pagingInfo?
+## 16. Why should the read-only grid's pagingInfo match the data's pagingInfo?
 This is because the data has to be refreshed based on each page.
 
-## 18. Why shouldn’t an interface have more than 500 lines of code? How to reduce the number of lines of code?
+## 17. Why shouldn’t an interface have more than 500 lines of code? How to reduce the number of lines of code?
 More than 500 lines of code can lead to binding issues. This can be solved using modular coding.
 
