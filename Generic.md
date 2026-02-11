@@ -52,7 +52,7 @@ It is possible to add up to a total of 32 execution and 32 analytics engines by 
 |                                    |                                             |                                                    | Web APIs               |                      |
 
 
-## 4. how do you modify the securities for 1000 appian objects?
+## 4. How do you modify the securities for 1000 appian objects?
 Using security summary (under gear symbol) it can cofigure
 
 ## 5. What are the stages appian recommend to use in Project ?
@@ -78,6 +78,7 @@ PreDeployment :
  * Deployment Fails Due to Locked Objects.
  * Circular Dependencies Between Objects.
  * Import Customisation File ICF Not Applied or Misconfigured.
+ * Create a backup package before deployment
 
 Post Deployment :
  * Security Checks
@@ -88,15 +89,15 @@ Post Deployment :
 Users and Service account need to configured manually. Groups can be moved to next environment but not the users. 
 
 ## 9. How to create 50 users to next environment? (NR)
-using create user smart service we can create but how 50 data's are populated?
+Using create user smart service we can create but how 50 data's are populated?
 
 ## 10. Why can users not be deleted or moved to another environment in Appian?
 The license cost is based on the number of users per environment, and Appian maintains metadata based on users. Hence, users cannot be moved or deleted.
 
 ## 11. Different Types of prod Issues you have encounter?
-PV Variable was mis configured, due to which calculation went missing, using report we took the process instances, getexternalPv or setexternalPv
+PV variable value was mis configured, using process report we had queries the data and using getexternalpv and modified the data using setexternalpv and modified the pv value, and restarted the process instance using restart process smart services 
 
-## 12. What is use case of Customisation file and what is environment constant / (connected System)? 
+## 12. What is use case of Customisation file and what is environment constant/connected System? 
 The customization file is used to provide values to the environmental constant and connected systems when deploying to another environment so that the value changed isn't missed.
 
 ## 13. What are the limitations for business user?
@@ -105,19 +106,19 @@ In Appian, a Business User (usually someone from the business team who reviews t
 ## 14. What is hot fix?
 Hot fix is an bug of appian, which appian provide to fix those bugs.
 
-## 15. How do you force deploy to next environment?
-By Removing UUID / Customisation File (NR)
+## 15. How do you force deploy to next environment? (NR)
+By Removing UUID / Customisation File
 
 ## 16. What are Production bugs? How did you fix them?
-Reproduce the Production bugs in lower environment and fix those bugs, once fixed move the fixes to the next next environments.
+Reproduce the Production bugs in lower environment and fix those bugs, once fixed move the fixes to next next environments.
 
 ## 17. How to download a document when it is unplublished?
-From Appian 25.3 we can able to download the document by using a!documentDownloadLink() passing the doc Id, for Lower Version Environment through process model you need to write in DB and then download the Documents.
+From Appian 25.3 we can able to download the document by using a!documentDownloadLink() passing the doc Id, for Lower Version Environment through process model we need to write in DB and then download the Documents.
 
 ## 18. How much document size appian can send to external document?
-Request Body : Can't exceed 5 mb
-Base 64 : Combined size of file 75 mb
-Binary files : 250 Mb
+ * Request Body : Can't exceed 5 mb
+ * Base 64 : Combined size of file 75 mb
+ * Binary files : 250 Mb
 
 ## 19. How do you check if document exist or not in your application?
 getcontentobjectdetailsbyid()
@@ -128,22 +129,19 @@ Using "Delete Documents Created Before Date" smart service in the Process model,
 ## 21. How to move document without changing its ID to next environment?
 Can't be done, Documet Id varies for different environment
 
-## 22. how to configure Single click document download?
-Contruct the excel sheet or document and pass it in document download link
+## 22. How to configure Single click document download?
+Contruct the excel sheet or word document using templates and pass it in document download link
 
 ## 23. What is Portal and how does sign in and sign out works?
 Business user who does not have login credential in appian but able to access
 Eg: Complaince related to water shortage, Electricity shortage 
 
 ## 24. If any request is submitted through an user by portal, how can we find them?
-By creating a request id which can be configured through email id or phone number using unique set of constraints
+By generating a unique request id which can be combined with email id or phone number (unique set of constraints)
 
 ## 25. How do you handle errors in Portal? 
-Portals do NOT support out-of-the-box Appian error dialogs. Portals run outside the Appian environment
-Errors must be handled manually in the interface and integrations
-check dependents and navigate (It will show which precedents caused issue)
-Published with no error message (Open interface, comment child interface and check one by one which causing the error)
-Error will be emaailed to admin
+ * Portals do NOT support out-of-the-box Appian error dialogs. Portals run outside the Appian environment. Errors must be handled manually in the interface and integrations
+ * Error will be emailed to admin team
 
 ## 26. What is the purpose of user start page?
 When configured, this allows the user to directly log in to the given site rather than the Tempo page.
@@ -163,7 +161,7 @@ Read excel smart service and segreagate the DB, Write to data store entity for e
 By Creating separate individual sub process in sync for each approvers (In sync method Parent process instance will wait for child process to complete)
 For DB driven, query the data in script task and once all completed, proceed with next steps
 
-## 31. why do we split tabel in Database? why can't we store all in single DB?
+## 31. Why do we split tabel in Database? why can't we store all in single DB?
 Split tabel because it would create major performance, storage, consistency, scalability, and maintainability issues.
 Databases follow Normalization, where data is split into related tables to avoid duplication and ensure efficiency.
 
@@ -171,8 +169,8 @@ Databases follow Normalization, where data is split into related tables to avoid
  * k3.lic for engines
  * k4.lic for the data server
 
-## 33. what is health chekup and use case?
-check metrics and performance log critical fix, high fix, medium,  low (check if fix)
+## 33. What is health chekup and use case?
+Check metrics and performance log critical fix, high fix, medium,  low (check if fix)
 
 ## 34. What is monitoring and use case? 
  * Health Dashboard: Overall system health view showing performance, errors, and resource usage.
@@ -196,7 +194,7 @@ check metrics and performance log critical fix, high fix, medium,  low (check if
 ## 37. How do you implement Optimistic locking in appian?
 In CDT Based approch, we can add a new column Version and default set to zero, In XSD package add @Version and import and then using trigerrs we can create those versions.
 
-## 38. difference between tomcot logs and performance logs?
+## 38. Difference between tomcot logs and performance logs?
 | Tomcot Logs                           | Performance Logs                         |
 |---------------------------------------|------------------------------------------|
 | Server startup/shutdown details       | Use request response Times               |
@@ -214,7 +212,7 @@ It provides a tabular visual framework to make business decisions clear, maintai
 | Hit Policy     | Defines whether to return first match, all matches, or collect values |
 
 ## 40. Tempo vs Site?
-| Tempoo                  | Site                                                   |
+| Tempo                   | Site                                                   |
 |-------------------------|--------------------------------------------------------|
 | Default by appian       | Can configure based on business need                   |
 | View/See all tasks      | Security acess can be modified (View/Modify)           |
