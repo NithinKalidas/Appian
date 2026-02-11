@@ -10,9 +10,9 @@ Handling the integration with status code
 Using retry machanism for server unavailable and logging the details
 
 ## 3. Issues you faced in Web API or Integration and how did you overcome?
-Timeout and network issues (Implemented retry logic for safe APIs)
-Duplicate API calls due to multiple button clicks (Multiple clicks triggered duplicate API calls, leading to repeated transactions)
-Data mapping and type mismatch (Integration failures due to incorrect data types (text vs number, date formats))
+ * Timeout and network issues (Implemented retry logic for safe APIs)
+ * Duplicate API calls due to multiple button clicks (Multiple clicks triggered duplicate API calls, leading to repeated transactions)
+ * Data mapping and type mismatch (Integration failures due to incorrect data types (text vs number, date formats))
 
 ## 4. Authentication types and explain them?
  * Basic
@@ -22,7 +22,7 @@ Data mapping and type mismatch (Integration failures due to incorrect data types
 ## 5. In Web API/ a!save how many smart service we can use as function?
 Only one, To configure multiple we can provide the another smart services either in On success or on error
 
-## 6. How do you handle integration error ?
+## 6. How do you handle integration error?
 | Code Type | Reason        |
 | --------- | ------------- |
 | 1xx       | Informational |
@@ -31,14 +31,14 @@ Only one, To configure multiple we can provide the another smart services either
 | 4xx       | Client issue  |
 | 5xx       | Server issue  |
 
-## 7. What are method of API types?
-| Method | Operation        | Idempotent | Use Case       |
-| ------ | ---------------- | ---------- | -------------- |
-| GET    | Read             | Yes        | Fetch data     |
-| POST   | Create           | No         | New record     |
-| PUT    | Update (full)    | Yes        | Replace record |
-| PATCH  | Update (partial) | No         | Modify fields  |
-| DELETE | Remove           | Yes        | Delete record  |
+## 7. What are method of API types and methods supported in appian?
+| Method | Operation        | Idempotent | Use Case       | Usage in Appian                                                   | Typical Use Case                             |
+| ------ | ---------------- | ---------- | -------------- | ----------------------------------------------------------------- | -------------------------------------------- |
+| GET    | Read             | Yes        | Fetch data     | Retrieve data from an external system or return data in a Web API | Get record / fetch list / search details     |
+| POST   | Create           | No         | New record     | Create new resource or send data to external system               | Create user / submit form / upload file      |
+| PUT    | Update (full)    | Yes        | Replace record | Update a resource by replacing the full dataset                   | Update full customer record                  |
+| PATCH  | Update (partial) | No         | Modify fields  | Update only specific fields of a resource                         | Update only email / status / phone number    |
+| DELETE | Remove           | Yes        | Delete record  | Remove a resource from external system                            | Delete record / cancel request / remove user |
 
 ## 8. Web API is called in button action, how do you prevent from multiple clicks for same web API call?
 In critical flows like payments or submissions, we handle this at both UI and API levels. The UI disables the button after the first click, and the backend ensures idempotency using unique transaction identifiers to avoid duplicate processing.
@@ -66,7 +66,6 @@ In Admin console, under web API authentication we can create service account
 | Setup                  | More complex                | Relatively simpler                         |
 | Ideal for              | SSO across multiple apps    | Centralized authentication within intranet |
 | Appian usage           | Appian SSO login via IdP    | Appian user authentication via AD          |
-
 
 ## 13. What is difference between REST API vs SOAP API?
 | Feature                  | **REST API**                                                       | **SOAP API**                                                                      |
@@ -101,32 +100,21 @@ use start index and batch size for pagination and use query parameter for filter
 | **Preconfigured Connected System Authentication**              | Reusable credential objects that manage authentication securely.                                                                              |
 
 ## 16. How to get data of employee where age is between 20-25 and salary is greatter than 1,00,000 integration?
-GET /employees?minAge=20&maxAge=25&minSalary=100000
-
-Query Parameters:
-minAge=20 → lower age limit
-maxAge=25 → upper age limit
-minSalary=100000 → salary filter
+ * GET /employees?minAge=20&maxAge=25&minSalary=100000
+ * Query Parameters:
+minAge=20 → lower age limit, maxAge=25 → upper age limit , minSalary=100000 → salary filter
 
 ## 17. Can we deploy service account to higher environment? If yes, How? If No how to overcome?
 No, Need to create new and add into the group
 
 ## 18. How to construct custom error message in integration?
-In Response, under Error Handling 
-turn on "OverRide and define all error conditions"
-We can set up success criteria and error message based on the status code
+In Response, under Error Handling, turn on "OverRide and define all error conditions", We can configure success criteria and error message based on the status code
 
-## 19. Minimun level of Permission to execute web API? 
-Viewer Access but Can't able to upload document(NR)
+## 19. Minimun level of Permission to execute web API? (NR)
+Viewer Access but Can't able to upload document
 
-## 20. What are the http methods supported in appian?
-| HTTP Method | Usage in Appian                                                   | Typical Use Case                             |
-| ----------- | ----------------------------------------------------------------- | -------------------------------------------- |
-| **GET**     | Retrieve data from an external system or return data in a Web API | Get record / fetch list / search details     |
-| **POST**    | Create new resource or send data to external system               | Create user / submit form / upload file      |
-| **PUT**     | Update a resource by replacing the full dataset                   | Update full customer record                  |
-| **PATCH**   | Update only specific fields of a resource                         | Update only email / status / phone number    |
-| **DELETE**  | Remove a resource from external system                            | Delete record / cancel request / remove user |
+## 20. How to create new service Account?
+Under Admin Console, In WEB Api Authentication we can create service account and authentication key as well
  
 ## 21. Can we use get method to execute smart service?
 No, To execute any smart service we need Post/Put/Patch
@@ -150,7 +138,6 @@ If you are querying an external system, use the GET HTTP method. You pass query 
 | **API / Endpoint URL (target API)**                      | The actual service endpoint Appian will call using the token                          |
 | **Token Type**                                           | Bearer token (typically) to include in Authorization header                           |
 
-
 ## 25. What are all information required for API Key authentication requires to implement?
 | Required Information                  | Purpose                                                                                        |
 | ------------------------------------- | ---------------------------------------------------------------------------------------------- |
@@ -162,13 +149,12 @@ If you are querying an external system, use the GET HTTP method. You pass query 
 | **Request Body format (if required)** | JSON / XML / form-data / none                                                                  |
 | **Expected Response Format**          | JSON / XML (used for parsing in Appian)                                                        |
 
-
 ## 26. How much size appian can send data to external system?
  * Request Body : Can't exceed 5 MB
  * Base 64 : Combined size of File 75 MB
  * Binary Files : 250 Mb
 
-## 27. what is single sign on?
+## 27. What is single sign on?
 SSO is a login mechanism where you sign in once and Securely access multiple applications using token-based authentication
 
 ## 28. When should Web API, Integration/Web service be used?
@@ -182,7 +168,7 @@ Web Service: Used when the data returned by the external system is in SOAP struc
 ## 30. What is connected systems?
 Connected Systems is an object to store the connection credentials used in integrations when connecting to an external system.
 
-## 31. Third part want to trigger your DB/SP
+## 31. Third part want to trigger your DB/SP?
 By creating a WEB API in process model using the execute SP smart service we can achieve (NR)
 
 ## 32. Inbound Integration vs Outbound Integration?
@@ -190,19 +176,17 @@ Inbound: External system initiating call to pull data from appian or push data
 Outbound: When Appian initiate the connection to external system
 
 ## 33. How Do you Handle Versioning in Web API?
-Include the version number in the API endpoint path.
-When creating the Web API, name the endpoint with the version prefix:
-vl_getEmployeeDetails
-v2_getEmployeeDetails
+When creating the Web API, Include the version number in the API endpoint path, with the version prefix or suffix:
+Eg: vl_getEmployeeDetails, v2_getEmployeeDetails
 
 ## 34. Can we import third-party data into Appian without a Connected System?
 Yes, You can connect to a third-party API without using a Connected System if the API is not secured or uses Basic Authentication, where you manually include credentials in the request.
 
 ## 35. An external Integration in experiencing timout when sending a large volume of data? How do you resolve?
-Batching
+Use batching or asynchronous processing (split the payload into smaller chunks and process via background/queued integrations) to avoid timeout while handling large data volumes.
 
 ## 36. How do you create WEB API in SOAP?
-Create process model and keep that as a service (NR)
+Create process model and keep that as a service, need to configure in legacy web service (NR) 
 
 ## 37. What is T24 and have you used in your application?
 T24 (Temenos T24) is a core banking software developed by Temenos.
@@ -212,8 +196,3 @@ T24 (Temenos T24) is a core banking software developed by Temenos.
  * Payments & transactions
  * Interest & charges
  * Regulatory and financial reporting
-
-## 38. How to create new service Account?
-Under Admin Console, In WEB Api Authentication we can create service account and authentication key as well
-
-
