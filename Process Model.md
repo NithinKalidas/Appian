@@ -41,7 +41,7 @@ In Startprocess 1000 is the limit
 ## 7. What is quick task and how do you configure?
 Quick Tasks are User Input Tasks executed outside the main task list, usually not shown in task reports, and often used for confirmation actions.
 
-## 8. what is hidden variable? How to get its report?
+## 8. What is hidden variable? How to get its report?
 A Hidden Variable is a process variable that is not exposed to reports or end users by default. It is mainly used for internal process logic, temporary values, or technical tracking that should not appear in standard process reports.
 Hidden variables reduce the amount of data Appian stores in process history, which improves memory efficiency
 
@@ -83,7 +83,7 @@ Reassigns the task to Senior Manager
 Sends reminder emails
 Triggers escalation process
 
-## 13. why to use process start form rather than user input task?
+## 13. Why to use process start form rather than user input task?
 Starts the process model when button action trigerred
 Reduces the utilisation of Appian Memory unit/Resource of appian engine (NR)
 
@@ -94,11 +94,11 @@ When quering the data inside the process model before the user interaction start
 ## 15. How do you convert a word to document?
 using docx to pdf converter through process model
 
-## 16. how do you send document to external system?
+## 16. How do you send document to external system?
 Using integration we can send through either base 64 or binary 
 Using a smart service send document to external system (NR)
 
-## 17. what is task log?
+## 17. What is task log?
 Task Log is a handling the task through DB Driven rather than Appian default assignment 
 Which Decrease the RAM memory and increase in Performance as all the task are handled through storages in DB
 
@@ -153,11 +153,13 @@ Eg: Confirmation screen to display the request number
 Setting Up retry after failed attempt after (mostly when statuc code is failed with 500) few minutes and also write the log for the integration when ever hits for analysis.
 
 ## 33. What is the difference between End Node vs terminate Node?
+ * End Node: Gracefully completes the current process path and allows other active paths in the process to continue.
+ * Terminate Node: Immediately stops the entire process instance and ends all active and parallel paths.
 
 ## 34. Long activity chains - greater than 5 seconds between attended activities - are strongly discouraged because they have both an adverse effect on the performance of the system at scale and the experience of the user. True or False?
 TRUE
 
-## 35.What is a quick task?
+## 35. What is a quick task?
 A quick task is an on-demand task. The task does not appear in the task tab and can only be performed when activity is chained. If the task is closed without any action taken, it cannot be retrieved. The quick task stays ACTIVE when not performed. When quick task is enabled, a tilde (~) will be visible in the user input task.
 
 ## 36. What is Activity Chaining and What are its limitations?
@@ -171,7 +173,7 @@ Exception: Used to kill the task and proceed with the flow when the task isn't p
 Process Start Form: Starts the instance only when a button with the submit attribute set to true is clicked. It avoids unnecessary instances and should be used when the user has the choice to submit the form, as it does not appear as a task in the task queue.
 User Input Task: Used when the task needs to be assigned to specific users.
 
-## 39.When should XOR and OR gateways be used?
+## 39. When should XOR and OR gateways be used?
 XOR: Used when only the first true path should be executed based on the given conditions.
 OR: Used when all the true paths should be executed based on the given conditions.
 
@@ -243,7 +245,7 @@ Yes, under the assignment tab the option can be unchecked.
 Records -> Speed of development is higher as foreign key mapping are easily configured by inbuilt relationship
 Usage of views, creation of record summary and able to configure custom field for aggregate function (NR)
 
-## 60. What is the maximum number of nodes and variables allowed per process model?
+## 60. What are the recommended best-practice limits for the number of nodes and process variables in process model?
 30 Nodes and 50 Variables
 
 ## 61. If task delayed for 24 hrs it shouuld assign to hire manager (NR/Ls Interview Ques)
