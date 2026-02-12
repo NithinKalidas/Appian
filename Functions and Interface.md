@@ -16,7 +16,7 @@
 ## 2. What is modular coding?
 Modular coding is the practice of breaking a large, complex program into smaller, independent and manageable pieces called modules
 
-## 3. Issues you came across in Interface and how do you resolve them? (NR)
+## 3. Issues you came across in Interface and how do you resolve them?
  * Faced slow interface loading due to multiple queries, nested loops, and large datasets; resolved by using Performance Metrics, removing redundant queries, caching data in local variables, and applying pagingInfo to limit data.
  * Encountered incorrect data display and null value issues caused by wrong index paths and missing checks; resolved using index() with default values and conditional logic like if() and where().
  * Experienced unwanted interface refresh and input reset issues; resolved by controlling refreshOnReferencedVarChange and managing save logic properly.
