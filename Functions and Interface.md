@@ -15,6 +15,7 @@
 
 ## 2. What is modular coding?
 Modular coding is the practice of breaking a large, complex program into smaller, independent and manageable pieces called modules
+Reusability of objects , Easy change management, Easy debugging, Reduced number of lines per interface (Reduces binding issues)
 
 ## 3. Issues you came across in Interface and how do you resolve them?
  * Faced slow interface loading due to multiple queries, nested loops, and large datasets; resolved by using Performance Metrics, removing redundant queries, caching data in local variables, and applying pagingInfo to limit data.
@@ -98,7 +99,4 @@ No. This is because if the index of the values changes, the comparison can colla
 
 ## 16. Why should the read-only grid's pagingInfo match the data's pagingInfo?
 This is because the data has to be refreshed based on each page.
-
-## 17. Why shouldn’t an interface have more than 500 lines of code? How to reduce the number of lines of code?
-More than 500 lines of code can lead to binding issues. This can be solved using modular coding.
 
