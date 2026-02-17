@@ -255,13 +255,7 @@ Appian Object: Application, Process Model
 Complex: PagingInfo, DataSubset
 Custom Data Type
 
-## 48. What are the benefits of modular coding?
-Reusability of objects
-Easy change management
-Easy debugging
-Reduced number of lines per interface
-
-## 49. how do you build an Application
+## 48. how do you build an Application
 Get Clear Requirements
 Analyse the requirement and flow process
 Create Data Model
@@ -272,7 +266,7 @@ Create Reports
 Do multiple Testing
 Create Site and Configure
 
-## 50. What are new appian features or new release (25.4)?
+## 49. What are new appian features or new release (25.4)?
  * AI-Powered Reporting: Users can create reports instantly using AI Copilot.
  * Increased Sync Limits: You can now sync up to 50 million rows per record type, significantly increasing data capacity.
  * Transparent Data Encryption (TDE) for synced data — Enterprises can now protect their synced data at rest with built-in encryption, with no changes required at the application level.
@@ -284,30 +278,24 @@ Create Site and Configure
  * Long-running AI Skill execution — New option to execute generative-AI tasks in “Long Running” mode (for large inputs/responses) so you don’t hit timeout issues.
  * New a!genAiModels() function — Helps you dynamically get the list of available AI models and lets you build more flexible AI-enabled solutions.
 
-## 51. What is AI skill types and use cases?
-Prompt - Text, EML File, PDF, Jpeg, TIFF, PNG
-IDP - PDF, Jpeg, TIFF, PNG
-ML - PDF, EML
+## 50. What is AI skill types and use cases?
+ * Prompt - Text, EML File, PDF, Jpeg, TIFF, PNG
+ * IDP - PDF, Jpeg, TIFF, PNG
+ * ML - PDF, EML
 
-## 52. Types of AI Skill ?
-Document Classification
-Document Extraction
-Email Classification
+## 51. Types of AI Skill ?
+ * Document Classification
+ * Document Extraction
+ * Email Classification
 
-## 53. What are the AI Components, What AI Model does Appian Use?
+## 52. What are the AI Components, What AI Model does Appian Use?
 Anthropic AI is earlier used, Now In Appian we can able to use
 {"Claude 3 Haiku", "Claude 3.5 Sonnet", "Claude 3.7 Sonnet", "Claude Sonnet 4", "Claude Sonnet 4.5", "Claude Haiku 4.5"}
 
-## 54. What is Agile\Waterfall method?
+## 53. What is Agile\Waterfall method?
  * Agile: Agile is an iterative and incremental development methodology. Work is delivered in small cycles (Sprints) with continuous feedback.
  * Waterfall: Waterfall is a linear and sequential project development model. Each phase must be completed fully before moving to the next.
 
-## 55. What is Sprint duration and Sprint velocity?
+## 54. What is Sprint duration and Sprint velocity?
  * Sprint Duration: A Sprint is a fixed time period in Agile (mainly Scrum) during which the team works to complete a set of user stories.
  * Sprint Velocity: Sprint Velocity is the measure of work done by a team in a sprint.
-
-## 56. How to create new schema for appian what permission would require for that? 
-When connected with database schema, We can select the database
-
-
-
