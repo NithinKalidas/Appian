@@ -69,19 +69,23 @@ Data Fabric in Appian allows applications to access and manage data from multipl
  * Schedule incremental syncs
  * Using ICF - Force sync to true when deployed to higher environment
 
-## 11. 
-
-## 12. How do you increase query Performance?
+## 11. How do you increase query Performance?
  * Use selection to limit the number of columns to be returned.
  * Use filters wherever possible.
  * Use a limited batch size rather than -1.
- * Set fetchTotalCount to false.
+ * Set fetchTotalCount to false (using it only when required)
+ * Query only in Parent interface and avoid querying in child interface, to reduce the no of query if reusable is needed
 
+## 12.Difference between Extra Long Text, Long Text and text in Record?
+ * 64000 characters for Extra long text 
+ * 4000 character for Long text
+ * 255 character for text 
+ 
 ## 13. If i write more than 5000 Character using record, where there is no issues in varchar limit, will it write the date or truncate? and how much data will get back when i query the data? (firts 4000 or last 4000)
 5000 character will be written and only 4000 character will be retrieved back.
 
 ## 14. What approach you use to delete In-Active Records?
-In Same Process model, at end before it completes we can create a stored procedure 
+In Same Process model, at before the end node we can create a stored procedure to delete the soft deleted data
 
 ## 15. How many ways we can query a data from record?
 1. a!queryRecordType() : is a function used to fetch multiple records (rows) from a Record Type based on filters, paging, and sorting.
@@ -107,10 +111,11 @@ Delete action outside the related action using Process model call Outside the vi
 ## 20. Record Smart Search? 
 Record Smart Search is an AI-powered semantic search feature that you can enable on a synced record type so users can search using natural language or concepts rather than exact keywords
 
-## 21. 
+## 21.  What is the range of filtered record list for which the "Export to Excel" button is disabled?
+The button is enabled to export up to 100,000 records from the list, including rich text, images, and links.
 
-## 22. What is a data sync and when should I use it?
-When data sync is enabled, you are caching your source data in Appian. With a cache of your data, this means Appian will only have to execute queries from the cached data instead of the external source whenever you view or interact with the record data. Refer here on when to use data sync.
+## 22. What is the purpose of fetchTotalCount and provide a scenario where fetchTotalCount has to be true?
+FetchTotalCount returns the total number of rows in a table based on the applied filters. This is usually set to false (i.e., when batch size is not -1) as it takes extra time to retrieve the total. Set to true when used in a Read-Only grid to calculate the total number of pages required.
 
 ## 23. When should default filters and user filters be used?
 Default Filters: Used when the filter has to be applied to the source while retrieving the data for the record type.
@@ -119,38 +124,19 @@ User Filters: Applied by the user once the record type list is displayed.
 ## 24. How many additional views can be added to a record type?
 Total 20 along with Summary view
 
-## 25.
-
-
-## 26. What are the different ways to create a CDT?
+## 25. What are the different ways to create a CDT?
  * From Scratch
  * Duplicating the existing datatype
  * From database view or table
  * From XSD
  * From Web Services
 
-## 27. What are the different ways to fetch details from a database? (Nr)
+## 26. What are the different ways to fetch details from a database? (Nr)
  * Query DB smart service
  * Query Entity
  * Query rule (Deprecated)
 
-## 28. What is the purpose of fetchTotalCount and provide a scenario where fetchTotalCount has to be true?
-FetchTotalCount returns the total number of rows in a table based on the applied filters. This is usually set to false (i.e., when batch size is not -1) as it takes extra time to retrieve the total. Set to true when used in a Read-Only grid to calculate the total number of pages required.
-
-## 29. What is the range of filtered record list for which the "Export to Excel" button is disabled?
-The button is enabled to export up to 100,000 records from the list, including rich text, images, and links.
-
-## 30. Difference between Extra Long Text, Long Text and text in Record?
- * 64000 characters for Extra long text 
- * 4000 character for Long text
- * 255 character for text
-
-## 31. Best practice for querying data?
- * Query fetch totalcount to false (using it only when required)
- * Querying only the record field that is required
- * Query only in Parent interface and avoid querying in child interface, to reduce the no of query if reusable is needed
-
-## 32. Difference between query record type and record type identifier?
+## 27. Difference between query record type and record type identifier?
 | queryrecordtype()                  | recordTypebyIdentifier            |
 | ---------------------------------- | --------------------------------- |
 | Queries **data**                   | Locates **a single record**       |
