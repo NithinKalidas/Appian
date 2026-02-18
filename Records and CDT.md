@@ -69,12 +69,7 @@ Data Fabric in Appian allows applications to access and manage data from multipl
  * Schedule incremental syncs
  * Using ICF - Force sync to true when deployed to higher environment
 
-## 11. What are the different ways to use a record (Table, web service , PM)
- * Database
- * Process
- * Web Service
- * Sales Force
- * Create From Scratch
+## 11. 
 
 ## 12. How do you increase query Performance?
  * Use selection to limit the number of columns to be returned.
@@ -127,9 +122,8 @@ User Filters: Applied by the user once the record type list is displayed.
 ## 24. How many additional views can be added to a record type?
 Total 20 along with Summary view
 
-## 25. What is the difference between an action and a related action?
-* Record Action: Creates new data in the system.
-* Related Action: Performs some action related to the existing data.
+## 25.
+
 
 ## 26. What are the different ways to create a CDT?
  * From Scratch
@@ -160,7 +154,7 @@ The button is enabled to export up to 100,000 records from the list, including r
  * Query only in Parent interface and avoid querying in child interface, to reduce the no of query if reusable is needed
 
 ## 32. Difference between query record type and record type identifier?
-| queryrecordtype()                  | recordType.identifier             |
+| queryrecordtype()                  | recordTypebyIdentifier            |
 | ---------------------------------- | --------------------------------- |
 | Queries **data**                   | Locates **a single record**       |
 | Can return **multiple records**    | Points to **one record**          |
@@ -168,8 +162,7 @@ The button is enabled to export up to 100,000 records from the list, including r
 | Heavy operation (executes a query) | Lightweight (just passes ID)      |
 | Accepts filters, sorting, paging   | No filtering options — just an ID |
 
-## 33. How do you resolve write to records got errored out because of unique constraints ID?
-Need to check in process history and modify the necessary change and fix in the instances
+
 
 
 
