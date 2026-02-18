@@ -4,7 +4,7 @@
 | Feature | Custom Data Type (CDT) | Record Type |
 |--------|------------------------|-------------|
 | Primary Purpose | Maps to a database table/view via Data Store Entity and can be used as an in-memory data structure | Represents data from DB, process instances, APIs, or external systems |
-| Data Retrieval | Queried directly from the database via `a!queryEntity()` | Queried using `a!queryRecordType()`,`a!queryRecordByIdentifier()`,`a!RecordType()` (Grid)|
+| Data Retrieval | Queried directly from the database via `a!queryEntity()` | Queried using `a!queryRecordType()`,`a!queryRecordByIdentifier()`,`a!recordData()` (Grid)|
 | Caching | No built-in caching | Supports **Data Sync** to cache data for faster performance |
 | Relationships | Must be explicitly designed in CDT (nested/flat structures) and often require complex queries | Supports Data Fabric for relationship using **dot notation** |
 | Virtual / Custom Fields | Cannot create fields that do not exist in the DB table | Supports **Custom Record Fields** (Virtual Fields) calculated via expressions without altering DB |
