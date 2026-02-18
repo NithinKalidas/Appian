@@ -50,10 +50,10 @@ Create an intermediate record type (Eg: Student -> Enrollment -> Class) to bridg
 | **Use case**               | Create a new record       | Update or Delete an existing record     |
 | **Example**                | Add New Employee          | Update Selected Employee                |
 
-## 8. What are the types of Backed Record Type? (NR)
- * Entity Backed
- * Process Backed
- * Web Service Backed
+## 8. What are the types of Backed Record Type?
+ * Database Table Backed Records
+ * Service Backed Records
+ * Process Backed Records
 
 ## 9. What is data fabric?
 Data Fabric in Appian allows applications to access and manage data from multiple sources through records in a unified, secure, and real-time manner.
@@ -107,10 +107,7 @@ Delete action outside the related action using Process model call Outside the vi
 ## 20. Record Smart Search? 
 Record Smart Search is an AI-powered semantic search feature that you can enable on a synced record type so users can search using natural language or concepts rather than exact keywords
 
-## 21. What are the different types of records created in Appian?
- * Database Table Backed Records
- * Service Backed Records
- * Process Backed Records
+## 21. 
 
 ## 22. What is a data sync and when should I use it?
 When data sync is enabled, you are caching your source data in Appian. With a cache of your data, this means Appian will only have to execute queries from the cached data instead of the external source whenever you view or interact with the record data. Refer here on when to use data sync.
