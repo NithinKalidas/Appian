@@ -30,7 +30,7 @@ start process -> async -> different engine (based on availability in load balanc
 sync -> activity chaining not there (AC not handled in appian)
 
 ## 5. Difference Between  Asyncronous and syncronous Process?
-Sync: Parent Process will wait for its child process to complete. Eg: used for sequential steps, business calculation logic, confirmation screen 
+Sync: Parent Process will wait for its child process to complete. Eg: used for sequential steps, business calculation logic
 ASync: Parent Process trigerrs the child process and runs in parallel. Eg: Sending email 
 
 ## 6. What is MNI and where do you use them?
