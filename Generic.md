@@ -161,9 +161,11 @@ Read excel smart service and segreagate the DB, Write to data store entity for e
 By Creating separate individual sub process in sync for each approvers (In sync method Parent process instance will wait for child process to complete)
 For DB driven, query the data in script task and once all completed, proceed with next steps
 
-## 31. Why do we split tabel in Database? why can't we store all in single DB?
-Split tabel because it would create major performance, storage, consistency, scalability, and maintainability issues.
-Databases follow Normalization, where data is split into related tables to avoid duplication and ensure efficiency.
+## 31. What are the different datatypes available in Appian? Give examples for each.
+ * Primitive: Int, Text, Date, DateTime
+ * Appian Object: Application, Process Model
+ * Complex: PagingInfo, DataSubset
+ * Custom Data Type
 
 ## 32. What are the different licenses available and for what components are they provided?
  * k3.lic for engines
@@ -219,7 +221,6 @@ It provides a tabular visual framework to make business decisions clear, maintai
 | Can't add logo          | Can Add Logo                                           |
 | No changes can be done  | Changes can be Done to site based on requirement       |
 
-
 ## 41. Difference between DB driven and Process driven based approach?
  * DB Drivern : A DB-driven approach means data drives the state of the application instead of workflows.
  * Process models are minimized; most operations happen via records, smart services, write to data store, and interfaces.
@@ -245,28 +246,22 @@ UUID is an Universally Unique Identifier - remains stable acrosss different envi
 TRUE
 
 ## 46. What are the different types of Appian installations and state their differences?
-On-Premise: The physical hardware is with us and maintenance is also done by us.
-On-Cloud: The physical hardware is with Appian, and Appian handles the maintenance. The URL will have "appiancloud" in it.
-Hybrid: A combination of On-Premise and On-Cloud. For example, a training environment where the hardware is with Appian but maintenance is done by us.
+ * On-Premise: The physical hardware is with us and maintenance is also done by us.
+ * On-Cloud: The physical hardware is with Appian, and Appian handles the maintenance. The URL will have "appiancloud" in it.
+ * Hybrid: A combination of On-Premise and On-Cloud. For example, a training environment where the hardware is with Appian but maintenance is done by us.
 
-## 47. What are the different datatypes available in Appian? Give examples for each.
-Primitive: Int, Text, Date, DateTime
-Appian Object: Application, Process Model
-Complex: PagingInfo, DataSubset
-Custom Data Type
+## 47. How do you build an Application
+ * Get Clear Requirements
+ * Analyse the requirement and flow process
+ * Create Data Model
+ * Create DB and Record Type (or) CDt and Data Store
+ * Create required constants/interface/rule
+ * Create PM
+ * Create Reports
+ * Do multiple Testing
+ * Create Site and Configure
 
-## 48. how do you build an Application
-Get Clear Requirements
-Analyse the requirement and flow process
-Create Data Model
-Create DB and Record Type (or) CDt and Data Store
-Create required constants and Interface
-Create PM
-Create Reports
-Do multiple Testing
-Create Site and Configure
-
-## 49. What are new appian features or new release (25.4)?
+## 48. What are new appian features or new release (25.4)?
  * AI-Powered Reporting: Users can create reports instantly using AI Copilot.
  * Increased Sync Limits: You can now sync up to 50 million rows per record type, significantly increasing data capacity.
  * Transparent Data Encryption (TDE) for synced data — Enterprises can now protect their synced data at rest with built-in encryption, with no changes required at the application level.
@@ -278,21 +273,21 @@ Create Site and Configure
  * Long-running AI Skill execution — New option to execute generative-AI tasks in “Long Running” mode (for large inputs/responses) so you don’t hit timeout issues.
  * New a!genAiModels() function — Helps you dynamically get the list of available AI models and lets you build more flexible AI-enabled solutions.
 
-## 50. What is AI skill types and use cases?
+## 49. What is AI skill types and use cases?
  * Prompt - Text, EML File, PDF, Jpeg, TIFF, PNG
  * IDP - PDF, Jpeg, TIFF, PNG
  * ML - PDF, EML
 
-## 51. Types of AI Skill ?
+## 50. Types of AI Skill ?
  * Document Classification
  * Document Extraction
  * Email Classification
 
-## 52. What are the AI Components, What AI Model does Appian Use?
+## 51. What are the AI Components, What AI Model does Appian Use?
 Anthropic AI is earlier used, Now In Appian we can able to use
 {"Claude 3 Haiku", "Claude 3.5 Sonnet", "Claude 3.7 Sonnet", "Claude Sonnet 4", "Claude Sonnet 4.5", "Claude Haiku 4.5"}
 
-## 53. What is Agile\Waterfall method?
+## 52. What is Agile\Waterfall method?
  * Agile: Agile is an iterative and incremental development methodology. Work is delivered in small cycles (Sprints) with continuous feedback.
  * Waterfall: Waterfall is a linear and sequential project development model. Each phase must be completed fully before moving to the next.
 
