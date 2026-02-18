@@ -56,6 +56,8 @@ Request body contains the business data sent to the API.
 In Admin console, under web API authentication we can create service account
 
 ## 12. What is the difference between SAML and LDAP?
+SAML (Security Assertion Markup Language)
+LDAP (Lightweight Directory Access Protocol)
 | Feature                | **SAML**                    | **LDAP**                                   |
 | ---------------------- | --------------------------- | ------------------------------------------ |
 | Type                   | SSO Authentication Protocol | Directory Authentication Protocol          |
