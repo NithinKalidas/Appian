@@ -53,7 +53,7 @@ Create an intermediate record type (Eg: Student -> Enrollment -> Class) to bridg
 ## 8. What are the types of Backed Record Type? (NR)
  * Entity Backed
  * Process Backed
- * Expression Backed
+ * Web Service Backed
 
 ## 9. What is data fabric?
 Data Fabric in Appian allows applications to access and manage data from multiple sources through records in a unified, secure, and real-time manner.
