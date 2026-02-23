@@ -11,7 +11,6 @@
 | Flexibility in Data Source | Only database tables/views | Database, process models, APIs, web services, or other systems |
 
 ## 2. Limitation of Records and CDT?
-
 CDT: 
  * No built-in join handling; you must write custom queries manually
  * No inherent security model—must handle manually
@@ -60,16 +59,13 @@ Data Fabric in Appian allows applications to access and manage data from multipl
 
 ## 10. What are the different ways to sync a record?
  * Manual Full sync (via the "Start Full Sync" button)
- * Sync on Create/Update/Delete (CUD events)
- * Sync after Record Actions
  * Sync using a!syncRecords() Smart service in interface 
  * Sync Records Smart Service (passing a list of record identifiers (PK) to be synced)
- * Sync via Process Model write operations
  * Schedule Full Sync
  * Schedule incremental syncs
  * Using ICF - Force sync to true when deployed to higher environment
 
-## 11. How do you increase query Performance?
+## 11. How do you increase Query Performance?
  * Use selection to limit the number of columns to be returned.
  * Use filters wherever possible.
  * Use a limited batch size rather than -1.
@@ -90,6 +86,7 @@ In Same Process model, at before the end node we can create a stored procedure t
 ## 15. How many ways we can query a data from record?
 1. a!queryRecordType() : is a function used to fetch multiple records (rows) from a Record Type based on filters, paging, and sorting.
 2. a!queryRecordByIdentifier() : The Record Type Identifier is the unique primary identifier (key) of each record in a Record Type.
+3. a!recordData() : It is utilised for grid data and charts
 
 ## 16. What is ther return type of query entity and query record?
  * Query Record: List of Dictionary 
@@ -129,7 +126,6 @@ Total 20 along with Summary view
  * Duplicating the existing datatype
  * From database view or table
  * From XSD
- * From Web Services
 
 ## 26. What are the different ways to fetch details from a database? (Nr)
  * Query DB smart service
