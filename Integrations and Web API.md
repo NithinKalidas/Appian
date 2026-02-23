@@ -112,7 +112,7 @@ No, Need to create new and add into the group
 ## 18. How to construct custom error message in integration?
 In Response, under Error Handling, turn on "OverRide and define all error conditions", We can configure success criteria and error message based on the status code
 
-## 19. Minimun level of Permission to execute web API? (NR)
+## 19. Minimun level of Permission to execute web API? 
 Viewer Access but Can't able to upload document
 
 ## 20. How to create new service Account?
@@ -171,7 +171,7 @@ Web Service: Used when the data returned by the external system is in SOAP struc
 Connected Systems is an object to store the connection credentials used in integrations when connecting to an external system.
 
 ## 31. Third part want to trigger your DB/SP?
-By creating a WEB API in process model using the execute SP smart service we can achieve (NR)
+By creating a WEB API in process model using the execute SP smart service we can achieve 
 
 ## 32. Inbound Integration vs Outbound Integration?
 Inbound: External system initiating call to pull data from appian or push data
@@ -188,7 +188,7 @@ Yes, You can connect to a third-party API without using a Connected System if th
 Use batching or asynchronous processing (split the payload into smaller chunks and process via background/queued integrations) to avoid timeout while handling large data volumes.
 
 ## 36. How do you create WEB API in SOAP?
-Create process model and keep that as a service, need to configure in legacy web service (NR) 
+Create process model and keep that as a service, need to configure in legacy web service
 
 ## 37. What is T24 and have you used in your application?
 T24 (Temenos T24) is a core banking software developed by Temenos.
