@@ -1,8 +1,8 @@
 # Integrations and WEB API
 
 ## 1. What is Web API, Integration and Connected system?
- * WEB API: External system want to use appian Data/Resource
- * Integration: Data/Resource sharing to external System
+ * WEB API: External system needs to use appian Data/Resource
+ * Integration: Expose Data to external system
  * Connected system: To store the credentials for integration (basic, WebApi Key, Oauth client grand 2.0)
 
 ## 2. Best Practices in Integration?
