@@ -10,3 +10,8 @@ Hi, I’m Nithin Kalidas, an Appian Certified Associate Developer with over 3.5 
 
 Roles and Responsibilities:
 My roles and responsibilities to work on assigned (align with) user story, development performing unit testing and so on. 
+
+Current Work Item,
+Working on user story related to send back cases from operation maker to operation checker
+
+
