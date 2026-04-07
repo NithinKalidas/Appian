@@ -20,7 +20,7 @@ Records:
  * Sync breaks if external application changes the data in DB
  * 4 Million Rows (per synced Record Type). (licence has to be upgraded inorder to increase the limit)
  * Related Record limit: 100 Related Records for queryRecordType and 250 for queryRecordByIdentifier.
- * Text 4000 and Extra long text 64000 character limit
+ * Long Text 4000 and Extra long text 64000 character limit
 
 ## 3. How do you create CDT?
  * Create a Table in SQL
