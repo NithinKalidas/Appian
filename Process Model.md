@@ -13,8 +13,8 @@
  * Short lived Process model
  * Usage of terminate node rather than end node
  
-## 2. Production Issues you came across in PM and how did you handle them? (NR)
-
+## 2. Production Issues you came across in PM and how did you handle them?
+Reproduced same test case in lower environment and PV variables where misconfigured and we have utilised setexternalpv to set up the variables and restarted all the process model 
 
 ## 3. Difference Between Start Process and Sub Process?
 Start Process and Sub Process both are used to trigger a process model
@@ -22,10 +22,10 @@ Start Process and Sub Process both are used to trigger a process model
  * Sub Process: Sub process Runs on the same execution engine as of parent process.
 
 ## 4. Difference between asyncronous vs syncronous in start and sub process?
-* Async: Parent Process will wait for its child process to complete. Eg: used for sequential steps, business calculation logic
+* Sync: Parent Process will wait for its child process to complete. Eg: used for sequential steps, business calculation logic
  * In Start process async the load are balanced as it may executes on different engine
  * In Sub process async the loads are not balanced, it exectes in the same engine of parent engine
-* Sync: Parent Process trigerrs the child process and runs in parallel. Eg: Sending email 
+* Async: Parent Process trigerrs the child process and runs in parallel. Eg: Sending email 
  * In sub process sync, activity chaining can be configured as it executes on the same engine
  * In start process sync, activity chaining is not configured but loads are balanced
  
@@ -37,7 +37,7 @@ Start Process and Sub Process both are used to trigger a process model
  * Sub process
  * Start Process Link
  * Start Form
- * Timer (Daily or nightly process)
+ * Timer (Scheduler)
  * Using Email
  * Using Web API
  * Using End/Terminate Node
@@ -52,7 +52,7 @@ In Subprocess nodes, you can enable “Allow more than 1000 instances of this no
 In Startprocess 1000 is the limit
 
 ## 8. What is quick task and how do you configure?
-A quick task is an on-demand task. The task does not appear in the task tab and can only be performed when activity is chained. If the task is closed without any action taken, it cannot be retrieved. The quick task stays ACTIVE when not performed. When quick task is enabled, a tilde (~) will be visible in the user input task.
+A quick task is an on-demand task. The task does not appear in the task tab and can only be performed when activity is chained. If the task is closed without any action taken, it cannot be retrieved. The quick task stays active when not performed. When quick task is enabled, a tilde (~) will be visible in the user input task.
 Eg: Confirmation screen to display the request number
 
 ## 9. What is hidden variable? How to get its report?
@@ -116,9 +116,10 @@ In start node by scheduling the time and interval of run
 
 ## 21. How to optimise the PM having 200 Nodes?
  * Need to create reusable process model and call the process model again whenever required
- * Using sub process asynchronous to reduce the load the engine as it may execute in different engine
+ * Using start process asynchronous to reduce the load the engine as it may execute in different engine
 
-## 22. While calling a Sub process what is the difference between passing a variable as reference and a value? (NR)
+## 22. While calling a sub process what is the difference between Pass as reference is checked on (true)?
+The variable is shared (same memory reference) between parent and subprocess. Any changes in subprocess directly update the parent variable
 When Pass by referece is not selected the value will not change immediately only when we take the output, it will change
 Pass by reference is not preferred, as performance may impact as it need to refresh the variable every time it changes
 
@@ -198,7 +199,7 @@ Task Owner: The person who accepts a group task.
 ## 45. What should be the reassignment privilege for basic users?
 The reassignment privilege should be No privilege as basic users should not have the ability to reassign the task to anyone in the system, and if reassignment is enabled, the tracking of it becomes difficult. This can be set in the Assignment tab of User input task under "Set Reassignment Privilege".
 
-## 46. If task delayed for 24 hrs it shouuld assign to hire manager (NR/Ls Interview Ques)
+## 46. If task delayed for 24 hrs it shouuld assign to hire manager?
 
 ## 47. When Process is errored out? how do you check them?
  * Error on which node is causing error, Eg: Write node character limitation, Expression rule type cast issue identify which rule 
