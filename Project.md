@@ -1,4 +1,4 @@
-# RLP
+# Intro and Projects
 
 Hi, I’m Nithin Kalidas, an Appian Certified Associate Developer with over 3.5 years of experience working at Tata Consultancy Services. I’ve been primarily involved in enterprise banking and retail loan processing applications, where I design and deliver end-to-end BPM solutions using Appian. I have strong hands-on experience with SAIL interfaces, Process Models, Records, CDTs especially with core banking systems like T24.
 
