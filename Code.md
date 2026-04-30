@@ -83,3 +83,21 @@ a!localVariables(
   )
 )
 ```
+
+To Find the occurance in the list
+```javascript
+a!localVariables(
+  local!data: { 1, 2, 6, 6, 7, 7, 7, 9, 9 },
+  local!union: union(local!data, local!data),
+  a!forEach(
+    local!union,
+    concat(
+      fv!item,
+      " has occured ",
+      count(wherecontains(fv!item, local!data)),
+      " times."
+    )
+  )
+)
+```
+
